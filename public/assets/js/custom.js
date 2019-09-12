@@ -180,13 +180,13 @@ $(function(){
             $("#lvl1l3pzaqp").val($('#lvl2l3pzaqp').val());
             $('#lvl2l3pzaqp').val(aqpLinea3);
  
-            var opLinea3 = $("#lvl1l3pzop").val();
+            var opLinea3 = $("#lvl1l3pzop").val();     
             $("#lvl1l3pzop").val($('#lvl2l3pzop').val());
-            $('#lvl2l3pzop').val(opLinea3);
+            $('#lvl2l3pzop').val(opLinea3); 
 
             var pzVenta = pzvendidasnivel2l3;
             $('#lvl1l3pz_vendidas').text( $('#lvl2l3pz_vendidas').text());
-            $('#lvl2l3pz_vendidas').text(pzVenta);
+            $('#lvl2l3pz_vendidas').text(pzVenta); 
 
             $('#lvl2l3retail').text('$0.00');
 
