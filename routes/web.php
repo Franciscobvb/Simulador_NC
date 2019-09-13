@@ -1,4 +1,4 @@
 <?php
 
-Route::resource('simuladornc', 'simuladornc\CrudController');
-Route::post('simuladornc.welcome', 'simuladornc\CrudController@store')->name('NikkenChallenge');
+Route::resource('simulador', 'simulador\CrudController');
+Route::post('simulador.welcome', 'simulador\CrudController@store');

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\simuladornc;
+namespace App\Http\Controllers\simulador;
 
 use Request;
 use App\Http\Controllers\Controller;

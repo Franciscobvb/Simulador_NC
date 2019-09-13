@@ -11,9 +11,19 @@
         <link rel="icon" href="https://nikkenlatam.com/nikken-challenge/favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-        <link href="./assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
-        <link href="./assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
-        <link href="./assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
+        <link href="{{asset('simuladornc/js/plugins/nucleo/css/nucleo.css')}}" rel="stylesheet" />
+        <link href="{{asset('simuladornc/js/plugins/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet" />
+        <link href="{{asset('simuladornc/css/argon-dashboard.css?v=1.1.0')}}" rel="stylesheet" />
+        <style>
+            .fixed-action-btn.my-custom-btn {
+                position: fixed;
+                top: 100px;
+                right: 0;
+                padding-top: 15px;
+                margin-bottom: 0;
+                z-index: 1000;
+            }
+        </style>
     </head>
     <body>
         <div class="main-content">
@@ -30,7 +40,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <center>
-                                <img src="./assets/img/nikken_chalenge_logo.png" width="50%">
+                                <img src="{{asset('simuladornc/img/nikken_chalenge_logo.png')}}" width="50%">
                             </center>
                         </div>
                     </div>
@@ -49,9 +59,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <form class="gralForm" name="gralForm" id="gralForm" method="POST" data-route="{{route('NikkenChallenge')}}">
+                        <form class="gralForm" name="gralForm" id="gralForm" method="POST" action="'simuladornc.welcome'">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="card-body">
+                                    <div class="row">
+                                        <div class="fixed-action-btn my-custom-btn justify-content-center col col-lg-2 col-xl-2">
+                                            <button type="submit" class="btn btn-success" id="sendForm">Calcular</button>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-xl-3 order-xl-1 mb-5 mb-xl-0"></div>
                                         <div class="col-xl-6 order-xl-2 mb-5 mb-xl-0">
@@ -232,9 +247,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-2 col-md-1 col-lg-3 col-xl-3 " style="position: fixed;right: 0;z-index:9999;">
-                                            <button type="submit" class="btn btn-success" id="sendForm">Calcular</button>
-                                        </div>
+                                        
                                     </div>
                                     <hr>
                                     <div class="row">
@@ -1297,7 +1310,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </form>
                         </div>
@@ -1308,7 +1320,7 @@
                     <div class="row align-items-center justify-content-xl-between">
                         <div class="col-xl-6">
                             <div class="copyright text-center text-xl-left text-muted">
-                                &copy; 2019 <a href="https://nikkenlatam.com" class="font-weight-bold ml-1" target="_blank">Nikken Latinoamérica.</a> Todos los derechos reservados.
+                                &copy; 2019 <a href="https://nikkenlatam.com" class="font-weight-bold ml-1" target="_blank">Nikken Latam.</a> Todos los derechos reservados.
                             </div>
                         </div>
                     </div>
@@ -1316,8 +1328,8 @@
             </div>
         </div>
     </body>
-    <script src="./assets/js/plugins/jquery/dist/jquery.min.js"></script>
-    <script src="./assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/argon-dashboard.min.js?v=1.1.0"></script>
-    <script src="./assets/js/custom.js"></script>
+    <script src="{{asset('simuladornc/js/plugins/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('simuladornc/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('simuladornc/js/argon-dashboard.min.js?v=1.1.0')}}"></script>
+    <script src="{{asset('simuladornc/js/custom.js')}}"></script>
 </html>
