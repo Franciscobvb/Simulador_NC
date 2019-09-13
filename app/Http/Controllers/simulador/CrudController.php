@@ -24,7 +24,7 @@ class CrudController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
