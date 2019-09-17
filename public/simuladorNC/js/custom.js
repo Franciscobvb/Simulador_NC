@@ -209,20 +209,33 @@ $(function(){
             success: function(Response){
                 // Linea 0 - Nivel 0
                 if (Response[0].TotalAmount != '.00') {
-                    if (pzvendidasnivel0 > 0) {
+                    if (pzvendidasnivel0 >= 3) {
                         var totalfinal = (parseFloat(Response[0].Ganancias_Sugerido) + parseFloat(Response[0].Ganancias_Compras) + parseFloat(Response[0].TotalAmount) + parseFloat((Response[0].VGP > 1500 ? Response[0].Total_Adicional : 0)));
                         $('#lvl0retail').text(formatCurrency(totalfinal));
                         (Response[0].VC != '.00' ? $('#lvl0vc').text(Response[0].VGP) : null);
                         (Response[0].Puntos != '.00' ? (Response[0].Puntos > 100 ? $('#lvl0puntaje').text(Response[0].Puntos) : 0) : 0);
-                        (Response[0].Kinya != '.00' ? $('#lvl0kinya').text(formatCurrency(Response[0].Kinya)) : $('#lvl0kinya').text(formatCurrency(0)));
-                        (Response[0].KinyaL1 != '.00' ? $('#lvl0kinyal1').text(formatCurrency(Response[0].KinyaL1)) : $('#lvl0kinyal1').text(formatCurrency(0)));
-                        (Response[0].KinyaL2 != '.00' ? $('#lvl0kinyal2').text(formatCurrency(Response[0].KinyaL2)) : $('#lvl0kinyal2').text(formatCurrency(0)));
-                        (Response[0].Kintai != '.00' ? $('#lvl0kintai').text(formatCurrency(Response[0].Kintai)) : $('#lvl0kintai').text(formatCurrency(0)));
+                        (Response[0].Kinya != '.00' ? $('#lvl0kinya').text(formatCurrency(Response[0].Kinya)) : $('#lvl0kinya').text(formatCurrency('0')));
+                        (Response[0].KinyaL1 != '.00' ? $('#lvl0kinyal1').text(formatCurrency(Response[0].KinyaL1)) : $('#lvl0kinyal1').text(formatCurrency('0')));
+                        (Response[0].KinyaL2 != '.00' ? $('#lvl0kinyal2').text(formatCurrency(Response[0].KinyaL2)) : $('#lvl0kinyal2').text(formatCurrency('0')));
+                        (Response[0].Kintai != '.00' ? $('#lvl0kintai').text(formatCurrency(Response[0].Kintai)) : $('#lvl0kintai').text(formatCurrency('0')));
                         (Response[0].TotalAmount != '.00' ? $('#lvl0NCHtotal').text(formatCurrency(Response[0].TotalAmount)) : null);
                         $('#lvl0bonoGP').text(formatCurrency(Response[0].Total_Adicional));
                         $('#lvl0bonificaciones').text(formatCurrency(Response[0].Ganancias_Sugerido));
                         $('#lvl0venta').text(formatCurrency(Response[0].Ganancias_Compras));
                     }
+                }
+                else{
+                    $('#lvl0kinya').text(formatCurrency(0));
+                    $('#lvl0kinyal1').text(formatCurrency(0));
+                    $('#lvl0kinyal2').text(formatCurrency(0));
+                    $('#lvl0kintai').text(formatCurrency(0));
+                    $('#lvl0NCHtotal').text(formatCurrency(0));
+                    $('#lvl0vc').text(formatCurrency(0));
+                    $('#lvl0bonoGP').text(formatCurrency(Response[0].Total_Adicional));
+                    $('#lvl0bonificaciones').text(formatCurrency(Response[0].Ganancias_Sugerido));
+                    $('#lvl0venta').text(formatCurrency(Response[0].Ganancias_Compras));
+                    var totalfinal = (parseFloat(Response[0].Ganancias_Sugerido) + parseFloat(Response[0].Ganancias_Compras));
+                    $('#lvl0retail').text(formatCurrency(totalfinal));
                 }
 
                 // Linea 1 - Nivel 1
@@ -361,22 +374,6 @@ $("#lvl0rango").change(function(){
     $("#lvl0rangoText").text($("#lvl0rango option:selected").text());
 });
 
-$('#lvl0pzpiw').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl0pzwa').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl0pzaqp').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl0pzop').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
 $("#lvl0pzpiw").change(function(){
     var inputenter = this.value;
     if(inputenter == ''){
@@ -471,22 +468,6 @@ $("#lvl1l1pais").change(function(){
 
 $("#lvl1l1rango").change(function(){
     $("#lvl1l1rangoText").text($("#lvl1l1rango option:selected").text());
-});
-
-$('#lvl1l1pzpiw').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl1l1pzwa').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl1l1pzaqp').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl1l1pzop').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
 });
 
 $("#lvl1l1pzpiw").change(function(){
@@ -594,22 +575,6 @@ $("#lvl1l2rango").change(function(){
     $("#lvl1l2rangoText").text($("#lvl1l2rango option:selected").text());
 });
 
-$('#lvl1l2pzpiw').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl1l2pzwa').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl1l2pzaqp').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl1l2pzop').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
 $("#lvl1l2pzpiw").change(function(){
     var inputenter = this.value;
     if(inputenter == ''){
@@ -713,22 +678,6 @@ $("#lvl1l3pais").change(function(){
 
 $("#lvl1l3rango").change(function(){
     $("#lvl1l3rangoText").text($("#lvl1l3rango option:selected").text());
-});
-
-$('#lvl1l3pzpiw').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl1l3pzwa').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl1l3pzaqp').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl1l3pzop').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
 });
 
 $("#lvl1l3pzpiw").change(function(){
@@ -836,22 +785,6 @@ $("#lvl2l1rango").change(function(){
     $("#lvl2l1rangoText").text($("#lvl2l1rango option:selected").text());
 });
 
-$('#lvl2l1pzpiw').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl2l1pzwa').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl2l1pzaqp').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl2l1pzop').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
 $("#lvl2l1pzpiw").change(function(){
     var inputenter = this.value;
     if(inputenter == ''){
@@ -949,22 +882,6 @@ $("#lvl2l2rango").change(function(){
     $("#lvl2l2rangoText").text($("#lvl2l2rango option:selected").text());
 });
 
-$('#lvl2l2pzpiw').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl2l2pzwa').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl2l2pzaqp').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl2l2pzop').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
 $("#lvl2l2pzpiw").change(function(){
     var inputenter = this.value;
     if(inputenter == ''){
@@ -1059,22 +976,6 @@ $("#lvl2l3pais").change(function(){
 
 $("#lvl2l3rango").change(function(){
     $("#lvl2l3rangoText").text($("#lvl2l3rango option:selected").text());
-});
-
-$('#lvl2l3pzpiw').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl2l3pzwa').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl2l3pzaqp').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
-});
-
-$('#lvl2l3pzop').on('input', function () { 
-    this.value = this.value.replace(/[^0-9]/g,'');
 });
 
 $("#lvl2l3pzpiw").change(function(){

@@ -23,6 +23,18 @@
                 margin-bottom: 0;
                 z-index: 1000;
             }
+
+            .col-xl-4 hr{
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button { 
+                -webkit-appearance: none; 
+                margin: 0; 
+            }
+
+            input[type=number] { -moz-appearance:textfield; }
         </style>
     </head>
     <body>
@@ -59,7 +71,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <form class="gralForm" name="gralForm" id="gralForm" method="POST" action="'simuladornc.welcome'">
+                            <form class="gralForm" name="gralForm" id="gralForm" method="POST" action="'simuladornc.welcome'">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="card-body">
                                     <div class="row">
@@ -89,7 +101,7 @@
                                                                 <tbody class="list">
                                                                     <tr>
                                                                         <th>
-                                                                            <span>Total nikken challenge;</span>
+                                                                            <span>Total nikken challenge:</span>
                                                                         </th>
                                                                         <td>
                                                                             <span id="lvl0NCHtotal">$0.00</span>
@@ -215,27 +227,40 @@
                                                     <div class="row">
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm">PI WATER</span>
+                                                                <span class="mb-0 text-sm"><h6>PI WATER</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl0pzpiw" id="lvl0pzpiw">
                                                         </div>
+                                                        
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm">WATERFALL</span>
+                                                                <span class="mb-0 text-sm"><h6>WATERFALL</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl0pzwa" id="lvl0pzwa">
                                                         </div>
+
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm">AQUAPOUR</span>
+                                                                <span class="mb-0 text-sm"><h6>AQUA POUR</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl0pzaqp" id="lvl0pzaqp">
                                                         </div>
+
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm">OPTIMIZER</span>
+                                                                <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl0pzop" id="lvl0pzop">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzpiw" id="lvl0pzpiw">
+                                                        </div>
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzwa" id="lvl0pzwa">
+                                                        </div>
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzaqp" id="lvl0pzaqp">
+                                                        </div>
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzop" id="lvl0pzop">
                                                         </div>
                                                     </div>
                                                     <br>
@@ -247,7 +272,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                     <hr>
                                     <div class="row">
@@ -271,7 +295,7 @@
                                                                 <tbody class="list">
                                                                     <tr>
                                                                         <th>
-                                                                            <span>Total nikken challenge;</span>
+                                                                            <span>Total nikken challenge:</span>
                                                                         </th>
                                                                         <td>
                                                                             <span id="lvl1l1NCHtotal">$0.00</span>
@@ -368,7 +392,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Pais:
                                                             <select class="form-control" id="lvl1l1pais" name="lvl1l1pais">
                                                                 <option value="Lat">México</option>
@@ -381,7 +405,7 @@
                                                                 <option value="Gtm">Guatemala</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Rango:
                                                             <select class="form-control" id="lvl1l1rango" name="lvl1l1rango">
                                                                 <option value="1">Directo</option>
@@ -393,30 +417,43 @@
                                                     <div class="row">
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h5>PI WATER</h5></span>
+                                                                <span class="mb-0 text-sm"><h6>PI WATER</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l1pzpiw" id="lvl1l1pzpiw">
                                                         </div>
                                                         
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h5>WATERFALL</h5></span>
+                                                                <span class="mb-0 text-sm"><h6>WATERFALL</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l1pzwa" id="lvl1l1pzwa">
                                                         </div>
 
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
                                                                 <span class="mb-0 text-sm"><h6>AQUA POUR</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l1pzaqp" id="lvl1l1pzaqp">
                                                         </div>
 
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h5>OPTIMIZER</h5></span>
+                                                                <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l1pzop" id="lvl1l1pzop">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzpiw" id="lvl1l1pzpiw">
+                                                        </div>
+                                                        
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzwa" id="lvl1l1pzwa">
+                                                        </div>
+
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzaqp" id="lvl1l1pzaqp">
+                                                        </div>
+
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzop" id="lvl1l1pzop">
                                                         </div>
                                                     </div>
                                                     <br>
@@ -546,7 +583,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Pais:
                                                             <select class="form-control" id="lvl1l2pais" name="lvl1l2pais">
                                                                 <option value="Lat">México</option>
@@ -559,7 +596,7 @@
                                                                 <option value="Gtm">Guatemala</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Rango:
                                                             <select class="form-control" id="lvl1l2rango" name="lvl1l2rango">
                                                                 <option value="1">Directo</option>
@@ -571,30 +608,43 @@
                                                     <div class="row">
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h5>PI WATER</h5></span>
+                                                                <span class="mb-0 text-sm"><h6>PI WATER</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l2pzpiw" id="lvl1l2pzpiw">
                                                         </div>
                                                         
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h5>WATERFALL</h5></span>
+                                                                <span class="mb-0 text-sm"><h6>WATERFALL</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l2pzwa" id="lvl1l2pzwa">
                                                         </div>
 
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
                                                                 <span class="mb-0 text-sm"><h6>AQUA POUR</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l2pzaqp" id="lvl1l2pzaqp">
                                                         </div>
 
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h5>OPTIMIZER</h5></span>
+                                                                <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l2pzop" id="lvl1l2pzop">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzpiw" id="lvl1l2pzpiw">
+                                                        </div>
+                                                        
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzwa" id="lvl1l2pzwa">
+                                                        </div>
+
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzaqp" id="lvl1l2pzaqp">
+                                                        </div>
+
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzop" id="lvl1l2pzop">
                                                         </div>
                                                     </div>
                                                     <br>
@@ -724,7 +774,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Pais:
                                                             <select class="form-control" id="lvl1l3pais" name="lvl1l3pais">
                                                                 <option value="Lat">México</option>
@@ -737,7 +787,7 @@
                                                                 <option value="Gtm">Guatemala</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Rango:
                                                             <select class="form-control" id="lvl1l3rango" name="lvl1l3rango">
                                                                 <option value="1">Directo</option>
@@ -749,30 +799,43 @@
                                                     <div class="row">
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h5>PI WATER</h5></span>
+                                                                <span class="mb-0 text-sm"><h6>PI WATER</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l3pzpiw" id="lvl1l3pzpiw">
                                                         </div>
                                                         
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h5>WATERFALL</h5></span>
+                                                                <span class="mb-0 text-sm"><h6>WATERFALL</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l3pzwa" id="lvl1l3pzwa">
                                                         </div>
 
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
                                                                 <span class="mb-0 text-sm"><h6>AQUA POUR</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l3pzaqp" id="lvl1l3pzaqp">
                                                         </div>
 
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h5>OPTIMIZER</h5></span>
+                                                                <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
                                                             </div>
-                                                            <input class="form-control" type="text" maxlength="2" value="0" name="lvl1l3pzop" id="lvl1l3pzop">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzpiw" id="lvl1l3pzpiw">
+                                                        </div>
+                                                        
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzwa" id="lvl1l3pzwa">
+                                                        </div>
+
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzaqp" id="lvl1l3pzaqp">
+                                                        </div>
+
+                                                        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzop" id="lvl1l3pzop">
                                                         </div>
                                                     </div>
                                                     <br>
@@ -808,7 +871,7 @@
                                                                     <tbody class="list">
                                                                         <tr>
                                                                             <th>
-                                                                                <span>Total nikken challenge;</span>
+                                                                                <span>Total nikken challenge:</span>
                                                                             </th>
                                                                             <td>
                                                                                 <span id="lvl2l1NCHtotal">$0.00</span>
@@ -905,7 +968,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Pais:
                                                                 <select class="form-control" id="lvl2l1pais" name="lvl2l1pais">
                                                                     <option value="Lat">México</option>
@@ -918,7 +981,7 @@
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Rango:
                                                                 <select class="form-control" id="lvl2l1rango" name="lvl2l1rango">
                                                                     <option value="1">Directo</option>
@@ -930,30 +993,43 @@
                                                         <div class="row">
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h5>PI WATER</h5></span>
+                                                                    <span class="mb-0 text-sm"><h6>PI WATER</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l1pzpiw" id="lvl2l1pzpiw">
                                                             </div>
                                                             
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h5>WATERFALL</h5></span>
+                                                                    <span class="mb-0 text-sm"><h6>WATERFALL</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l1pzwa" id="lvl2l1pzwa">
                                                             </div>
-    
+
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
                                                                     <span class="mb-0 text-sm"><h6>AQUA POUR</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l1pzaqp" id="lvl2l1pzaqp">
+                                                            </div>
+
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzpiw" id="lvl2l1pzpiw">
+                                                            </div>
+                                                            
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzwa" id="lvl2l1pzwa">
                                                             </div>
     
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h5>OPTIMIZER</h5></span>
-                                                                </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l1pzop" id="lvl2l1pzop">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzaqp" id="lvl2l1pzaqp">
+                                                            </div>
+    
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzop" id="lvl2l1pzop">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -982,7 +1058,7 @@
                                                                     <tbody class="list">
                                                                         <tr>
                                                                             <th>
-                                                                                <span>Total nikken challenge;</span>
+                                                                                <span>Total nikken challenge:</span>
                                                                             </th>
                                                                             <td>
                                                                                 <span id="lvl2l2NCHtotal">$0.00</span>
@@ -1079,7 +1155,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Pais:
                                                                 <select class="form-control" id="lvl2l2pais" name="lvl2l2pais">
                                                                     <option value="Lat">México</option>
@@ -1092,7 +1168,7 @@
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Rango:
                                                                 <select class="form-control" id="lvl2l2rango" name="lvl2l2rango">
                                                                     <option value="1">Directo</option>
@@ -1104,30 +1180,43 @@
                                                         <div class="row">
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h5>PI WATER</h5></span>
+                                                                    <span class="mb-0 text-sm"><h6>PI WATER</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l2pzpiw" id="lvl2l2pzpiw">
                                                             </div>
                                                             
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h5>WATERFALL</h5></span>
+                                                                    <span class="mb-0 text-sm"><h6>WATERFALL</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l2pzwa" id="lvl2l2pzwa">
                                                             </div>
 
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
                                                                     <span class="mb-0 text-sm"><h6>AQUA POUR</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l2pzaqp" id="lvl2l2pzaqp">
                                                             </div>
 
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h5>OPTIMIZER</h5></span>
+                                                                    <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l2pzop" id="lvl2l2pzop">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzpiw" id="lvl2l2pzpiw">
+                                                            </div>
+                                                            
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzwa" id="lvl2l2pzwa">
+                                                            </div>
+
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzaqp" id="lvl2l2pzaqp">
+                                                            </div>
+
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzop" id="lvl2l2pzop">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1157,7 +1246,7 @@
                                                                     <tbody class="list">
                                                                         <tr>
                                                                             <th>
-                                                                                <span>Total nikken challenge;</span>
+                                                                                <span>Total nikken challenge:</span>
                                                                             </th>
                                                                             <td>
                                                                                 <span id="lvl2l3NCHtotal">$0.00</span>
@@ -1254,7 +1343,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Pais:
                                                                 <select class="form-control" id="lvl2l3pais" name="lvl2l3pais">
                                                                     <option value="Lat">México</option>
@@ -1267,7 +1356,7 @@
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Rango:
                                                                 <select class="form-control" id="lvl2l3rango" name="lvl2l3rango">
                                                                     <option value="1">Directo</option>
@@ -1279,30 +1368,43 @@
                                                         <div class="row">
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h5>PI WATER</h5></span>
+                                                                    <span class="mb-0 text-sm"><h6>PI WATER</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l3pzpiw" id="lvl2l3pzpiw">
                                                             </div>
                                                             
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h5>WATERFALL</h5></span>
+                                                                    <span class="mb-0 text-sm"><h6>WATERFALL</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l3pzwa" id="lvl2l3pzwa">
                                                             </div>
 
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
                                                                     <span class="mb-0 text-sm"><h6>AQUA POUR</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l3pzaqp" id="lvl2l3pzaqp">
                                                             </div>
 
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h5>OPTIMIZER</h5></span>
+                                                                    <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
                                                                 </div>
-                                                                <input class="form-control" type="text" maxlength="2" value="0" name="lvl2l3pzop" id="lvl2l3pzop">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzpiw" id="lvl2l3pzpiw">
+                                                            </div>
+                                                            
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzwa" id="lvl2l3pzwa">
+                                                            </div>
+
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzaqp" id="lvl2l3pzaqp">
+                                                            </div>
+
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzop" id="lvl2l3pzop">
                                                             </div>
                                                         </div>
                                                     </div>
