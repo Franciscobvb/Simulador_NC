@@ -200,7 +200,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Pais:
-                                                            <select class="form-control" id="lvl0pais" name="lvl0pais">
+                                                            <select class="form-control" id="lvl0pais" name="lvl0pais" onchange="hideProducts( this.id, 'lvl0pzaqp', 'lvl0pzop')">
                                                                 <option value="Lat">México</option>
                                                                 <option value="Col">Colombia</option>
                                                                 <option value="Cri">Costa Rica</option>
@@ -213,7 +213,7 @@
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Rango:
-                                                            <select class="form-control" id="lvl0rango" name="lvl0rango">
+                                                            <select class="form-control" id="lvl0rango" name="lvl0rango" onchange="setTextRango(this.id, 'lvl0rangoText')">
                                                                 <option value="1">Directo</option>
                                                                 <option value="3">Ejecutivo</option>
                                                                 <option value="5">Plata</option>
@@ -394,7 +394,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Pais:
-                                                            <select class="form-control" id="lvl1l1pais" name="lvl1l1pais">
+                                                            <select class="form-control" id="lvl1l1pais" name="lvl1l1pais" onchange="hideProducts(this.id, 'lvl1l1pzaqp', 'lvl1l1pzop')">
                                                                 <option value="Lat">México</option>
                                                                 <option value="Col">Colombia</option>
                                                                 <option value="Cri">Costa Rica</option>
@@ -407,7 +407,7 @@
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Rango:
-                                                            <select class="form-control" id="lvl1l1rango" name="lvl1l1rango">
+                                                            <select class="form-control" id="lvl1l1rango" name="lvl1l1rango" onchange="setTextRango(this.id, 'lvl1l1rangoText')">
                                                                 <option value="1">Directo</option>
                                                                 <option value="3">Ejecutivo</option>
                                                             </select>
@@ -585,7 +585,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Pais:
-                                                            <select class="form-control" id="lvl1l2pais" name="lvl1l2pais">
+                                                            <select class="form-control" id="lvl1l2pais" name="lvl1l2pais" onchange="hideProducts(this.id, 'lvl1l2pzaqp', 'lvl1l2pzop')">
                                                                 <option value="Lat">México</option>
                                                                 <option value="Col">Colombia</option>
                                                                 <option value="Cri">Costa Rica</option>
@@ -598,7 +598,7 @@
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Rango:
-                                                            <select class="form-control" id="lvl1l2rango" name="lvl1l2rango">
+                                                            <select class="form-control" id="lvl1l2rango" name="lvl1l2rango" onclick="setTextRango(this.id, 'lvl1l2rangoText')">
                                                                 <option value="1">Directo</option>
                                                                 <option value="3">Ejecutivo</option>
                                                             </select>
@@ -776,7 +776,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Pais:
-                                                            <select class="form-control" id="lvl1l3pais" name="lvl1l3pais">
+                                                            <select class="form-control" id="lvl1l3pais" name="lvl1l3pais" onchange="hideProducts(this.id, 'lvl1l3pzaqp', 'lvl1l3pzop')">
                                                                 <option value="Lat">México</option>
                                                                 <option value="Col">Colombia</option>
                                                                 <option value="Cri">Costa Rica</option>
@@ -789,7 +789,7 @@
                                                         </div>
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                             Rango:
-                                                            <select class="form-control" id="lvl1l3rango" name="lvl1l3rango">
+                                                            <select class="form-control" id="lvl1l3rango" name="lvl1l3rango" onchange="setTextRango(this.id, 'lvl1l3rangoText')">
                                                                 <option value="1">Directo</option>
                                                                 <option value="3">Ejecutivo</option>
                                                             </select>
@@ -970,7 +970,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Pais:
-                                                                <select class="form-control" id="lvl2l1pais" name="lvl2l1pais">
+                                                                <select class="form-control" id="lvl2l1pais" name="lvl2l1pais" onchange="hideProducts(this.id, 'lvl2l1pzaqp', 'lvl2l1pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
                                                                     <option value="Cri">Costa Rica</option>
@@ -983,7 +983,7 @@
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Rango:
-                                                                <select class="form-control" id="lvl2l1rango" name="lvl2l1rango">
+                                                                <select class="form-control" id="lvl2l1rango" name="lvl2l1rango" onchange="setTextRango(this.id, 'lvl2l1rangoText')">
                                                                     <option value="1">Directo</option>
                                                                     <option value="3">Ejecutivo</option>
                                                                 </select>
@@ -1157,7 +1157,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Pais:
-                                                                <select class="form-control" id="lvl2l2pais" name="lvl2l2pais">
+                                                                <select class="form-control" id="lvl2l2pais" name="lvl2l2pais" onchange="hideProducts(this.id, 'lvl2l2pzaqp', 'lvl2l2pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
                                                                     <option value="Cri">Costa Rica</option>
@@ -1170,7 +1170,7 @@
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Rango:
-                                                                <select class="form-control" id="lvl2l2rango" name="lvl2l2rango">
+                                                                <select class="form-control" id="lvl2l2rango" name="lvl2l2rango" onchange="setTextRango(this.id, 'lvl2l2rangoText')">
                                                                     <option value="1">Directo</option>
                                                                     <option value="3">Ejecutivo</option>
                                                                 </select>
@@ -1345,7 +1345,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Pais:
-                                                                <select class="form-control" id="lvl2l3pais" name="lvl2l3pais">
+                                                                <select class="form-control" id="lvl2l3pais" name="lvl2l3pais" onchange="hideProducts(this.id, 'lvl2l3pzaqp', 'lvl2l3pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
                                                                     <option value="Cri">Costa Rica</option>
@@ -1358,7 +1358,7 @@
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
                                                                 Rango:
-                                                                <select class="form-control" id="lvl2l3rango" name="lvl2l3rango">
+                                                                <select class="form-control" id="lvl2l3rango" name="lvl2l3rango" onchange="setTextRango(this.id, 'lvl2l3rangoText')">
                                                                     <option value="1">Directo</option>
                                                                     <option value="3">Ejecutivo</option>
                                                                 </select>

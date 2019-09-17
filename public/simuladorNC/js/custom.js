@@ -349,6 +349,23 @@ function formatCurrency(total) {
     return (neg ? "-$" : '$') + parseFloat(total, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
 }
 
+function hideProducts(id, aquapour, optimizer){
+    if($('#' + id).val() == 'Gtm' || $('#' + id).val() == 'Slv'){
+        $("#" + aquapour).parent('div').hide();
+        $("#" + optimizer).parent('div').hide();
+        $("#" + aquapour).val(0);
+        $("#" + optimizer).val(0);
+    }
+    else{
+        $("#" + aquapour).parent('div').show();
+        $("#" + optimizer).parent('div').show();
+    }
+}
+
+function setTextRango(selectRango, target){
+    $("#" + target).text($("#" + selectRango + " option:selected").text());
+}
+
 //------------------------- NIVEL 0 ------------------------------------------------------------
 
 var pzvendidasnivel0 = 0;
@@ -356,23 +373,6 @@ var lvl0pzpiw = 0;
 var lvl0pzwa = 0;
 var lvl0pzaqp = 0;
 var lvl0pzop = 0;
-
-$("#lvl0pais").change(function(){
-    if(this.value == 'Gtm' || this.value == 'Slv'){
-        $("#lvl0pzaqp").parent('div').hide();
-        $("#lvl0pzop").parent('div').hide();
-        $("#lvl0pzaqp").val(0);
-        $("#lvl0pzop").val(0);
-    }
-    else{
-        $("#lvl0pzaqp").parent('div').show();
-        $("#lvl0pzop").parent('div').show();
-    }
-});
-
-$("#lvl0rango").change(function(){
-    $("#lvl0rangoText").text($("#lvl0rango option:selected").text());
-});
 
 $("#lvl0pzpiw").change(function(){
     var inputenter = this.value;
@@ -424,27 +424,6 @@ $("#lvl0pzop").change(function(){
     
 });
 
-function setPiezasVendidas(){
-    $('#lvl0pz_vendidas').text(pzvendidasnivel0);
-    if(pzvendidasnivel0 >= 3){
-        $("#lvl0Avatar").attr("src","SimuladorNC/img/ninja.png");
-        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
-        }
-    }
-    else{
-        $("#lvl0Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
-        $('#lvl0retail').text('$0.00');
-        if(pzvendidasnivel1l1 >= 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/ninja.png");
-        }
-    }
-
-    if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
-        $("#lvl0Avatar").attr("src","SimuladorNC/img/sensei.png");
-    }
-}
-
 //------------------------- NIVEL 1 LINEA 1 ------------------------------------------------------------
 
 var pzvendidasnivel1l1 = 0;
@@ -452,23 +431,6 @@ var lvl1l1pzpiw = 0;
 var lvl1l1pzwa = 0;
 var lvl1l1pzaqp = 0;
 var lvl1l1pzop = 0;
-
-$("#lvl1l1pais").change(function(){
-    if(this.value == 'Gtm' || this.value == 'Slv'){
-        $("#lvl1l1pzaqp").parent('div').hide();
-        $("#lvl1l1pzop").parent('div').hide();
-        $("#lvl1l1pzaqp").val(0);
-        $("#lvl1l1pzop").val(0);
-    }
-    else{
-        $("#lvl1l1pzaqp").parent('div').show();
-        $("#lvl1l1pzop").parent('div').show();
-    }
-});
-
-$("#lvl1l1rango").change(function(){
-    $("#lvl1l1rangoText").text($("#lvl1l1rango option:selected").text());
-});
 
 $("#lvl1l1pzpiw").change(function(){
     var inputenter = this.value;
@@ -558,23 +520,6 @@ var lvl1l2pzwa = 0;
 var lvl1l2pzaqp = 0;
 var lvl1l2pzop = 0;
 
-$("#lvl1l2pais").change(function(){
-    if(this.value == 'Gtm' || this.value == 'Slv'){
-        $("#lvl1l2pzaqp").parent('div').hide();
-        $("#lvl1l2pzop").parent('div').hide();
-        $("#lvl1l2pzaqp").val(0);
-        $("#lvl1l2pzop").val(0);
-    }
-    else{
-        $("#lvl1l2pzaqp").parent('div').show();
-        $("#lvl1l2pzop").parent('div').show();
-    }
-});
-
-$("#lvl1l2rango").change(function(){
-    $("#lvl1l2rangoText").text($("#lvl1l2rango option:selected").text());
-});
-
 $("#lvl1l2pzpiw").change(function(){
     var inputenter = this.value;
     if(inputenter == ''){
@@ -662,23 +607,6 @@ var lvl1l3pzpiw = 0;
 var lvl1l3pzwa = 0;
 var lvl1l3pzaqp = 0;
 var lvl1l3pzop = 0;
-
-$("#lvl1l3pais").change(function(){
-    if(this.value == 'Gtm' || this.value == 'Slv'){
-        $("#lvl1l3pzaqp").parent('div').hide();
-        $("#lvl1l3pzop").parent('div').hide();
-        $("#lvl1l3pzaqp").val(0);
-        $("#lvl1l3pzop").val(0);
-    }
-    else{
-        $("#lvl1l3pzaqp").parent('div').show();
-        $("#lvl1l3pzop").parent('div').show();
-    }
-});
-
-$("#lvl1l3rango").change(function(){
-    $("#lvl1l3rangoText").text($("#lvl1l3rango option:selected").text());
-});
 
 $("#lvl1l3pzpiw").change(function(){
     var inputenter = this.value;
@@ -768,23 +696,6 @@ var lvl2l1pzwa = 0;
 var lvl2l1pzaqp = 0;
 var lvl2l1pzop = 0;
 
-$("#lvl2l1pais").change(function(){
-    if(this.value == 'Gtm' || this.value == 'Slv'){
-        $("#lvl2l1pzaqp").parent('div').hide();
-        $("#lvl2l1pzop").parent('div').hide();
-        $("#lvl2l1pzaqp").val(0);
-        $("#lvl2l1pzop").val(0);
-    }
-    else{
-        $("#lvl2l1pzaqp").parent('div').show();
-        $("#lvl2l1pzop").parent('div').show();
-    }
-});
-
-$("#lvl2l1rango").change(function(){
-    $("#lvl2l1rangoText").text($("#lvl2l1rango option:selected").text());
-});
-
 $("#lvl2l1pzpiw").change(function(){
     var inputenter = this.value;
     if(inputenter == ''){
@@ -865,23 +776,6 @@ var lvl2l2pzwa = 0;
 var lvl2l2pzaqp = 0;
 var lvl2l3pzop = 0;
 
-$("#lvl2l2pais").change(function(){
-    if(this.value == 'Gtm' || this.value == 'Slv'){
-        $("#lvl2l2pzaqp").parent('div').hide();
-        $("#lvl2l2pzop").parent('div').hide();
-        $("#lvl2l2pzaqp").val(0);
-        $("#lvl2l2pzop").val(0);
-    }
-    else{
-        $("#lvl2l2pzaqp").parent('div').show();
-        $("#lvl2l2pzop").parent('div').show();
-    }
-});
-
-$("#lvl2l2rango").change(function(){
-    $("#lvl2l2rangoText").text($("#lvl2l2rango option:selected").text());
-});
-
 $("#lvl2l2pzpiw").change(function(){
     var inputenter = this.value;
     if(inputenter == ''){
@@ -960,23 +854,6 @@ var lvl2l3pzpiw = 0;
 var lvl2l3pzwa = 0;
 var lvl2l3pzaqp = 0;
 var lvl2l3pzop = 0;
-
-$("#lvl2l3pais").change(function(){
-    if(this.value == 'Gtm' || this.value == 'Slv'){
-        $("#lvl2l3pzaqp").parent('div').hide();
-        $("#lvl2l3pzop").parent('div').hide();
-        $("#lvl2l3pzaqp").val(0);
-        $("#lvl2l3pzop").val(0);
-    }
-    else{
-        $("#lvl2l3pzaqp").parent('div').show();
-        $("#lvl2l3pzop").parent('div').show();
-    }
-});
-
-$("#lvl2l3rango").change(function(){
-    $("#lvl2l3rangoText").text($("#lvl2l3rango option:selected").text());
-});
 
 $("#lvl2l3pzpiw").change(function(){
     var inputenter = this.value;
