@@ -33,6 +33,76 @@ $().ready(function(){
     //////// Linea 3 nivel 2 //////////
     var rango = $("#lvl2l3rango option:selected").text();
     $("#lvl2l3rangoText").text(rango);
+
+    $('.lvl0NCHtotal').text(monedaSelec);
+    $('.lvl0kinya').text(monedaSelec);
+    $('.lvl0bonificaciones').text(monedaSelec);
+    $('.lvl0kinyal1').text(monedaSelec);
+    $('.lvl0venta').text(monedaSelec);
+    $('.lvl0kinyal2').text(monedaSelec);
+    $('.lvl0bonoGP').text(monedaSelec);
+    $('.lvl0kintai').text(monedaSelec);
+    $('.lvl0retail').text(monedaSelec);
+
+    $('.lvl1l1NCHtotal').text(monedaSelec);
+    $('.lvl1l1kinya').text(monedaSelec);
+    $('.lvl1l1bonificaciones').text(monedaSelec);
+    $('.lvl1l1kinyal1').text(monedaSelec);
+    $('.lvl1l1venta').text(monedaSelec);
+    $('.lvl1l1kinyal2').text(monedaSelec);
+    $('.lvl1l1bonoGP').text(monedaSelec);
+    $('.lvl1l1kintai').text(monedaSelec);
+    $('.lvl1l1retail').text(monedaSelec);
+
+    $('.lvl2l1NCHtotal').text(monedaSelec);
+    $('.lvl2l1kinya').text(monedaSelec);
+    $('.lvl2l1bonificaciones').text(monedaSelec);
+    $('.lvl2l1kinyal1').text(monedaSelec);
+    $('.lvl2l1venta').text(monedaSelec);
+    $('.lvl2l1kinyal2').text(monedaSelec);
+    $('.lvl2l1bonoGP').text(monedaSelec);
+    $('.lvl2l1kintai').text(monedaSelec);
+    $('.lvl2l1retail').text(monedaSelec);
+
+    $('.lvl1l2NCHtotal').text(monedaSelec);
+    $('.lvl1l2kinya').text(monedaSelec);
+    $('.lvl1l2bonificaciones').text(monedaSelec);
+    $('.lvl1l2kinyal1').text(monedaSelec);
+    $('.lvl1l2venta').text(monedaSelec);
+    $('.lvl1l2kinyal2').text(monedaSelec);
+    $('.lvl1l2bonoGP').text(monedaSelec);
+    $('.lvl1l2kintai').text(monedaSelec);
+    $('.lvl1l2retail').text(monedaSelec);
+    
+    $('.lvl2l2NCHtotal').text(monedaSelec);
+    $('.lvl2l2kinya').text(monedaSelec);
+    $('.lvl2l2bonificaciones').text(monedaSelec);
+    $('.lvl2l2kinyal1').text(monedaSelec);
+    $('.lvl2l2venta').text(monedaSelec);
+    $('.lvl2l2kinyal2').text(monedaSelec);
+    $('.lvl2l2bonoGP').text(monedaSelec);
+    $('.lvl2l2kintai').text(monedaSelec);
+    $('.lvl2l2retail').text(monedaSelec);
+    
+    $('.lvl1l3NCHtotal').text(monedaSelec);
+    $('.lvl1l3kinya').text(monedaSelec);
+    $('.lvl1l3bonificaciones').text(monedaSelec);
+    $('.lvl1l3kinyal1').text(monedaSelec);
+    $('.lvl1l3venta').text(monedaSelec);
+    $('.lvl1l3kinyal2').text(monedaSelec);
+    $('.lvl1l3bonoGP').text(monedaSelec);
+    $('.lvl1l3kintai').text(monedaSelec);
+    $('.lvl1l3retail').text(monedaSelec);
+    
+    $('.lvl2l3NCHtotal').text(monedaSelec);
+    $('.lvl2l3kinya').text(monedaSelec);
+    $('.lvl2l3bonificaciones').text(monedaSelec);
+    $('.lvl2l3kinyal1').text(monedaSelec);
+    $('.lvl2l3venta').text(monedaSelec);
+    $('.lvl2l3kinyal2').text(monedaSelec);
+    $('.lvl2l3bonoGP').text(monedaSelec);
+    $('.lvl2l3kintai').text(monedaSelec);
+    $('.lvl2l3retail').text(monedaSelec);
 });
 
 function addNodeLinea1(){
@@ -340,26 +410,151 @@ $(function(){
     });
 })
 
+var monedaMexicana = '$ ';
+var monedaColombia = '$ ';
+var monedaCostaRica = '₡ ';
+var monedaPanama = 'B ';
+var monedaEcuador = 'USD ';
+var monedaPeru = 'S/. ';
+var monedaSalvador = '₡ ';
+var monedaGuatemala = 'Q ';
+
+var monedaSelec = monedaMexicana;
+
 function formatCurrency(total) {
     var neg = false;
     if(total < 0) {
         neg = true;
         total = Math.abs(total);
     }
-    return (neg ? "-$" : '$') + parseFloat(total, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+    return parseFloat(total, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
 }
 
 function hideProducts(id, aquapour, optimizer){
-    if($('#' + id).val() == 'Gtm' || $('#' + id).val() == 'Slv'){
+    if($('#' + id).val() == 'Lat'){
+        monedaSelec = monedaMexicana;
+        $("#" + aquapour).parent('div').show();
+        $("#" + optimizer).parent('div').show();
+    }
+    else if($('#' + id).val() == 'Col'){
+        monedaSelec = monedaColombia;
+        $("#" + aquapour).parent('div').show();
+        $("#" + optimizer).parent('div').show();
+    }
+    else if($('#' + id).val() == 'Cri'){
+        monedaSelec = monedaCostaRica;
+        $("#" + aquapour).parent('div').show();
+        $("#" + optimizer).parent('div').show();
+    }
+    else if($('#' + id).val() == 'Pan'){
+        monedaSelec = monedaPanama;
+        $("#" + aquapour).parent('div').show();
+        $("#" + optimizer).parent('div').show();
+    }
+    else if($('#' + id).val() == 'Ecu'){
+        monedaSelec = monedaEcuador;
+        $("#" + aquapour).parent('div').show();
+        $("#" + optimizer).parent('div').show();
+    }
+    else if($('#' + id).val() == 'Per'){
+        monedaSelec = monedaPeru;
+        $("#" + aquapour).parent('div').show();
+        $("#" + optimizer).parent('div').show();
+    }
+    else if($('#' + id).val() == 'Gtm'){
         $("#" + aquapour).parent('div').hide();
         $("#" + optimizer).parent('div').hide();
         $("#" + aquapour).val(0);
         $("#" + optimizer).val(0);
+        monedaSelec = monedaGuatemala;
     }
-    else{
-        $("#" + aquapour).parent('div').show();
-        $("#" + optimizer).parent('div').show();
+    else if( $('#' + id).val() == 'Slv'){
+        $("#" + aquapour).parent('div').hide();
+        $("#" + optimizer).parent('div').hide();
+        $("#" + aquapour).val(0);
+        $("#" + optimizer).val(0);
+        monedaSelec = monedaSalvador;
     }
+    switch(id){
+        case 'lvl0pais':
+            $('.lvl0NCHtotal').text(monedaSelec);
+            $('.lvl0kinya').text(monedaSelec);
+            $('.lvl0bonificaciones').text(monedaSelec);
+            $('.lvl0kinyal1').text(monedaSelec);
+            $('.lvl0venta').text(monedaSelec);
+            $('.lvl0kinyal2').text(monedaSelec);
+            $('.lvl0bonoGP').text(monedaSelec);
+            $('.lvl0kintai').text(monedaSelec);
+            $('.lvl0retail').text(monedaSelec);
+            break;
+        case 'lvl1l1pais':
+            $('.lvl1l1NCHtotal').text(monedaSelec);
+            $('.lvl1l1kinya').text(monedaSelec);
+            $('.lvl1l1bonificaciones').text(monedaSelec);
+            $('.lvl1l1kinyal1').text(monedaSelec);
+            $('.lvl1l1venta').text(monedaSelec);
+            $('.lvl1l1kinyal2').text(monedaSelec);
+            $('.lvl1l1bonoGP').text(monedaSelec);
+            $('.lvl1l1kintai').text(monedaSelec);
+            $('.lvl1l1retail').text(monedaSelec);
+            break;
+        case 'lvl2l1pais':  
+            $('.lvl2l1NCHtotal').text(monedaSelec);
+            $('.lvl2l1kinya').text(monedaSelec);
+            $('.lvl2l1bonificaciones').text(monedaSelec);
+            $('.lvl2l1kinyal1').text(monedaSelec);
+            $('.lvl2l1venta').text(monedaSelec);
+            $('.lvl2l1kinyal2').text(monedaSelec);
+            $('.lvl2l1bonoGP').text(monedaSelec);
+            $('.lvl2l1kintai').text(monedaSelec);
+            $('.lvl2l1retail').text(monedaSelec);
+            break;
+        case 'lvl1l2pais':
+            $('.lvl1l2NCHtotal').text(monedaSelec);
+            $('.lvl1l2kinya').text(monedaSelec);
+            $('.lvl1l2bonificaciones').text(monedaSelec);
+            $('.lvl1l2kinyal1').text(monedaSelec);
+            $('.lvl1l2venta').text(monedaSelec);
+            $('.lvl1l2kinyal2').text(monedaSelec);
+            $('.lvl1l2bonoGP').text(monedaSelec);
+            $('.lvl1l2kintai').text(monedaSelec);
+            $('.lvl1l2retail').text(monedaSelec);
+            break;
+        case 'lvl2l2pais':
+            $('.lvl2l2NCHtotal').text(monedaSelec);
+            $('.lvl2l2kinya').text(monedaSelec);
+            $('.lvl2l2bonificaciones').text(monedaSelec);
+            $('.lvl2l2kinyal1').text(monedaSelec);
+            $('.lvl2l2venta').text(monedaSelec);
+            $('.lvl2l2kinyal2').text(monedaSelec);
+            $('.lvl2l2bonoGP').text(monedaSelec);
+            $('.lvl2l2kintai').text(monedaSelec);
+            $('.lvl2l2retail').text(monedaSelec);
+            break;
+        case 'lvl1l3pais':
+            $('.lvl1l3NCHtotal').text(monedaSelec);
+            $('.lvl1l3kinya').text(monedaSelec);
+            $('.lvl1l3bonificaciones').text(monedaSelec);
+            $('.lvl1l3kinyal1').text(monedaSelec);
+            $('.lvl1l3venta').text(monedaSelec);
+            $('.lvl1l3kinyal2').text(monedaSelec);
+            $('.lvl1l3bonoGP').text(monedaSelec);
+            $('.lvl1l3kintai').text(monedaSelec);
+            $('.lvl1l3retail').text(monedaSelec);
+            break;
+        case 'lvl2l3pais':
+            $('.lvl2l3NCHtotal').text(monedaSelec);
+            $('.lvl2l3kinya').text(monedaSelec);
+            $('.lvl2l3bonificaciones').text(monedaSelec);
+            $('.lvl2l3kinyal1').text(monedaSelec);
+            $('.lvl2l3venta').text(monedaSelec);
+            $('.lvl2l3kinyal2').text(monedaSelec);
+            $('.lvl2l3bonoGP').text(monedaSelec);
+            $('.lvl2l3kintai').text(monedaSelec);
+            $('.lvl2l3retail').text(monedaSelec);
+            break;
+    }
+    
 }
 
 function setTextRango(selectRango, target){
@@ -423,6 +618,27 @@ $("#lvl0pzop").change(function(){
     }
     
 });
+
+function setPiezasVendidas(){
+    $('#lvl0pz_vendidas').text(pzvendidasnivel0);
+    if(pzvendidasnivel0 >= 3){
+        $("#lvl0Avatar").attr("src","SimuladorNC/img/ninja.png");
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3){
+            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+        }
+    }
+    else{
+        $("#lvl0Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+        $('#lvl0retail').text('$0.00');
+        if(pzvendidasnivel1l1 >= 3 && pzvendidasnivel0 >= 3){
+            $("#lvl0Avatar").attr("src","SimuladorNC/img/ninja.png");
+        }
+    }
+
+    if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
+        $("#lvl0Avatar").attr("src","SimuladorNC/img/sensei.png");
+    }
+}
 
 //------------------------- NIVEL 1 LINEA 1 ------------------------------------------------------------
 

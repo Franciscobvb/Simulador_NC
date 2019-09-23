@@ -104,13 +104,13 @@
                                                                             <span>Total nikken challenge:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl0NCHtotal">$0.00</span>
+                                                                            <span class="lvl0NCHtotal"></span><span id="lvl0NCHtotal">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl0kinya">$0.00</span>
+                                                                            <span class="lvl0kinya"></span><span id="lvl0kinya">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -118,13 +118,13 @@
                                                                             <span>Ganancias a sugerido:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl0bonificaciones">$0.00</span>
+                                                                            <span class="lvl0bonificaciones"></span><span id="lvl0bonificaciones">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya L1:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl0kinyal1">$0.00</span>
+                                                                            <span class="lvl0kinyal1"></span><span id="lvl0kinyal1">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -132,13 +132,13 @@
                                                                             <span>Ganancias por compra:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl0venta">$0.00</span>
+                                                                            <span class="lvl0venta"></span><span id="lvl0venta">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya L2:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl0kinyal2">$0.00</span>
+                                                                            <span class="lvl0kinyal2"></span><span id="lvl0kinyal2">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -146,13 +146,13 @@
                                                                             <span>Bonificacion por grupo personal:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl0bonoGP">$0.00</span>
+                                                                            <span class="lvl0bonoGP"></span><span id="lvl0bonoGP">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kintai:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl0kintai">$0.00</span>
+                                                                            <span class="lvl0kintai"></span><span id="lvl0kintai">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -168,7 +168,7 @@
                                                                             <span><h4 class="text-warning">Total Bonificacion: </h4></span>
                                                                         </th>
                                                                         <td>
-                                                                            <h4 class="text-warning"><span id="lvl0retail">$0.00</span></h4>
+                                                                            <h4 class="text-warning"><span class="lvl0retail"></span><span id="lvl0retail">0.00</span></h4>
                                                                         </td>
                                                                         <td>
                                                                             Volumen personal:
@@ -298,13 +298,13 @@
                                                                             <span>Total nikken challenge:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l1NCHtotal">$0.00</span>
+                                                                            <span class="lvl1l1NCHtotal"></span><span id="lvl1l1NCHtotal">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l1kinya">$0.00</span>
+                                                                            <span class="lvl1l1kinya"></span><span id="lvl1l1kinya">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -312,13 +312,13 @@
                                                                             <span>Ganancias a sugerido:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l1bonificaciones">$0.00</span>
+                                                                            <span class="lvl1l1bonificaciones"></span><span id="lvl1l1bonificaciones">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya L1:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l1kinyal1">0</span>
+                                                                            <span class="lvl1l1kinyal1"></span><span id="lvl1l1kinyal1">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -326,13 +326,13 @@
                                                                             <span>Ganancias por compra:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l1venta">$0.00</span>
+                                                                            <span class="lvl1l1venta"></span><span id="lvl1l1venta">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya L2:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l1kinyal2">0</span>
+                                                                            <span class="lvl1l1kinyal2"></span><span id="lvl1l1kinyal2">0</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -340,13 +340,13 @@
                                                                             <span>Bonificacion por grupo personal:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l1bonoGP">$0.00</span>
+                                                                            <span class="lvl1l1bonoGP"></span><span id="lvl1l1bonoGP">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kintai:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l1kintai">0</span>
+                                                                            <span class="lvl1l1kintai"></span><span id="lvl1l1kintai">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -362,7 +362,7 @@
                                                                             <span><h4 class="text-warning">Total Bonificacion: </h4></span>
                                                                         </th>
                                                                         <td>
-                                                                            <h4 class="text-warning"><span id="lvl1l1retail">$0.00</span></h4>
+                                                                            <h4 class="text-warning"><span class="lvl1l1retail"></span><span id="lvl1l1retail">0.00</span></h4>
                                                                         </td>
                                                                         <td>
                                                                             Volumen personal;
@@ -486,16 +486,16 @@
                                                                 <tbody class="list">
                                                                     <tr>
                                                                         <th>
-                                                                            <span>Total nikken challenge;</span>
+                                                                            <span>Total nikken challenge:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l2NCHtotal">$0.00</span>
+                                                                            <span class="lvl1l2NCHtotal"></span><span id="lvl1l2NCHtotal">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l2kinya">$0.00</span>
+                                                                            <span class="lvl1l2kinya"></span><span id="lvl1l2kinya">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -503,13 +503,13 @@
                                                                             <span>Ganancias a sugerido:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l2bonificaciones">$0.00</span>
+                                                                            <span class="lvl1l2bonificaciones"></span><span id="lvl1l2bonificaciones">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya L1:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l2kinyal1">0</span>
+                                                                            <span class="lvl1l2kinyal1"></span><span id="lvl1l2kinyal1">0</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -517,13 +517,13 @@
                                                                             <span>Ganancias por compra:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l2venta">$0.00</span>
+                                                                            <span class="lvl1l2venta"></span><span id="lvl1l2venta">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya L2:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l2kinyal2">0</span>
+                                                                            <span class="lvl1l2kinyal2"></span><span id="lvl1l2kinyal2">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -531,13 +531,13 @@
                                                                             <span>Bonificacion por grupo personal:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l2bonoGP">$0.00</span>
+                                                                            <span class="lvl1l2bonoGP"></span><span id="lvl1l2bonoGP">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kintai:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l2kintai">0</span>
+                                                                            <span class="lvl1l2kintai"></span> <span id="lvl1l2kintai">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -553,7 +553,7 @@
                                                                             <span><h4 class="text-warning">Total Bonificacion: </h4></span>
                                                                         </th>
                                                                         <td>
-                                                                            <h4 class="text-warning"><span id="lvl1l2retail">$0.00</span></h4>
+                                                                            <h4 class="text-warning"><span class="lvl1l2retail"></span><span id="lvl1l2retail">0.00</span></h4>
                                                                         </td>
                                                                         <td>
                                                                             Volumen personal:
@@ -677,16 +677,16 @@
                                                                 <tbody class="list">
                                                                     <tr>
                                                                         <th>
-                                                                            <span>Total nikken challenge;</span>
+                                                                            <span>Total nikken challenge:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l3NCHtotal">$0.00</span>
+                                                                            <span class="lvl1l3NCHtotal"></span><span id="lvl1l3NCHtotal">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l3kinya">$0.00</span>
+                                                                            <span class="lvl1l3kinya"></span><span id="lvl1l3kinya">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -694,13 +694,13 @@
                                                                             <span>Ganancias a sugerido:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l3bonificaciones">$0.00</span>
+                                                                            <span class="lvl1l3bonificaciones"></span><span id="lvl1l3bonificaciones">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya L1:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l3kinyal1">0</span>
+                                                                            <span class="lvl1l3kinyal1"></span><span id="lvl1l3kinyal1">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -708,13 +708,13 @@
                                                                             <span>Ganancias por compra:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l3venta">$0.00</span>
+                                                                            <span class="lvl1l3venta"></span><span id="lvl1l3venta">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kinya L2:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l3kinyal2">0</span>
+                                                                            <span class="lvl1l3kinyal2"></span><span id="lvl1l3kinyal2">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -722,13 +722,13 @@
                                                                             <span>Bonificacion por grupo personal:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l3bonoGP">$0.00</span>
+                                                                            <span class="lvl1l3bonoGP"></span><span id="lvl1l3bonoGP">0.00</span>
                                                                         </td>
                                                                         <th>
                                                                             <span>Kintai:</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="lvl1l3kintai">0</span>
+                                                                            <span class="lvl1l3kintai"></span><span id="lvl1l3kintai">0.00</span>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -744,7 +744,7 @@
                                                                             <span><h4 class="text-warning">Total Bonificacion: </h4></span>
                                                                         </th>
                                                                         <td>
-                                                                            <h4 class="text-warning"><span id="lvl1l3retail">$0.00</span></h4>
+                                                                            <h4 class="text-warning"><span class="lvl1l3retail"></span><span id="lvl1l3retail">0.00</span></h4>
                                                                         </td>
                                                                         <td>
                                                                             Volumen personal:
@@ -874,13 +874,13 @@
                                                                                 <span>Total nikken challenge:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l1NCHtotal">$0.00</span>
+                                                                                <span class="lvl2l1NCHtotal"></span><span id="lvl2l1NCHtotal">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kinya:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l1kinya">$0.00</span>
+                                                                                <span class="lvl2l1kinya"></span><span id="lvl2l1kinya">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -888,13 +888,13 @@
                                                                                 <span>Ganancias a sugerido:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l1bonificaciones">$0.00</span>
+                                                                                <span class="lvl2l1bonificaciones"></span><span id="lvl2l1bonificaciones">$0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kinya L1:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l1kinyal1">0</span>
+                                                                                <span class="lvl2l1kinyal1"></span><span id="lvl2l1kinyal1">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -902,13 +902,13 @@
                                                                                 <span>Ganancias por compra:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l1venta">$0.00</span>
+                                                                                <span class="lvl2l1venta"></span><span id="lvl2l1venta">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kinya L2:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l1kinyal2">0</span>
+                                                                                <span class="lvl2l1kinyal2"></span><span id="lvl2l1kinyal2">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -916,13 +916,13 @@
                                                                                 <span>Bonificacion por grupo personal:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l1bonoGP">$0.00</span>
+                                                                                <span class="lvl2l1bonoGP"></span><span id="lvl2l1bonoGP">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kintai:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l1kintai">0</span>
+                                                                                <span class="lvl2l1kintai"></span><span id="lvl2l1kintai">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                     </tbody>
@@ -938,7 +938,7 @@
                                                                                 <span><h4 class="text-warning">Total Bonificacion: </h4></span>
                                                                             </th>
                                                                             <td>
-                                                                                <h4 class="text-warning"><span id="lvl2l1retail">$0.00</span></h4>
+                                                                                <h4 class="text-warning"><span class="lvl2l1retail"></span><span id="lvl2l1retail">0.00</span></h4>
                                                                             </td>
                                                                             <td>
                                                                                 Volumen personal:
@@ -1061,13 +1061,13 @@
                                                                                 <span>Total nikken challenge:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l2NCHtotal">$0.00</span>
+                                                                                <span class="lvl2l2NCHtotal"></span><span id="lvl2l2NCHtotal">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kinya:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l2kinya">$0.00</span>
+                                                                                <span class="lvl2l2kinya"></span><span id="lvl2l2kinya">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -1075,13 +1075,13 @@
                                                                                 <span>Ganancias a sugerido:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l2bonificaciones">$0.00</span>
+                                                                                <span class="lvl2l2bonificaciones"></span><span id="lvl2l2bonificaciones">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kinya L1:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l2kinyal1">0</span>
+                                                                                <span class="lvl2l2kinyal1"></span><span id="lvl2l2kinyal1">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -1089,13 +1089,13 @@
                                                                                 <span>Ganancias por compra:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l2venta">$0.00</span>
+                                                                                <span class="lvl2l2venta"></span><span id="lvl2l2venta">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kinya L2:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l2kinyal2">0</span>
+                                                                                <span class="lvl2l2kinyal2"></span><span id="lvl2l2kinyal2">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -1103,13 +1103,13 @@
                                                                                 <span>Bonificacion por grupo personal:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l2bonoGP">$0.00</span>
+                                                                                <span class="lvl2l2bonoGP"></span><span id="lvl2l2bonoGP">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kintai:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l2kintai">0</span>
+                                                                                <span class="lvl2l2kintai"></span><span id="lvl2l2kintai">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                     </tbody>
@@ -1125,7 +1125,7 @@
                                                                                 <span><h4 class="text-warning">Total Bonificacion: </h4></span>
                                                                             </th>
                                                                             <td>
-                                                                                <h4 class="text-warning"><span id="lvl2l2retail">$0.00</span></h4>
+                                                                                <h4 class="text-warning"><span class="lvl2l2retail"></span><span id="lvl2l2retail">0.00</span></h4>
                                                                             </td>
                                                                             <td>
                                                                                 Volumen personal:
@@ -1249,13 +1249,13 @@
                                                                                 <span>Total nikken challenge:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l3NCHtotal">$0.00</span>
+                                                                                <span class="lvl2l3NCHtotal"></span><span id="lvl2l3NCHtotal">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kinya:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l3kinya">$0.00</span>
+                                                                                <span class="lvl2l3kinya"></span><span id="lvl2l3kinya">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -1263,13 +1263,13 @@
                                                                                 <span>Ganancias a sugerido:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l3bonificaciones">$0.00</span>
+                                                                                <span class="lvl2l3bonificaciones"></span><span id="lvl2l3bonificaciones">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kinya L1:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l3kinyal1">0</span>
+                                                                                <span class="lvl2l3kinyal1"></span><span id="lvl2l3kinyal1">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -1277,13 +1277,13 @@
                                                                                 <span>Ganancias por compra:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l3venta">$0.00</span>
+                                                                                <span class="lvl2l3venta"></span><span id="lvl2l3venta">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kinya L2:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l3kinyal2">0</span>
+                                                                                <span class="lvl2l3kinyal2"></span><span id="lvl2l3kinyal2">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -1291,13 +1291,13 @@
                                                                                 <span>Bonificacion por grupo personal:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l3bonoGP">$0.00</span>
+                                                                                <span class="lvl2l3bonoGP"></span><span id="lvl2l3bonoGP">0.00</span>
                                                                             </td>
                                                                             <th>
                                                                                 <span>Kintai:</span>
                                                                             </th>
                                                                             <td>
-                                                                                <span id="lvl2l3kintai">0</span>
+                                                                                <span class="lvl2l3kintai"></span><span id="lvl2l3kintai">0.00</span>
                                                                             </td>
                                                                         </tr>
                                                                     </tbody>
@@ -1313,7 +1313,7 @@
                                                                                 <span><h4 class="text-warning">Total Bonificacion: </h4></span>
                                                                             </th>
                                                                             <td>
-                                                                                <h4 class="text-warning"><span id="lvl2l3retail">$0.00</span></h4>
+                                                                                <h4 class="text-warning"><span class="lvl2l3retail"></span><span id="lvl2l3retail">0.00</span></h4>
                                                                             </td>
                                                                             <td>
                                                                                 Volumen personal:
