@@ -265,7 +265,7 @@
                                                     </div>
                                                     <br>
                                                     <center>
-                                                        <button class="btn btn-icon btn-2 btn-primary" type="button" data-toggle="tooltip" title="Añadir nodo" data-placement="bottom" onclick="addNodeLinea1()">
+                                                        <button class="btn btn-icon btn-2 btn-primary" type="button" data-toggle="tooltip" title="Añadir jugador" data-placement="bottom" onclick="addNodeLinea1()">
                                                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                                                         </button>
                                                     </center>                                            
@@ -458,7 +458,7 @@
                                                     </div>
                                                     <br>
                                                     <center>
-                                                        <button class="btn btn-icon btn-2 btn-primary" type="button" data-toggle="tooltip" title="Añadir nodo" data-placement="bottom" onclick="addLinea3('nivel2linea1')">
+                                                        <button class="btn btn-icon btn-2 btn-primary" type="button" data-toggle="tooltip" title="Añadir jugador" data-placement="bottom" onclick="addLinea3('nivel2linea1')">
                                                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                                                         </button>
                                                     </center>
@@ -649,7 +649,7 @@
                                                     </div>
                                                     <br>
                                                     <center>
-                                                        <button class="btn btn-icon btn-2 btn-primary" type="button" data-toggle="tooltip" title="Añadir nodo" data-placement="bottom" onclick="addLinea3('nivel2linea2')">
+                                                        <button class="btn btn-icon btn-2 btn-primary" type="button" data-toggle="tooltip" title="Añadir jugador" data-placement="bottom" onclick="addLinea3('nivel2linea2')">
                                                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                                                         </button>
                                                     </center>
@@ -840,7 +840,7 @@
                                                     </div>
                                                     <br>
                                                     <center>
-                                                        <button class="btn btn-icon btn-2 btn-primary" type="button" data-toggle="tooltip" title="Añadir nodo" data-placement="bottom" onclick="addLinea3('nivel2linea3')">
+                                                        <button class="btn btn-icon btn-2 btn-primary" type="button" data-toggle="tooltip" title="Añadir jugador" data-placement="bottom" onclick="addLinea3('nivel2linea3')">
                                                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                                                         </button>
                                                     </center>
