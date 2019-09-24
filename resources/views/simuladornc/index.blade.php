@@ -245,7 +245,7 @@
 
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
+                                                                <span class="mb-0 text-sm"><h6 class="lvl0pzop">OPTIMIZER</h6></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -435,7 +435,7 @@
 
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
+                                                                <span class="mb-0 text-sm"><h6 class="lvl1l1pzop">OPTIMIZER</h6></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -626,7 +626,7 @@
 
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
+                                                                <span class="mb-0 text-sm"><h6 class="lvl1l2pzop">OPTIMIZER</h6></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -817,7 +817,7 @@
 
                                                         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                             <div class="media-body">
-                                                                <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
+                                                                <span class="mb-0 text-sm"><h6 class="lvl1l3pzop">OPTIMIZER</h6></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1011,7 +1011,7 @@
 
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
+                                                                    <span class="mb-0 text-sm"><h6 class="lvl2l1pzop">OPTIMIZER</h6></span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1198,7 +1198,7 @@
 
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
+                                                                    <span class="mb-0 text-sm"><h6 class="lvl2l2pzop">OPTIMIZER</h6></span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1386,7 +1386,7 @@
 
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                                                 <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6>OPTIMIZER</h6></span>
+                                                                    <span class="mb-0 text-sm"><h6 class="lvl2l3pzop">OPTIMIZER</h6></span>
                                                                 </div>
                                                             </div>
                                                         </div>

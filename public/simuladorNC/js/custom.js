@@ -435,46 +435,55 @@ function hideProducts(id, aquapour, optimizer){
         monedaSelec = monedaMexicana;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
+        $("." + optimizer).show();
     }
     else if($('#' + id).val() == 'Col'){
         monedaSelec = monedaColombia;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
+        $("." + optimizer).show();
     }
     else if($('#' + id).val() == 'Cri'){
         monedaSelec = monedaCostaRica;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
+        $("." + optimizer).show();
     }
     else if($('#' + id).val() == 'Pan'){
         monedaSelec = monedaPanama;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
+        $("." + optimizer).show();
     }
     else if($('#' + id).val() == 'Ecu'){
         monedaSelec = monedaEcuador;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
+        $("." + optimizer).show();
     }
     else if($('#' + id).val() == 'Per'){
         monedaSelec = monedaPeru;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
+        $("." + optimizer).show();
     }
     else if($('#' + id).val() == 'Gtm'){
-        $("#" + aquapour).parent('div').hide();
+        //$("#" + aquapour).parent('div').hide();
         $("#" + optimizer).parent('div').hide();
-        $("#" + aquapour).val(0);
+        $("." + optimizer).hide();
+        //$("#" + aquapour).val(0);
         $("#" + optimizer).val(0);
         monedaSelec = monedaGuatemala;
     }
     else if( $('#' + id).val() == 'Slv'){
-        $("#" + aquapour).parent('div').hide();
+        //$("#" + aquapour).parent('div').hide();
         $("#" + optimizer).parent('div').hide();
-        $("#" + aquapour).val(0);
+        $("." + optimizer).hide();
+        //$("#" + aquapour).val(0);
         $("#" + optimizer).val(0);
         monedaSelec = monedaSalvador;
     }
+
     switch(id){
         case 'lvl0pais':
             $('.lvl0NCHtotal').text(monedaSelec);
