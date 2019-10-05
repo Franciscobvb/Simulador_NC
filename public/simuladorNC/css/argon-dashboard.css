@@ -1998,7 +1998,7 @@ pre code {
   display: block;
   width: 100%;
   height: calc(2.75rem + 2px);
-  padding: 0.625rem 0.75rem;
+  padding: 0.2rem 0.2rem;
   font-size: 1rem;
   line-height: 1.5;
   color: #8898aa;
@@ -18435,8 +18435,8 @@ textarea[resize="horizontal"] {
 
 .card .table td,
 .card .table th {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 
 p {

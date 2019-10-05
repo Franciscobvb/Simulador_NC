@@ -98,6 +98,7 @@ header {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
 }
+
 *, ::after, ::before {
     box-sizing: border-box;
 }
@@ -124,15 +125,17 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     max-width: 85%;
     min-width: 90px;
     background: linear-gradient(
-rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7),
     rgba(0, 0, 0, 0.7));
     padding: 5px 2px;
     border-radius: 5px;
 }
+
 img {
     vertical-align: middle;
     border-style: none;
 }
+
 *, ::after, ::before {
     box-sizing: border-box;
 }
@@ -144,7 +147,7 @@ img {
 
 .fixed-action-btn.my-custom-btn {
     position: fixed;
-    top: 100px;
+    top: 10px;
     right: 0;
     padding-top: 15px;
     margin-bottom: 0;
@@ -175,4 +178,51 @@ input[type=number] { -moz-appearance:textfield; }
     height: 4px;
 }
 
+.elipse_1 {
+    border-width: 2px;
+    border-color: rgb( 83, 83, 83 );
+    border-style: solid;
+    border-radius: 50%;
+    left: 677px;
+    top: 716px;
+    width: 36px;
+    height: 36px;
+    z-index: 915;
+}
   
+.addLevel1, .addLevel2{
+    background-color: rgb( 0, 102, 204 );
+    color: #fff;
+}
+
+.par{
+    background-color: rgb(233, 233, 233);
+}
+
+.inpar{
+    background-color: rgb( 204, 204, 204 );
+}
+
+.productos0, .productos1, .productos2, .productos3, .productos11, .productos22, .productos33{
+    border-radius: 10px;
+    background-color: #bebebe;
+    width: 721px;
+    height: 139px;
+}
+
+
+.prodsNinja{
+    background-image: url('../img/prodsninja.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.table-responsive{
+    padding-right: 1px;
+    padding-left: 1px;
+}
+
+.formulario{
+    padding-right: 15px;
+    padding-left: 1px;
+}

@@ -1,4 +1,39 @@
 var showLinea1 = 0;
+$('.lvl0alcance').css('display', 'none');
+$('.lvl1l1alcance').css('display', 'none');
+$('.lvl1l2alcance').css('display', 'none');
+$('.lvl1l3alcance').css('display', 'none');
+$('.lvl2l1alcance').css('display', 'none');
+$('.lvl2l2alcance').css('display', 'none');
+$('.lvl2l3alcance').css('display', 'none');
+
+function addProd(prod){
+    var actual = $('#' + prod).val();
+    var nuevo = (parseInt(actual) + parseInt(1));
+    $('#' + prod).val(nuevo);
+    
+    pzvendidasnivel0 = (parseInt(lvl0pzpiw) + parseInt(lvl0pzwa) + parseInt(lvl0pzaqp) + parseInt(lvl0pzop));
+    setPiezasVendidas();
+    $('#lvl0pz_vendidas').text(pzvendidasnivel0);
+
+    setPiezasVendidaslvl1l1();
+    setPiezasVendidaslvl1l2();
+    setPiezasVendidaslvl1l3();
+    setPiezasVendidaslvl2l1();
+    setPiezasVendidaslvl2l2();
+    setPiezasVendidaslvl2l3();
+}
+
+function remProd(prod){
+    $('#' + prod).val(($('#' + prod).val() - 1));
+    setPiezasVendidas();
+    setPiezasVendidaslvl1l1();
+    setPiezasVendidaslvl1l2();
+    setPiezasVendidaslvl1l3();
+    setPiezasVendidaslvl2l1();
+    setPiezasVendidaslvl2l2();
+    setPiezasVendidaslvl2l3();
+}
 
 $().ready(function(){
     showLinea1 = 0;
@@ -167,13 +202,21 @@ $(function(){
             pzvendidasnivel1l1 = pzvendidasnivel2l1;
             pzvendidasnivel2l1 = pzVenta;
             if(pzvendidasnivel1l1 >= 3){
-                $("#lvl1l1Avatar").attr("src","SimuladorNC/img/ninja.png");
+                $("#lvl1l1Avatar").attr("src","../SimuladorNC/img/ninja1.png");
                 if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3){
-                    $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+                    $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
                 }
             }
 
-            $("#lvl2l1Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+            $("#lvl2l1Avatar").attr("src","../simuladornc/img/asesor.png");
+            $('.productos11').css('background-color', '#bebebe');
+            $('.productos1').css('background-color', '#ff9900');
+            $('.4').css('border-top-width', '0px');
+            $('.1').css('border-top-width', '10px');
+            $('.1').css('border-top-color', '#ff9900');
+            $('.lvl1l1alcance').css('display', 'block');
+            $('.lvl2l1alcance').css('display', 'none');
+            $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
         }
 
         if (pzvendidasnivel1l2 < 3 && pzvendidasnivel2l2 >= 3) {
@@ -215,16 +258,24 @@ $(function(){
             pzvendidasnivel1l2 = pzvendidasnivel2l2;
             pzvendidasnivel2l2 = pzVenta;
             if(pzvendidasnivel1l2 >= 3){
-                $("#lvl1l2Avatar").attr("src","SimuladorNC/img/ninja.png");
+                $("#lvl1l2Avatar").attr("src","../SimuladorNC/img/ninja1.png");
                 if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3){
-                    $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+                    $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
                 }
             }
 
-            $("#lvl2l2Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+            $("#lvl2l2Avatar").attr("src","../simuladornc/img/asesor.png");
+            $('.productos22').css('background-color', '#bebebe');
+            $('.productos2').css('background-color', '#ff9900');
+            $('.5').css('border-top-width', '0px');
+            $('.2').css('border-top-width', '10px');
+            $('.2').css('border-top-color', '#ff9900');
+            $('.lvl1l2alcance').css('display', 'block');
+            $('.lvl2l2alcance').css('display', 'none');
+            $('#lvl1l2AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
         }
 
-        if (pzvendidasnivel1l3 < 3) {
+        if (pzvendidasnivel1l3 < 3 && pzvendidasnivel2l3 >= 3) {
             var rangoLinea3 = $("#lvl1l3rangoText").text();
             $("#lvl1l3rangoText").text($("#lvl2l3rangoText").text());
             $("#lvl2l3rangoText").text(rangoLinea3);
@@ -263,13 +314,21 @@ $(function(){
             pzvendidasnivel1l3 = pzvendidasnivel2l3;
             pzvendidasnivel2l3 = pzVenta;
             if(pzvendidasnivel1l3 >= 3){
-                $("#lvl1l3Avatar").attr("src","SimuladorNC/img/ninja.png");
+                $("#lvl1l3Avatar").attr("src","../SimuladorNC/img/ninja1.png");
                 if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3){
-                    $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+                    $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
                 }
             }
 
-            $("#lvl2l3Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+            $("#lvl2l3Avatar").attr("src","../simuladornc/img/asesor.png");
+            $('.productos33').css('background-color', '#bebebe');
+            $('.productos3').css('background-color', '#ff9900');
+            $('.6').css('border-top-width', '0px');
+            $('.3').css('border-top-width', '10px');
+            $('.3').css('border-top-color', '#ff9900');
+            $('.lvl1l3alcance').css('display', 'block');
+            $('.lvl2l3alcance').css('display', 'none');
+            $('#lvl1l3AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
         }
 
         $.ajax({
@@ -345,7 +404,6 @@ $(function(){
                     var totalfinal = (parseFloat(Response[3].Ganancias_Sugerido) + parseFloat(Response[3].Ganancias_Compras) + parseFloat(Response[3].TotalAmount) + parseFloat((Response[3].VGP > 1500 ? Response[3].Total_Adicional : 0)));
                     $('#lvl1l2retail').text(formatCurrency(totalfinal));
                 }
-                console.log(Response[3].Puntos);
                 (Response[3].VC != '.00' ? $('#lvl1l2vc').text(Response[3].VGP) : null);
                 (Response[3].Puntos != '.00' ? $('#lvl1l2puntaje').text(Response[3].Puntos) : null);
                 (Response[3].Kinya != '.00' ? $('#lvl1l2kinya').text(formatCurrency(Response[3].Kinya)) : null);
@@ -570,6 +628,16 @@ function setTextRango(selectRango, target){
     $("#" + target).text($("#" + selectRango + " option:selected").text());
 }
 
+$('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 2000);
+    }
+});
+
 //------------------------- NIVEL 0 ------------------------------------------------------------
 
 var pzvendidasnivel0 = 0;
@@ -623,7 +691,7 @@ $("#lvl0pzop").change(function(){
     else{
         lvl0pzop = this.value;
         pzvendidasnivel0 = (parseInt(lvl0pzpiw) + parseInt(lvl0pzwa) + parseInt(lvl0pzaqp) + parseInt(lvl0pzop));
-            setPiezasVendidas();
+        setPiezasVendidas();
     }
     
 });
@@ -631,22 +699,59 @@ $("#lvl0pzop").change(function(){
 function setPiezasVendidas(){
     $('#lvl0pz_vendidas').text(pzvendidasnivel0);
     if(pzvendidasnivel0 >= 3){
-        $("#lvl0Avatar").attr("src","SimuladorNC/img/ninja.png");
-        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+        $("#lvl0Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+        $(".productos0").css('background-color', '#ff9900');
+        //$(".productos0").addClass('prodsNinja');
+        $('.0').css('border-top-width', '10px');
+        $('.0').css('border-top-style', 'solid');
+        $('.0').css('border-top-color', '#ff9900');
+        $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
+        $('.lvl0alcance').css('display', 'block');
+
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 ){
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            $(".productos0").css('background-color', '#669933');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#669933');
+            $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
+            $('.lvl0Alcancekinya').text('+1');
+        }
+
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l3 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3){
+            $('.lvl0Alcancekinya').text('+2');
         }
     }
     else{
-        $("#lvl0Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+        $("#lvl0Avatar").attr("src","../simuladornc/img/asesor.png");
         $('#lvl0retail').text('$0.00');
+        $(".productos0").css('background-color', '#bebebe');
+        $('.0').css('border-top-width', '0px');
+
+        $('#lvl0AlcanceImg').attr('src', '');
+        $('.lvl0Alcancekinya').text('');
+        $('.lvl0alcance').css('display', 'none');
+
         if(pzvendidasnivel1l1 >= 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/ninja.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+            $(".productos0").css('background-color', '#ff9900');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#ff9900');
         }
     }
 
     if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
-        $("#lvl0Avatar").attr("src","SimuladorNC/img/sensei.png");
+        $("#lvl0Avatar").attr("src","../SimuladorNC/img/sensei1.png");
+        $(".productos0").css('background-color', '#3333cc');
+        $('.0').css('border-top-width', '10px');
+        $('.0').css('border-top-style', 'solid');
+        $('.0').css('border-top-color', '#3333cc');
+        $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kintai.png');
+        $('.lvl0Alcancekinya').text('');
     }
+
+    console.log('hola');
 }
 
 //------------------------- NIVEL 1 LINEA 1 ------------------------------------------------------------
@@ -710,30 +815,80 @@ $("#lvl1l1pzop").change(function(){
 function setPiezasVendidaslvl1l1(){
     $('#lvl1l1pz_vendidas').text(pzvendidasnivel1l1);
     if(pzvendidasnivel1l1 >= 3){
-        $("#lvl1l1Avatar").attr("src","SimuladorNC/img/ninja.png");
+        $("#lvl1l1Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+        $(".productos1").css('background-color', '#ff9900');
+        $('.1').css('border-top-width', '10px');
+        $('.1').css('border-top-style', 'solid');
+        $('.1').css('border-top-color', '#ff9900');
+        $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
+        $('.lvl1l1alcance').css('display', 'block');
+
         if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            $(".productos0").css('background-color', '#669933');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#669933');
+            $('.lvl0Alcancekinya').text('+1');
+            $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
         }
+
         if(pzvendidasnivel2l1 >= 3 && pzvendidasnivel1l1 >= 3){
-            $('#lvl1l1Avatar').attr("src", "SimuladorNC/img/samurai.png");
+            $('#lvl1l1Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
+            $(".productos1").css('background-color', '#669933');
+            $('.1').css('border-top-width', '10px');
+            $('.1').css('border-top-style', 'solid');
+            $('.1').css('border-top-color', '#669933');
+            $('.lvl1l1Alcancekinya').text('+1');
+            $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
+        }
+
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l3 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3){
+            $('.lvl0Alcancekinya').text('+2');
+            $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
         }
     }
     else {
-        $("#lvl1l1Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+        $("#lvl1l1Avatar").attr("src","../simuladornc/img/asesor.png");
         $('#lvl1l1retail').text('$0.00');
+        $('.1').css('border-top-width', '0px');
+        $(".productos1").css('background-color', '#bebebe');
+
+        $('.lvl1l1alcance').css('display', 'none');
+        $('.lvl1l1Alcancekinya').text('');
+        $('#lvl1l1AlcanceImg').attr('src', '');
+
         if(pzvendidasnivel1l1 < 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/ninja.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+            $(".productos0").css('background-color', '#ff9900');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#ff9900');
+            $('.lvl1l1Alcancekinya').text('');
+            $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
         }
         if(pzvendidasnivel1l2 >= 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            $(".productos0").css('background-color', '#99cc33');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#99cc33');
+            $('.lvl1l1Alcancekinya').text('+1');
+            $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
         }
         if(pzvendidasnivel1l3 >= 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            $('.lvl1l1Alcancekinya').text('+1');
+            $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
         }
     }
 
     if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
-        $("#lvl0Avatar").attr("src","SimuladorNC/img/sensei.png");
+        $("#lvl0Avatar").attr("src","../SimuladorNC/img/sensei1.png");
+        $(".productos0").css('background-color', '#3333cc');
+        $('.0').css('border-top-width', '10px');
+        $('.0').css('border-top-style', 'solid');
+        $('.0').css('border-top-color', '#3333cc');
     }
 }
 
@@ -798,30 +953,71 @@ $("#lvl1l2pzop").change(function(){
 function setPiezasVendidaslvl1l2(){
     $('#lvl1l2pz_vendidas').text(pzvendidasnivel1l2);
     if(pzvendidasnivel1l2 >= 3){
-        $("#lvl1l2Avatar").attr("src","SimuladorNC/img/ninja.png");
+        $("#lvl1l2Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+        $(".productos2").css('background-color', '#ff9900');
+        $('.2').css('border-top-width', '10px');
+        $('.2').css('border-top-style', 'solid');
+        $('.2').css('border-top-color', '#ff9900');
+        $('#lvl1l2AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
+        $('.lvl1l2alcance').css('display', 'block');
+
         if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            $(".productos0").css('background-color', '#669933');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#669933');
+            $('.lvl0Alcancekinya').text('+1');
         }
         if(pzvendidasnivel2l2 >= 3 && pzvendidasnivel1l2 >= 3){
-            $('#lvl1l2Avatar').attr("src", "SimuladorNC/img/samurai.png");
+            $('#lvl1l2Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
+        }
+
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l3 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3){
+            $('.lvl0Alcancekinya').text('+2');
         }
     }
     else{
-        $("#lvl1l2Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+        $("#lvl1l2Avatar").attr("src","../simuladornc/img/asesor.png");
         $('#lvl1l2retail').text('$0.00');
+        $('.2').css('border-top-width', '0px');
+        
+        $('.lvl1l2alcance').css('display', 'none');
+        $('.lvl1l2Alcancekinya').text('');
+        $('#lvl1l2AlcanceImg').attr('src', '');
+
+        $(".productos2").css('background-color', '#bebebe');
         if(pzvendidasnivel1l1 < 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/ninja.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+            $(".productos0").css('background-color', '#ff9900');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#ff9900');
         }
         if(pzvendidasnivel1l2 >= 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            $(".productos0").css('background-color', '#ff9900');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#ff9900');
         }
         if(pzvendidasnivel1l3 >= 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            $(".productos0").css('background-color', '#ff9900');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#ff9900');
         }
     }
 
     if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
-        $("#lvl0Avatar").attr("src","SimuladorNC/img/sensei.png");
+        $("#lvl0Avatar").attr("src","../SimuladorNC/img/sensei1.png");
+        $(".productos0").css('background-color', '#3333cc');
+        $('.0').css('border-top-width', '10px');
+        $('.0').css('border-top-style', 'solid');
+        $('.0').css('border-top-color', '#3333cc');
+        $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kintai.png');
+        $('.lvl0Alcancekinya').text('');
     }
 }
 
@@ -886,30 +1082,66 @@ $("#lvl1l3pzop").change(function(){
 function setPiezasVendidaslvl1l3(){
     $('#lvl1l3pz_vendidas').text(pzvendidasnivel1l3);
     if(pzvendidasnivel1l3 >= 3){
-        $("#lvl1l3Avatar").attr("src","SimuladorNC/img/ninja.png");
+        $("#lvl1l3Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+        $(".productos3").css('background-color', '#ff9900');
+        $('.3').css('border-top-width', '10px');
+        $('.3').css('border-top-style', 'solid');
+        $('.3').css('border-top-color', '#ff9900');
+
+        $('.lvl1l3alcance').css('display', 'block');
+        $('#lvl1l3AlcanceImg').attr("src","../SimuladorNC/img/kinya.png");
+
         if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            $(".productos0").css('background-color', '#669933');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#669933');
+            $('.lvl0Alcancekinya').text('+1');
         }
         if(pzvendidasnivel2l3 >= 3 && pzvendidasnivel1l3 >= 3){
-            $('#lvl1l3Avatar').attr("src", "SimuladorNC/img/samurai.png");
+            $('#lvl1l3Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
+        }
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l3 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3){
+            $('.lvl0Alcancekinya').text('+2');
         }
     }
     else{
-        $("#lvl1l3Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+        $("#lvl1l3Avatar").attr("src","../simuladornc/img/asesor.png");
         $('#lvl1l3retail').text('$0.00');
+        $('.3').css('border-top-width', '0px');
+        $(".productos3").css('background-color', '#bebebe');
         if(pzvendidasnivel1l1 < 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/ninja.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+            $(".productos0").css('background-color', '#ff9900');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#ff9900');
         }
         if(pzvendidasnivel1l2 >= 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            $(".productos0").css('background-color', '#669933');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#669933');
         }
         if(pzvendidasnivel1l3 >= 3 && pzvendidasnivel0 >= 3){
-            $("#lvl0Avatar").attr("src","SimuladorNC/img/samurai.png");
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            $(".productos0").css('background-color', '#669933');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#669933');
         }
     }
 
     if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
-        $("#lvl0Avatar").attr("src","SimuladorNC/img/sensei.png");
+        $("#lvl0Avatar").attr("src","../SimuladorNC/img/sensei1.png");
+        $(".productos0").css('background-color', '#3333cc');
+        $('.0').css('border-top-width', '10px');
+        $('.0').css('border-top-style', 'solid');
+        $('.0').css('border-top-color', '#3333cc');
+        $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kintai.png');
+        $('.lvl0Alcancekinya').text('');
     }
 }
 
@@ -974,22 +1206,55 @@ $("#lvl2l1pzop").change(function(){
 function setPiezasVendidaslvl2l1(){
     $('#lvl2l1pz_vendidas').text(pzvendidasnivel2l1);
     if(pzvendidasnivel2l1 >= 3){
-        $("#lvl2l1Avatar").attr("src","SimuladorNC/img/ninja.png");
-        if(pzvendidasnivel2l1 >= 3 && pzvendidasnivel1l1 >= 3){
-            $('#lvl1l1Avatar').attr("src", "SimuladorNC/img/samurai.png");
-        }
+        $("#lvl2l1Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+        $(".productos11").css('background-color', '#ff9900');
+        $('.4').css('border-top-width', '10px');
+        $('.4').css('border-top-style', 'solid');
+        $('.4').css('border-top-color', '#ff9900');
         
+        $('.lvl2l1alcance').css('display', 'block');
+        $('#lvl2l1AlcanceImg').attr("src","../SimuladorNC/img/kinya.png");
+
+        if(pzvendidasnivel2l1 >= 3 && pzvendidasnivel1l1 >= 3){
+            $('#lvl1l1Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
+            $(".productos1").css('background-color', '#669933');
+            $('.1').css('border-top-width', '10px');
+            $('.1').css('border-top-style', 'solid');
+            $('.1').css('border-top-color', '#669933');
+            $('.lvl1l1Alcancekinya').text('+1');
+            $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
+        }
     }
     else{
-        $("#lvl2l1Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+        $("#lvl2l1Avatar").attr("src","../simuladornc/img/asesor.png");
         $('#lvl2l1retail').text('$0.00');
+        $('.4').css('border-top-width', '0px');
+        $(".productos11").css('background-color', '#bebebe');
+        $('.lvl2l1alcance').css('display', 'none');
+        $('#lvl2l1AlcanceImg').attr("src","");
+        $('.lvl1l1Alcancekinya').text('');
         if(pzvendidasnivel2l1 < 3 && pzvendidasnivel1l1 >= 3){
-            $("#lvl1l1Avatar").attr("src","SimuladorNC/img/ninja.png");
+            $("#lvl1l1Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+            $(".productos1").css('background-color', '#ff9900');
+            $('.1').css('border-top-width', '10px');
+            $('.1').css('border-top-style', 'solid');
+            $('.1').css('border-top-color', '#ff9900');
+            $('.lvl1l1Alcancekinya').text('');
+            $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
         }
     }
 
     if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
-        $("#lvl0Avatar").attr("src","SimuladorNC/img/sensei.png");
+        $("#lvl0Avatar").attr("src","../SimuladorNC/img/sensei1.png");
+        $(".productos0").css('background-color', '#3333cc');
+        $('.0').css('border-top-width', '10px');
+        $('.0').css('border-top-style', 'solid');
+        $('.0').css('border-top-color', '#3333cc');
+        $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kintai.png');
+        $('.lvl0Alcancekinya').text('');
+    }
+    else{
+        setPiezasVendidas();
     }
 }
 
@@ -1054,21 +1319,53 @@ $("#lvl2l2pzop").change(function(){
 function setPiezasVendidaslvl2l2(){
     $('#lvl2l2pz_vendidas').text(pzvendidasnivel2l2);
     if(pzvendidasnivel2l2 >= 3){
-        $("#lvl2l2Avatar").attr("src","SimuladorNC/img/ninja.png");
+        $("#lvl2l2Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+        $(".productos22").css('background-color', '#ff9900');
+        $('.5').css('border-top-width', '10px');
+        $('.5').css('border-top-style', 'solid');
+        $('.5').css('border-top-color', '#ff9900');
+
+        $('.lvl2l2alcance').css('display', 'block');
+        $('#lvl2l2AlcanceImg').attr("src","../SimuladorNC/img/kinya.png");
+
         if(pzvendidasnivel2l2 >= 3 && pzvendidasnivel1l2 >= 3){
-            $('#lvl1l2Avatar').attr("src", "SimuladorNC/img/samurai.png");
+            $('#lvl1l2Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
+            $(".productos2").css('background-color', '#669933');
+            $('.2').css('border-top-width', '10px');
+            $('.2').css('border-top-style', 'solid');
+            $('.2').css('border-top-color', '#669933');
+            $('#lvl1l2AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
+            $('.lvl1l2Alcancekinya').text('+1');
         }
     }
     else{
-        $("#lvl2l2Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+        $("#lvl2l2Avatar").attr("src","../simuladornc/img/asesor.png");
         $('#lvl2l2retail').text('$0.00');
+        $('.5').css('border-top-width', '0px');
+        $(".productos22").css('background-color', '#bebebe');
+        $('.lvl2l2alcance').css('display', 'none');
+        $('#lvl2l2AlcanceImg').attr("src","");
+        $('.lvl1l2Alcancekinya').text('');
         if(pzvendidasnivel2l2 < 3 && pzvendidasnivel1l2 >= 3){
-            $('#lvl1l2Avatar').attr("src", "SimuladorNC/img/ninja.png");
+            $('#lvl1l2Avatar').attr("src", "../SimuladorNC/img/ninja1.png");
+            $(".productos2").css('background-color', '#ff9900');
+            $('.2').css('border-top-width', '10px');
+            $('.2').css('border-top-style', 'solid');
+            $('.2').css('border-top-color', '#ff9900');
+            $('#lvl1l2AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
+            $('.lvl1l2Alcancekinya').text('');
         }
     }
 
     if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
-        $("#lvl0Avatar").attr("src","SimuladorNC/img/sensei.png");
+        $("#lvl0Avatar").attr("src","../SimuladorNC/img/sensei1.png");
+        $(".productos0").css('background-color', '#3333cc');
+        $('.0').css('border-top-width', '10px');
+        $('.0').css('border-top-style', 'solid');
+        $('.0').css('border-top-color', '#3333cc');
+    }
+    else{
+        setPiezasVendidas();
     }
 }
 
@@ -1133,20 +1430,52 @@ $("#lvl2l3pzop").change(function(){
 function setPiezasVendidaslvl2l3(){
     $('#lvl2l3pz_vendidas').text(pzvendidasnivel2l3);
     if(pzvendidasnivel2l3 >= 3){
-        $("#lvl2l3Avatar").attr("src","SimuladorNC/img/ninja.png");
+        $("#lvl2l3Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+        $(".productos33").css('background-color', '#ff9900');
+        $('.6').css('border-top-width', '10px');
+        $('.6').css('border-top-style', 'solid');
+        $('.6').css('border-top-color', '#ff9900');
+
+        $('.lvl2l3alcance').css('display', 'block');
+        $('#lvl2l3AlcanceImg').attr("src","../SimuladorNC/img/kinya.png");
+
         if(pzvendidasnivel2l3 >= 3  && pzvendidasnivel1l3 >= 3){
-            $('#lvl1l3Avatar').attr("src", "SimuladorNC/img/samurai.png");
+            $('#lvl1l3Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
+            $(".productos3").css('background-color', '#669933');
+            $('.3').css('border-top-width', '10px');
+            $('.3').css('border-top-style', 'solid');
+            $('.3').css('border-top-color', '#669933');
+
+            $('.lvl1l3Alcancekinya').text('+1');
         }
     }
     else{
-        $("#lvl2l3Avatar").attr("src","https://nikkenlatam.com/oficina-virtual/assets/images/general/logo-abi.png");
+        $("#lvl2l3Avatar").attr("src","../simuladornc/img/asesor.png");
         $('#lvl2l3retail').text('$0.00');
+        $('.6').css('border-top-width', '0px');
+        $(".productos33").css('background-color', '#bebebe');
+        $('.lvl2l3alcance').css('display', 'none');
+        $('#lvl2l3AlcanceImg').attr("src","");
+        $('.lvl1l3Alcancekinya').text('');
         if(pzvendidasnivel2l3 < 3 && pzvendidasnivel1l3 >= 3){
-            $('#lvl1l3Avatar').attr("src", "SimuladorNC/img/ninja.png");
+            $('#lvl1l3Avatar').attr("src", "../SimuladorNC/img/ninja1.png");
+            $(".productos3").css('background-color', '#ff9900');
+            $('.3').css('border-top-width', '10px');
+            $('.3').css('border-top-style', 'solid');
+            $('.3').css('border-top-color', '#ff9900');
         }
     }
 
     if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
-        $("#lvl0Avatar").attr("src","SimuladorNC/img/sensei.png");
+        $("#lvl0Avatar").attr("src","../SimuladorNC/img/sensei1.png");
+        $(".productos0").css('background-color', '#3333cc');
+        $('.0').css('border-top-width', '10px');
+        $('.0').css('border-top-style', 'solid');
+        $('.0').css('border-top-color', '#3333cc');
+        $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kintai.png');
+        $('.lvl0Alcancekinya').text('');
+    }
+    else{
+        setPiezasVendidas();
     }
 }
