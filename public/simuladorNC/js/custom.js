@@ -11,28 +11,10 @@ function addProd(prod){
     var actual = $('#' + prod).val();
     var nuevo = (parseInt(actual) + parseInt(1));
     $('#' + prod).val(nuevo);
-    
-    pzvendidasnivel0 = (parseInt(lvl0pzpiw) + parseInt(lvl0pzwa) + parseInt(lvl0pzaqp) + parseInt(lvl0pzop));
-    setPiezasVendidas();
-    $('#lvl0pz_vendidas').text(pzvendidasnivel0);
-
-    setPiezasVendidaslvl1l1();
-    setPiezasVendidaslvl1l2();
-    setPiezasVendidaslvl1l3();
-    setPiezasVendidaslvl2l1();
-    setPiezasVendidaslvl2l2();
-    setPiezasVendidaslvl2l3();
 }
 
 function remProd(prod){
     $('#' + prod).val(($('#' + prod).val() - 1));
-    setPiezasVendidas();
-    setPiezasVendidaslvl1l1();
-    setPiezasVendidaslvl1l2();
-    setPiezasVendidaslvl1l3();
-    setPiezasVendidaslvl2l1();
-    setPiezasVendidaslvl2l2();
-    setPiezasVendidaslvl2l3();
 }
 
 $().ready(function(){
@@ -468,14 +450,14 @@ $(function(){
     });
 })
 
-var monedaMexicana = '$ ';
-var monedaColombia = '$ ';
-var monedaCostaRica = '₡ ';
-var monedaPanama = 'B ';
-var monedaEcuador = 'USD ';
-var monedaPeru = 'S/. ';
-var monedaSalvador = '₡ ';
-var monedaGuatemala = 'Q ';
+var monedaMexicana      = '$ ';
+var monedaColombia      = '$ ';
+var monedaCostaRica     = '₡ ';
+var monedaPanama        = 'B ';
+var monedaEcuador       = 'USD ';
+var monedaPeru          = 'S/. ';
+var monedaSalvador      = '₡ ';
+var monedaGuatemala     = 'Q ';
 
 var monedaSelec = monedaMexicana;
 
@@ -1272,7 +1254,7 @@ $("#lvl2l2pzpiw").change(function(){
         this.value = 0;
     }
     else{
-        lvl2l2pzpiw = this.value;
+        lvl2l2pzpiw = $("#lvl2l2pzpiw").val();
         pzvendidasnivel2l2 = (parseInt(lvl2l2pzpiw) + parseInt(lvl2l2pzwa) + parseInt(lvl2l2pzaqp) + parseInt(lvl2l3pzop));
         setPiezasVendidaslvl2l2();
     }
@@ -1311,7 +1293,7 @@ $("#lvl2l2pzop").change(function(){
     else{
         lvl2l3pzop = this.value;
         pzvendidasnivel2l2 = (parseInt(lvl2l2pzpiw) + parseInt(lvl2l2pzwa) + parseInt(lvl2l2pzaqp) + parseInt(lvl2l3pzop));
-            setPiezasVendidaslvl2l2();
+        setPiezasVendidaslvl2l2();
     }
     
 });
@@ -1445,7 +1427,7 @@ function setPiezasVendidaslvl2l3(){
             $('.3').css('border-top-width', '10px');
             $('.3').css('border-top-style', 'solid');
             $('.3').css('border-top-color', '#669933');
-
+            $('#lvl1l3AlcanceImg').attr("src","../SimuladorNC/img/kinya+.png");
             $('.lvl1l3Alcancekinya').text('+1');
         }
     }
