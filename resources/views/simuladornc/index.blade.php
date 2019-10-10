@@ -165,7 +165,7 @@
                                             <div class="card-header border-0 pt-8 pt-md-4 pb-0">
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        Pais:
+                                                        País:
                                                         <select class="form-control" id="lvl0pais" name="lvl0pais" onchange="hideProducts( this.id, 'lvl0pzaqp', 'lvl0pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
@@ -338,7 +338,7 @@
                                                 </div>
                                                 <!--<div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Pais:
+                                                        País:
                                                         <select class="form-control" id="lvl0pais" name="lvl0pais" onchange="hideProducts( this.id, 'lvl0pzaqp', 'lvl0pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
@@ -463,7 +463,7 @@
                                                 </a>
                                                 <div class="row">
                                                     <div class="col-sm-3">
-                                                        Pais:
+                                                        País:
                                                         <select class="form-control" id="lvl1l1pais" name="lvl1l1pais" onchange="hideProducts(this.id, 'lvl1l1pzaqp', 'lvl1l1pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
@@ -631,7 +631,7 @@
                                                 </div>
                                                 <!--<div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Pais:
+                                                        País:
                                                         <select class="form-control" id="lvl1l1pais" name="lvl1l1pais" onchange="hideProducts(this.id, 'lvl1l1pzaqp', 'lvl1l1pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
@@ -747,7 +747,7 @@
                                                         </a>
                                                         <div class="row">
                                                             <div class="col-sm-3">
-                                                                Pais:
+                                                                País:
                                                                 <select class="form-control" id="lvl2l1pais" name="lvl2l1pais" onchange="hideProducts(this.id, 'lvl2l1pzaqp', 'lvl2l1pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
@@ -914,7 +914,7 @@
                                                         </div>
                                                         <!--<div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                Pais:
+                                                                País:
                                                                 <select class="form-control" id="lvl2l1pais" name="lvl2l1pais" onchange="hideProducts(this.id, 'lvl2l1pzaqp', 'lvl2l1pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
@@ -1027,7 +1027,7 @@
                                                 </a>
                                                 <div class="row">
                                                     <div class="col-sm-3">
-                                                        Pais:
+                                                        País:
                                                         <select class="form-control" id="lvl1l2pais" name="lvl1l2pais" onchange="hideProducts(this.id, 'lvl1l2pzaqp', 'lvl1l2pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
@@ -1195,7 +1195,7 @@
                                                 </div>
                                                 <!--<div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Pais:
+                                                        País:
                                                         <select class="form-control" id="lvl1l2pais" name="lvl1l2pais" onchange="hideProducts(this.id, 'lvl1l2pzaqp', 'lvl1l2pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
@@ -1311,7 +1311,7 @@
                                                         </a>
                                                         <div class="row">
                                                             <div class="col-sm-3">
-                                                                Pais:
+                                                                País:
                                                                 <select class="form-control" id="lvl2l2pais" name="lvl2l2pais" onchange="hideProducts(this.id, 'lvl2l2pzaqp', 'lvl2l2pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
@@ -1478,7 +1478,7 @@
                                                         </div>
                                                         <!--<div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                Pais:
+                                                                País:
                                                                 <select class="form-control" id="lvl2l2pais" name="lvl2l2pais" onchange="hideProducts(this.id, 'lvl2l2pzaqp', 'lvl2l2pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
@@ -1590,7 +1590,7 @@
                                                 </a>
                                                 <div class="row">
                                                     <div class="col-sm-3">
-                                                        Pais:
+                                                        País:
                                                         <select class="form-control" id="lvl1l3pais" name="lvl1l3pais" onchange="hideProducts(this.id, 'lvl1l3pzaqp', 'lvl1l3pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
@@ -1758,7 +1758,7 @@
                                                 </div>
                                                 <!--<div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Pais:
+                                                        País:
                                                         <select class="form-control" id="lvl1l3pais" name="lvl1l3pais" onchange="hideProducts(this.id, 'lvl1l3pzaqp', 'lvl1l3pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
@@ -1875,7 +1875,7 @@
                                                         </a>
                                                         <div class="row">
                                                             <div class="col-sm-3">
-                                                                Pais:
+                                                                País:
                                                                 <select class="form-control" id="lvl2l3pais" name="lvl2l3pais" onchange="hideProducts(this.id, 'lvl2l3pzaqp', 'lvl2l3pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
@@ -2042,7 +2042,7 @@
                                                         </div>
                                                         <!--<div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                Pais:
+                                                                País:
                                                                 <select class="form-control" id="lvl2l3pais" name="lvl2l3pais" onchange="hideProducts(this.id, 'lvl2l3pzaqp', 'lvl2l3pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
