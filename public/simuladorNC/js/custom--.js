@@ -7,6 +7,60 @@ $('.lvl2l1alcance').css('display', 'none');
 $('.lvl2l2alcance').css('display', 'none');
 $('.lvl2l3alcance').css('display', 'none');
 
+function hideLinea1Nivel1(){
+    var rangolinea1 = $("#lvl1l1rangoText").text();
+    $("#lvl1l1rangoText").text($("#lvl2l1rangoText").text());
+    $("#lvl2l1rangoText").text(rangolinea1);
+
+    var selectRangolinea1 = $("#lvl1l1rango").prop('selectedIndex');
+    $("select#lvl1l1rango")[0].selectedIndex = $("#lvl2l1rango").prop('selectedIndex');
+    $("select#lvl2l1rango")[0].selectedIndex = selectRangolinea1;
+    $("#lvl2l1rangoText").text($("#lvl2l1rango option:selected").text());
+
+    var selectPaislinea1 = $("#lvl1l1pais").prop('selectedIndex');
+    $("select#lvl1l1pais")[0].selectedIndex = $("#lvl2l1pais").prop('selectedIndex');
+    $("select#lvl2l1pais")[0].selectedIndex = selectPaislinea1;
+
+    var piwLinea1 = $('#lvl1l1pzpiw').val();
+    $("#lvl1l1pzpiw").val($('#lvl2l1pzpiw').val());
+    $('#lvl2l1pzpiw').val(piwLinea1);
+
+    var waLinea1 = $('#lvl1l1pzwa').val();
+    $("#lvl1l1pzwa").val($('#lvl2l1pzwa').val());
+    $('#lvl2l1pzwa').val(waLinea1);
+
+    var aqpLinea1 = $('#lvl1l1pzaqp').val();
+    $("#lvl1l1pzaqp").val($('#lvl2l1pzaqp').val());
+    $('#lvl2l1pzaqp').val(aqpLinea1);
+
+    var opLinea1 = $('#lvl1l1pzop').val();
+    $("#lvl1l1pzop").val($('#lvl2l1pzop').val());
+    $('#lvl2l1pzop').val(opLinea1);
+
+    var pzVenta = pzvendidasnivel2l1;
+    $('#lvl1l1pz_vendidas').text( $('#lvl2l1pz_vendidas').text());
+    $('#lvl2l1pz_vendidas').text(opLinea1);
+    
+    pzvendidasnivel1l1 = pzvendidasnivel2l1;
+    pzvendidasnivel2l1 = pzVenta;
+    if(pzvendidasnivel1l1 >= 3){
+        $("#lvl1l1Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3){
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+        }
+    }
+
+    $("#lvl2l1Avatar").attr("src","../simuladornc/img/asesor.png");
+    $('.productos11').css('background-color', '#bebebe');
+    $('.productos1').css('background-color', '#ff9900');
+    $('.4').css('border-top-width', '0px');
+    $('.1').css('border-top-width', '10px');
+    $('.1').css('border-top-color', '#ff9900');
+    $('.lvl1l1alcance').css('display', 'block');
+    $('.lvl2l1alcance').css('display', 'none');
+    $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
+}
+
 function addProd(prod){
     var actual = $('#' + prod).val();
     var nuevo = (parseInt(actual) + parseInt(1));
@@ -450,64 +504,14 @@ $(function(){
     });
 })
 
-function hideLinea1Nivel1(){
-    var nlinea_1 = $('#lvl2l1retail').text();
-    $('#lvl1l1retail').text(nlinea_1);
-    $('#lvl2l1retail').text('');
-
-    /*$("select#lvl1l1rango")[0].selectedIndex = $("#lvl2l1rango").prop('selectedIndex');
-    $("select#lvl2l1rango")[0].selectedIndex = 0;
-    $("#lvl2l1rangoText").text($("#lvl2l1rango option:selected").text());*/
-
-    /*$("select#lvl1l1pais")[0].selectedIndex = $("#lvl2l1pais").prop('selectedIndex');
-    $("select#lvl2l1pais")[0].selectedIndex = 0;*/
-
-    $("#lvl1l1pzpiw").val($('#lvl2l1pzpiw').val());
-    $('#lvl2l1pzpiw').val('0');
-
-    $("#lvl1l1pzwa").val($('#lvl2l1pzwa').val());
-    $('#lvl2l1pzwa').val('0');
-
-    $("#lvl1l1pzaqp").val($('#lvl2l1pzaqp').val());
-    $('#lvl2l1pzaqp').val('0');
-
-    $("#lvl1l1pzop").val($('#lvl2l1pzop').val());
-    $('#lvl2l1pzop').val('0');
-
-    var pzVenta = pzvendidasnivel2l1;
-    $('#lvl1l1pz_vendidas').text( $('#lvl2l1pz_vendidas').text());
-    $('#lvl2l1pz_vendidas').text('');
-    
-    pzvendidasnivel1l1 = pzvendidasnivel2l1;
-    pzvendidasnivel2l1 = pzVenta;
-    if(pzvendidasnivel1l1 >= 3){
-        $("#lvl1l1Avatar").attr("src","../SimuladorNC/img/ninja1.png");
-        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3){
-            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
-        }
-    }
-
-    if(pzVenta >= 3){
-        $("#lvl2l1Avatar").attr("src","../simuladornc/img/asesor.png");
-        $('.productos11').css('background-color', '#bebebe');
-        $('.productos1').css('background-color', '#ff9900');
-        $('.4').css('border-top-width', '0px');
-        $('.1').css('border-top-width', '10px');
-        $('.1').css('border-top-color', '#ff9900');
-        $('.lvl1l1alcance').css('display', 'block');
-        $('.lvl2l1alcance').css('display', 'none');
-        $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
-    }
-}
-
-var monedaMexicana = '$ ';
-var monedaColombia = '$ ';
-var monedaCostaRica = '₡ ';
-var monedaPanama = 'B ';
-var monedaEcuador = 'USD ';
-var monedaPeru = 'S/. ';
-var monedaSalvador = '₡ ';
-var monedaGuatemala = 'Q ';
+var monedaMexicana      = '$ ';
+var monedaColombia      = '$ ';
+var monedaCostaRica     = '₡ ';
+var monedaPanama        = 'B ';
+var monedaEcuador       = 'USD ';
+var monedaPeru          = 'S/. ';
+var monedaSalvador      = '₡ ';
+var monedaGuatemala     = 'Q ';
 
 var monedaSelec = monedaMexicana;
 
@@ -723,7 +727,7 @@ $("#lvl0pzop").change(function(){
     else{
         lvl0pzop = this.value;
         pzvendidasnivel0 = (parseInt(lvl0pzpiw) + parseInt(lvl0pzwa) + parseInt(lvl0pzaqp) + parseInt(lvl0pzop));
-            setPiezasVendidas();
+        setPiezasVendidas();
     }
     
 });
@@ -1302,7 +1306,7 @@ $("#lvl2l2pzpiw").change(function(){
         this.value = 0;
     }
     else{
-        lvl2l2pzpiw = this.value;
+        lvl2l2pzpiw = $("#lvl2l2pzpiw").val();
         pzvendidasnivel2l2 = (parseInt(lvl2l2pzpiw) + parseInt(lvl2l2pzwa) + parseInt(lvl2l2pzaqp) + parseInt(lvl2l3pzop));
         setPiezasVendidaslvl2l2();
     }
@@ -1341,7 +1345,7 @@ $("#lvl2l2pzop").change(function(){
     else{
         lvl2l3pzop = this.value;
         pzvendidasnivel2l2 = (parseInt(lvl2l2pzpiw) + parseInt(lvl2l2pzwa) + parseInt(lvl2l2pzaqp) + parseInt(lvl2l3pzop));
-            setPiezasVendidaslvl2l2();
+        setPiezasVendidaslvl2l2();
     }
     
 });
@@ -1475,7 +1479,7 @@ function setPiezasVendidaslvl2l3(){
             $('.3').css('border-top-width', '10px');
             $('.3').css('border-top-style', 'solid');
             $('.3').css('border-top-color', '#669933');
-
+            $('#lvl1l3AlcanceImg').attr("src","../SimuladorNC/img/kinya+.png");
             $('.lvl1l3Alcancekinya').text('+1');
         }
     }

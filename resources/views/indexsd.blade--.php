@@ -62,26 +62,29 @@
                     <div class="col">
                         <div class="card-header bg-transparent border-0">
                             <center>
-                                <h1 class="display-1">Bienvenido a tu simulador</h1>
+                                <h1 class="display-1">Tú decides cómo jugar y cuánto ganar.</h1>
                                 <div class="Rectángulo_1_copia"></div>
                                 <h2>
-                                    Tú decides cómo jugar y cuánto ganar. <br>
-                                    Descubre tus posibilidades y alcances financieros al participar en esta increible dinámica. <br>
-                                    ¿Quieres intentarlo? Utiliza este simulador para predecir hasta dónde quieres llegar y cuántos <br>
-                                    ingresos extra puedes ganar.
+                                        Utiliza este simulador para predecir hasta dónde quieres llegar y cuántos ingresos extras puedes lograr. <br>
+                                        ¿Quieres mejorar tus finanzas? <br><br>
+                                        ¡Inténtalo ahora!
                                 </h2>
-                                <a href="#gralForm">
+                                <a href="#start">
                                     <div class="elipse_1">
                                         <h1><i class="ni ni-bold-down"></i></h1>
                                     </div>
                                 </a>
+                                <br><br><br>
+                                <span id="start">
+                                    Selecciona el país y rango. Luego, digita la cantidad de productos en los recuadros de acuerdo a las referencias indicadas, obtendrás una simulación de tus ganancias.
+                                </span>
                             </center>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-12 mt-8 mb-xl-0">
+                    <div class="col-xl-12 mt-5 mb-xl-0">
                         <form class="gralForm" name="gralForm" id="gralForm" method="POST">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="card-body">
@@ -165,14 +168,14 @@
                                             <div class="card-header border-0 pt-8 pt-md-4 pb-0">
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        Pais:
-                                                        <select class="form-control" id="lvl0pais" name="lvl0pais" onchange="hideProducts( this.id, 'lvl0pzaqp', 'lvl0pzop')">
+                                                        País:
+                                                        <select class="form-control" id="lvl0País" name="lvl0País" onchange="hideProducts( this.id, 'lvl0pzaqp', 'lvl0pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -196,7 +199,7 @@
                                                 <div class="card-profile-stats mt-md-1">
                                                     <center>
                                                         <span class="text-warning font-weight-bold">
-                                                            Total Bonificacion:
+                                                            Total Bonificación:
                                                             <span class="lvl0retail"></span>
                                                             <span id="lvl0retail">0.00</span>
                                                         </span>
@@ -217,7 +220,7 @@
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
-                                                                        <span>Total nikken challenge:</span>
+                                                                        <span>Total NIKKEN Challenge:</span>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl0NCHtotal"></span><span id="lvl0NCHtotal">0.00</span>
@@ -242,7 +245,7 @@
                                                                 <tr class="inpar">
                                                                     <th>
                                                                         <span>Bonificacion por grupo personal:</span> &nbsp;
-                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
+                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es la suma de las bonificaciones generadas por los volúmenes de los asesores de su línea de rango Directo y Ejecutivo en un mes calendario.">
                                                                             <i class="fa fa-question"></i>
                                                                         </span>
                                                                     </th>
@@ -252,7 +255,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <th>
-                                                                        <span class="text-warning font-weight-bold">Total Bonificacion:</span>
+                                                                        <span class="text-warning font-weight-bold">Total Bonificación:</span>
                                                                     </th>
                                                                     <td class="text-warning font-weight-bold">
                                                                         <span class="lvl0retail"></span>
@@ -267,7 +270,7 @@
                                                                         Pz: <span id="lvl0pz_vendidas">0 </span>
                                                                     </td>
                                                                 </tr>
-                                                                <tr class="par">
+                                                                <tr>
                                                                     <td class="text-default font-weight-bold">
                                                                         Volumen personal:
                                                                     </td>
@@ -324,7 +327,7 @@
                                                                         <span id="lvl0puntaje">0</span>
                                                                     </td>
                                                                 </tr>-->
-                                                                <tr class="par">
+                                                                <tr>
                                                                     <td class="text-default font-weight-bold">
                                                                         VGP:
                                                                     </td>
@@ -338,14 +341,14 @@
                                                 </div>
                                                 <!--<div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Pais:
-                                                        <select class="form-control" id="lvl0pais" name="lvl0pais" onchange="hideProducts( this.id, 'lvl0pzaqp', 'lvl0pzop')">
+                                                        País:
+                                                        <select class="form-control" id="lvl0País" name="lvl0País" onchange="hideProducts( this.id, 'lvl0pzaqp', 'lvl0pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -387,7 +390,7 @@
                                                                     <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
                                                                     <div class="row">
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="65%" height="auto">
+                                                                                <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="65%" height="auto">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
                                                                             <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzwa" id="lvl0pzwa">
@@ -402,7 +405,7 @@
                                                                     <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
                                                                     <div class="row">
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="65%" height="auto">
+                                                                            <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="65%" height="auto">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
                                                                             <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzaqp" id="lvl0pzaqp">
@@ -463,14 +466,14 @@
                                                 </a>
                                                 <div class="row">
                                                     <div class="col-sm-3">
-                                                        Pais:
-                                                        <select class="form-control" id="lvl1l1pais" name="lvl1l1pais" onchange="hideProducts(this.id, 'lvl1l1pzaqp', 'lvl1l1pzop')">
+                                                        País:
+                                                        <select class="form-control" id="lvl1l1País" name="lvl1l1País" onchange="hideProducts(this.id, 'lvl1l1pzaqp', 'lvl1l1pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -489,7 +492,7 @@
                                                 <div class="card-profile-stats mt-md-1">
                                                     <center>
                                                         <span class="text-warning font-weight-bold">
-                                                            Total Bonificacion:
+                                                            Total Bonificación:
                                                             <span class="lvl1l1retail"></span>
                                                             <span id="lvl1l1retail">0.00</span>
                                                         </span>
@@ -510,7 +513,7 @@
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
-                                                                        <span>Total nikken challenge:</span>
+                                                                        <span>Total NIKKEN Challenge:</span>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l1NCHtotal"></span><span id="lvl1l1NCHtotal">0.00</span>
@@ -535,7 +538,7 @@
                                                                 <tr class="inpar">
                                                                     <th>
                                                                         <span>Bonificacion por <br> grupo personal:</span>
-                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
+                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es la suma de las bonificaciones generadas por los volúmenes de los asesores de su línea de rango Directo y Ejecutivo en un mes calendario.">
                                                                             <i class="fa fa-question"></i>
                                                                         </span>
                                                                     </th>
@@ -545,7 +548,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <th>
-                                                                        <span class="text-warning">Total Bonificacion:</span>
+                                                                        <span class="text-warning">Total Bonificación:</span>
                                                                     </th>
                                                                     <td class="text-warning">
                                                                         <span class="lvl1l1retail"></span>
@@ -560,7 +563,7 @@
                                                                         Pz: <span id="lvl1l1pz_vendidas">0</span>
                                                                     </td>
                                                                 </tr>
-                                                                <tr class="par">
+                                                                <tr class="">
                                                                         <td class="text-default font-weight-bold">
                                                                             Volumen personal:
                                                                         </td>
@@ -617,7 +620,7 @@
                                                                         <span id="lvl1l1puntaje">0</span>
                                                                     </td>
                                                                 </tr>-->
-                                                                <tr class="par">
+                                                                <tr class="">
                                                                     <td class="text-default font-weight-bold">
                                                                         VGP:
                                                                     </td>
@@ -631,14 +634,14 @@
                                                 </div>
                                                 <!--<div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Pais:
-                                                        <select class="form-control" id="lvl1l1pais" name="lvl1l1pais" onchange="hideProducts(this.id, 'lvl1l1pzaqp', 'lvl1l1pzop')">
+                                                        País:
+                                                        <select class="form-control" id="lvl1l1País" name="lvl1l1País" onchange="hideProducts(this.id, 'lvl1l1pzaqp', 'lvl1l1pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -740,21 +743,21 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel2()">
                                                             <span class="badge badge-danger text-right">
                                                                 <i class="fa fa-minus-circle"></i>
                                                             </span>
                                                         </a>
                                                         <div class="row">
                                                             <div class="col-sm-3">
-                                                                Pais:
-                                                                <select class="form-control" id="lvl2l1pais" name="lvl2l1pais" onchange="hideProducts(this.id, 'lvl2l1pzaqp', 'lvl2l1pzop')">
+                                                                País:
+                                                                <select class="form-control" id="lvl2l1País" name="lvl2l1País" onchange="hideProducts(this.id, 'lvl2l1pzaqp', 'lvl2l1pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
                                                                     <option value="Cri">Costa Rica</option>
                                                                     <option value="Pan">Panamá</option>
                                                                     <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
+                                                                    <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
@@ -773,7 +776,7 @@
                                                         <div class="card-profile-stats mt-md-1">
                                                             <center>
                                                                 <span class="text-warning font-weight-bold">
-                                                                    Total Bonificacion:
+                                                                    Total Bonificación:
                                                                     <span class="lvl2l1retail"></span>
                                                                     <span id="lvl2l1retail">0.00</span>
                                                                 </span>
@@ -793,7 +796,7 @@
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
-                                                                                <span>Total nikken challenge:</span>
+                                                                                <span>Total NIKKEN Challenge:</span>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l1NCHtotal"></span><span id="lvl2l1NCHtotal">0.00</span>
@@ -818,7 +821,7 @@
                                                                         <tr class="inpar">
                                                                             <th>
                                                                                 <span>Bonificacion por <br> grupo personal:</span>
-                                                                                <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
+                                                                                <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es la suma de las bonificaciones generadas por los volúmenes de los asesores de su línea de rango Directo y Ejecutivo en un mes calendario.">
                                                                                     <i class="fa fa-question"></i>
                                                                                 </span>
                                                                             </th>
@@ -828,7 +831,7 @@
                                                                         </tr>
                                                                         <!--<tr class="par">
                                                                             <th>
-                                                                                <span class="text-warning">Total Bonificacion:</span>
+                                                                                <span class="text-warning">Total Bonificación:</span>
                                                                             </th>
                                                                             <td class="text-warning">
                                                                                 <span class="lvl2l1retail"></span>
@@ -843,7 +846,7 @@
                                                                                 Pz: <span id="lvl2l1pz_vendidas">0</span>
                                                                             </td>
                                                                         </tr>
-                                                                        <tr class="par">
+                                                                        <tr class="">
                                                                             <td class="text-default font-weight-bold">
                                                                                 Volumen personal:
                                                                             </td>
@@ -900,7 +903,7 @@
                                                                                 <span id="lvl2l1puntaje">0</span>
                                                                             </td>
                                                                         </tr>-->
-                                                                        <tr class="par">
+                                                                        <tr class="">
                                                                             <td class="text-default font-weight-bold">
                                                                                 VGP:
                                                                             </td>
@@ -914,14 +917,14 @@
                                                         </div>
                                                         <!--<div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                Pais:
-                                                                <select class="form-control" id="lvl2l1pais" name="lvl2l1pais" onchange="hideProducts(this.id, 'lvl2l1pzaqp', 'lvl2l1pzop')">
+                                                                País:
+                                                                <select class="form-control" id="lvl2l1País" name="lvl2l1País" onchange="hideProducts(this.id, 'lvl2l1pzaqp', 'lvl2l1pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
                                                                     <option value="Cri">Costa Rica</option>
                                                                     <option value="Pan">Panamá</option>
                                                                     <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
+                                                                    <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
@@ -1020,21 +1023,21 @@
                                                 </div>
                                             </div>
                                             <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                <a href="javascript:void(0)" style="position: absolute; top: 0px;">
                                                     <span class="badge badge-danger text-right">
                                                         <i class="fa fa-minus-circle"></i>
                                                     </span>
                                                 </a>
                                                 <div class="row">
                                                     <div class="col-sm-3">
-                                                        Pais:
-                                                        <select class="form-control" id="lvl1l2pais" name="lvl1l2pais" onchange="hideProducts(this.id, 'lvl1l2pzaqp', 'lvl1l2pzop')">
+                                                        País:
+                                                        <select class="form-control" id="lvl1l2País" name="lvl1l2País" onchange="hideProducts(this.id, 'lvl1l2pzaqp', 'lvl1l2pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -1053,7 +1056,7 @@
                                                 <div class="card-profile-stats mt-md-1">
                                                     <center>
                                                         <span class="text-warning font-weight-bold">
-                                                            Total Bonificacion:
+                                                            Total Bonificación:
                                                             <span class="lvl1l2retail"></span>
                                                             <span id="lvl1l2retail">0.00</span>
                                                         </span>
@@ -1074,7 +1077,7 @@
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
-                                                                        <span>Total nikken challenge:</span>
+                                                                        <span>Total NIKKEN Challenge:</span>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l2NCHtotal"></span><span id="lvl1l2NCHtotal">0.00</span>
@@ -1099,7 +1102,7 @@
                                                                 <tr class="inpar">
                                                                     <th>
                                                                         <span>Bonificacion por <br> grupo personal:</span>
-                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
+                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es la suma de las bonificaciones generadas por los volúmenes de los asesores de su línea de rango Directo y Ejecutivo en un mes calendario.">
                                                                             <i class="fa fa-question"></i>
                                                                         </span>
                                                                     </th>
@@ -1109,7 +1112,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <th>
-                                                                        <span class="text-warning">Total Bonificacion:</span>
+                                                                        <span class="text-warning">Total Bonificación:</span>
                                                                     </th>
                                                                     <td class="text-warning">
                                                                         <span class="lvl1l2retail"></span>
@@ -1124,7 +1127,7 @@
                                                                         Pz: <span id="lvl1l2pz_vendidas">0</span>
                                                                     </td>
                                                                 </tr>
-                                                                <tr class="par">
+                                                                <tr class="">
                                                                     <td class="text-default font-weight-bold">
                                                                         Volumen personal:
                                                                     </td>
@@ -1181,7 +1184,7 @@
                                                                         <span id="lvl1l2puntaje">0</span>
                                                                     </td>
                                                                 </tr>-->
-                                                                <tr class="par">
+                                                                <tr class="">
                                                                     <td class="text-default font-weight-bold">
                                                                         VGP:
                                                                     </td>
@@ -1195,14 +1198,14 @@
                                                 </div>
                                                 <!--<div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Pais:
-                                                        <select class="form-control" id="lvl1l2pais" name="lvl1l2pais" onchange="hideProducts(this.id, 'lvl1l2pzaqp', 'lvl1l2pzop')">
+                                                        País:
+                                                        <select class="form-control" id="lvl1l2País" name="lvl1l2País" onchange="hideProducts(this.id, 'lvl1l2pzaqp', 'lvl1l2pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -1304,21 +1307,21 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;">
                                                             <span class="badge badge-danger text-right">
                                                                 <i class="fa fa-minus-circle"></i>
                                                             </span>
                                                         </a>
                                                         <div class="row">
                                                             <div class="col-sm-3">
-                                                                Pais:
-                                                                <select class="form-control" id="lvl2l2pais" name="lvl2l2pais" onchange="hideProducts(this.id, 'lvl2l2pzaqp', 'lvl2l2pzop')">
+                                                                País:
+                                                                <select class="form-control" id="lvl2l2País" name="lvl2l2País" onchange="hideProducts(this.id, 'lvl2l2pzaqp', 'lvl2l2pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
                                                                     <option value="Cri">Costa Rica</option>
                                                                     <option value="Pan">Panamá</option>
                                                                     <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
+                                                                    <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
@@ -1337,7 +1340,7 @@
                                                         <div class="card-profile-stats mt-md-1">
                                                             <center>
                                                                 <span class="text-warning font-weight-bold">
-                                                                    Total Bonificacion:
+                                                                    Total Bonificación:
                                                                     <span class="lvl2l2retail"></span>
                                                                     <span id="lvl2l2retail">0.00</span>
                                                                 </span>
@@ -1357,7 +1360,7 @@
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
-                                                                                <span>Total nikken challenge:</span>
+                                                                                <span>Total NIKKEN Challenge:</span>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l2NCHtotal"></span><span id="lvl2l2NCHtotal">0.00</span>
@@ -1382,7 +1385,7 @@
                                                                             <tr class="inpar">
                                                                             <th>
                                                                                 <span>Bonificacion por <br> grupo personal:</span>
-                                                                                <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
+                                                                                <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es la suma de las bonificaciones generadas por los volúmenes de los asesores de su línea de rango Directo y Ejecutivo en un mes calendario.">
                                                                                     <i class="fa fa-question"></i>
                                                                                 </span>
                                                                             </th>
@@ -1392,7 +1395,7 @@
                                                                         </tr>
                                                                         <!--<tr class="par">
                                                                             <th>
-                                                                                <span class="text-warning">Total Bonificacion:</span>
+                                                                                <span class="text-warning">Total Bonificación:</span>
                                                                             </th>
                                                                             <td class="text-warning">
                                                                                 <span class="lvl2l2retail"></span>
@@ -1407,7 +1410,7 @@
                                                                                 Pz: <span id="lvl2l2pz_vendidas">0</span>
                                                                             </td>
                                                                         </tr>
-                                                                        <tr class="par">
+                                                                        <tr class="">
                                                                             <td class="text-default font-weight-bold">
                                                                                 Volumen personal:
                                                                             </td>
@@ -1464,7 +1467,7 @@
                                                                                 <span id="lvl2l2puntaje">0</span>
                                                                             </td>
                                                                         </tr>-->
-                                                                        <tr class="par">
+                                                                        <tr class="">
                                                                             <td class="text-default font-weight-bold">
                                                                                 VGP:
                                                                             </td>
@@ -1478,14 +1481,14 @@
                                                         </div>
                                                         <!--<div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                Pais:
-                                                                <select class="form-control" id="lvl2l2pais" name="lvl2l2pais" onchange="hideProducts(this.id, 'lvl2l2pzaqp', 'lvl2l2pzop')">
+                                                                País:
+                                                                <select class="form-control" id="lvl2l2País" name="lvl2l2País" onchange="hideProducts(this.id, 'lvl2l2pzaqp', 'lvl2l2pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
                                                                     <option value="Cri">Costa Rica</option>
                                                                     <option value="Pan">Panamá</option>
                                                                     <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
+                                                                    <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
@@ -1583,21 +1586,21 @@
                                                 </div>
                                             </div>
                                             <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                <a href="javascript:void(0)" style="position: absolute; top: 0px;">
                                                     <span class="badge badge-danger text-right">
                                                         <i class="fa fa-minus-circle"></i>
                                                     </span>
                                                 </a>
                                                 <div class="row">
                                                     <div class="col-sm-3">
-                                                        Pais:
-                                                        <select class="form-control" id="lvl1l3pais" name="lvl1l3pais" onchange="hideProducts(this.id, 'lvl1l3pzaqp', 'lvl1l3pzop')">
+                                                        País:
+                                                        <select class="form-control" id="lvl1l3País" name="lvl1l3País" onchange="hideProducts(this.id, 'lvl1l3pzaqp', 'lvl1l3pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -1616,7 +1619,7 @@
                                                 <div class="card-profile-stats mt-md-1">
                                                     <center>
                                                         <span class="text-warning font-weight-bold">
-                                                            Total Bonificacion:
+                                                            Total Bonificación:
                                                             <span class="lvl1l3retail"></span>
                                                             <span id="lvl1l3retail">0.00</span>
                                                         </span>
@@ -1637,7 +1640,7 @@
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
-                                                                        <span>Total nikken challenge:</span>
+                                                                        <span>Total NIKKEN Challenge:</span>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l3NCHtotal"></span><span id="lvl1l3NCHtotal">0.00</span>
@@ -1662,7 +1665,7 @@
                                                                 <tr class="inpar">
                                                                     <th>
                                                                         <span>Bonificacion por <br> grupo personal:</span>
-                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
+                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es la suma de las bonificaciones generadas por los volúmenes de los asesores de su línea de rango Directo y Ejecutivo en un mes calendario.">
                                                                             <i class="fa fa-question"></i>
                                                                         </span>
                                                                     </th>
@@ -1672,7 +1675,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <th>
-                                                                        <span class="text-warning">Total Bonificacion:</span>
+                                                                        <span class="text-warning">Total Bonificación:</span>
                                                                     </th>
                                                                     <td class="text-warning">
                                                                         <span class="lvl1l3retail"></span>
@@ -1687,7 +1690,7 @@
                                                                         Pz: <span id="lvl1l3pz_vendidas">0</span>
                                                                     </td>
                                                                 </tr>
-                                                                <tr class="par">
+                                                                <tr class="">
                                                                     <td class="text-default font-weight-bold">
                                                                         Volumen personal:
                                                                     </td>
@@ -1744,7 +1747,7 @@
                                                                         <span id="lvl1l3puntaje">0</span>
                                                                     </td>
                                                                 </tr>-->
-                                                                <tr class="par">
+                                                                <tr class="">
                                                                     <td class="text-default font-weight-bold">
                                                                         VGP
                                                                     </td>
@@ -1758,14 +1761,14 @@
                                                 </div>
                                                 <!--<div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Pais:
-                                                        <select class="form-control" id="lvl1l3pais" name="lvl1l3pais" onchange="hideProducts(this.id, 'lvl1l3pzaqp', 'lvl1l3pzop')">
+                                                        País:
+                                                        <select class="form-control" id="lvl1l3País" name="lvl1l3País" onchange="hideProducts(this.id, 'lvl1l3pzaqp', 'lvl1l3pzop')">
                                                             <option value="Lat">México</option>
                                                             <option value="Col">Colombia</option>
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -1868,26 +1871,26 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;">
                                                             <span class="badge badge-danger text-right">
                                                                 <i class="fa fa-minus-circle"></i>
                                                             </span>
                                                         </a>
                                                         <div class="row">
                                                             <div class="col-sm-3">
-                                                                Pais:
-                                                                <select class="form-control" id="lvl2l3pais" name="lvl2l3pais" onchange="hideProducts(this.id, 'lvl2l3pzaqp', 'lvl2l3pzop')">
+                                                                País:
+                                                                <select class="form-control" id="lvl2l3País" name="lvl2l3País" onchange="hideProducts(this.id, 'lvl2l3pzaqp', 'lvl2l3pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
                                                                     <option value="Cri">Costa Rica</option>
                                                                     <option value="Pan">Panamá</option>
                                                                     <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
+                                                                    <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-sm-6 "></div>
+                                                            <div class="col-sm-6"></div>
                                                             <div class="col-sm-3 ">
                                                                 Rango:
                                                                 <select class="form-control" id="lvl2l3rango" name="lvl2l3rango" onchange="setTextRango(this.id, 'lvl2l3rangoText')">
@@ -1901,7 +1904,7 @@
                                                         <div class="card-profile-stats mt-md-1">
                                                             <center>
                                                                 <span class="text-warning font-weight-bold">
-                                                                    Total Bonificacion:
+                                                                    Total Bonificación:
                                                                     <span class="lvl2l3retail"></span>
                                                                     <span id="lvl2l3retail">0.00</span>
                                                                 </span>
@@ -1921,7 +1924,7 @@
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
-                                                                                <span>Total nikken challenge:</span>
+                                                                                <span>Total NIKKEN Challenge:</span>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l3NCHtotal"></span><span id="lvl2l3NCHtotal">0.00</span>
@@ -1946,7 +1949,7 @@
                                                                         <tr class="inpar">
                                                                             <th>
                                                                                 <span>Bonificacion por <br> grupo personal:</span>
-                                                                                <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
+                                                                                <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es la suma de las bonificaciones generadas por los volúmenes de los asesores de su línea de rango Directo y Ejecutivo en un mes calendario.">
                                                                                     <i class="fa fa-question"></i>
                                                                                 </span>
                                                                             </th>
@@ -1956,7 +1959,7 @@
                                                                         </tr>
                                                                         <!--<tr class="par">
                                                                             <th>
-                                                                                <span class="text-warning">Total Bonificacion:</span>
+                                                                                <span class="text-warning">Total Bonificación:</span>
                                                                             </th>
                                                                             <td class="text-warning">
                                                                                 <span class="lvl2l3retail"></span>
@@ -1971,7 +1974,7 @@
                                                                                 Pz: <span id="lvl2l3pz_vendidas">0</span>
                                                                             </td>
                                                                         </tr>
-                                                                        <tr class="par">
+                                                                        <tr class="">
                                                                             <td class="text-default font-weight-bold">
                                                                                 Volumen personal:
                                                                             </td>
@@ -2028,7 +2031,7 @@
                                                                                 <span id="lvl2l3puntaje">0</span>
                                                                             </td>
                                                                         </tr>-->
-                                                                        <tr class="par">
+                                                                        <tr class="">
                                                                             <td class="text-default font-weight-bold">
                                                                                 VGP:
                                                                             </td>
@@ -2042,14 +2045,14 @@
                                                         </div>
                                                         <!--<div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                Pais:
-                                                                <select class="form-control" id="lvl2l3pais" name="lvl2l3pais" onchange="hideProducts(this.id, 'lvl2l3pzaqp', 'lvl2l3pzop')">
+                                                                País:
+                                                                <select class="form-control" id="lvl2l3País" name="lvl2l3País" onchange="hideProducts(this.id, 'lvl2l3pzaqp', 'lvl2l3pzop')">
                                                                     <option value="Lat">México</option>
                                                                     <option value="Col">Colombia</option>
                                                                     <option value="Cri">Costa Rica</option>
                                                                     <option value="Pan">Panamá</option>
                                                                     <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
+                                                                    <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
