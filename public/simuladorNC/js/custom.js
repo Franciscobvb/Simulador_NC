@@ -6,6 +6,22 @@ $('.lvl1l3alcance').css('display', 'none');
 $('.lvl2l1alcance').css('display', 'none');
 $('.lvl2l2alcance').css('display', 'none');
 $('.lvl2l3alcance').css('display', 'none');
+var hideLinea1Nivel1var = 0;
+var hideLinea2Nivel1var = 0;
+var hideLinea3Nivel1var = 0;
+
+function myFunction(x) {
+    if (x.matches) {
+        $('.genealogia').removeClass('justify-content-center');
+    }
+    else{
+        $('.genealogia').addClass('justify-content-center');
+    }
+}
+  
+var x = window.matchMedia("(max-width: 1200px)");
+myFunction(x);
+x.addListener(myFunction);
 
 function addProd(prod){
     var actual = $('#' + prod).val();
@@ -20,12 +36,12 @@ function remProd(prod){
 $().ready(function(){
     showLinea1 = 0;
 
-    /*$('#nivel1linea1').hide();
+    $('#nivel1linea1').hide();
     $('#nivel1linea2').hide();
     $('#nivel1linea3').hide();
     $('#nivel2linea1').hide();
     $('#nivel2linea2').hide();
-    $('#nivel2linea3').hide();*/
+    $('#nivel2linea3').hide();
 
     $("#gralForm").trigger("reset");
 
@@ -127,12 +143,17 @@ function addNodeLinea1(){
     switch (showLinea1) {
         case 1:
             $('#nivel1linea1').show(1000); 
+            hideLinea1Nivel1var = 1;
             break;
         case 2:
-            $('#nivel1linea2').show(1000); 
+            $('#nivel1linea2').show(1000);
+            hideLinea2Nivel1var = 1;
             break;
         case 3:
-            $('#nivel1linea3').show(1000); 
+            $('#nivel1linea3').show(1000);
+            $('.addLevel1').attr('disabled','disabled');
+            hideLinea3Nivel1var = 1;
+            showLinea1 = 0;
             break;
     }
 }
@@ -235,7 +256,7 @@ $(function(){
             $('#lvl1l2pz_vendidas').text( $('#lvl2l2pz_vendidas').text());
             $('#lvl2l2pz_vendidas').text(pzVenta);
 
-            $('#lvl2l2retail').text('$0.00');
+            $('#lvl2l2retail').text('0.00');
 
             pzvendidasnivel1l2 = pzvendidasnivel2l2;
             pzvendidasnivel2l2 = pzVenta;
@@ -291,7 +312,7 @@ $(function(){
             $('#lvl1l3pz_vendidas').text( $('#lvl2l3pz_vendidas').text());
             $('#lvl2l3pz_vendidas').text(pzVenta); 
 
-            $('#lvl2l3retail').text('$0.00');
+            $('#lvl2l3retail').text('0.00');
 
             pzvendidasnivel1l3 = pzvendidasnivel2l3;
             pzvendidasnivel2l3 = pzVenta;
@@ -451,43 +472,82 @@ $(function(){
 })
 
 function hideLinea1Nivel1(){
-    var nlinea_1 = $('#lvl2l1retail').text();
-    $('#lvl1l1retail').text(nlinea_1);
-    $('#lvl2l1retail').text('');
+    if(hideLinea1Nivel1var == 0){
+        var nlinea_1 = $('#lvl2l1retail').text();
+        $('#lvl1l1retail').text(nlinea_1);
+        $('#lvl2l1retail').text('0.00');
 
-    /*$("select#lvl1l1rango")[0].selectedIndex = $("#lvl2l1rango").prop('selectedIndex');
-    $("select#lvl2l1rango")[0].selectedIndex = 0;
-    $("#lvl2l1rangoText").text($("#lvl2l1rango option:selected").text());*/
+        nlinea_1 = $('#lvl2l1NCHtotal').text();
+        $('#lvl1l1NCHtotal').text(nlinea_1);
+        $('#lvl2l1NCHtotal').text('0.00');
 
-    /*$("select#lvl1l1pais")[0].selectedIndex = $("#lvl2l1pais").prop('selectedIndex');
-    $("select#lvl2l1pais")[0].selectedIndex = 0;*/
+        nlinea_1 = $('#lvl2l1bonificaciones').text();
+        $('#lvl1l1bonificaciones').text(nlinea_1);
+        $('#lvl2l1bonificaciones').text('0.00');
 
-    $("#lvl1l1pzpiw").val($('#lvl2l1pzpiw').val());
-    $('#lvl2l1pzpiw').val('0');
+        nlinea_1 = $('#lvl2l1venta').text();
+        $('#lvl1l1venta').text(nlinea_1);
+        $('#lvl2l1venta').text('0.00');
 
-    $("#lvl1l1pzwa").val($('#lvl2l1pzwa').val());
-    $('#lvl2l1pzwa').val('0');
+        nlinea_1 = $('#lvl2l1bonoGP').text();
+        $('#lvl1l1bonoGP').text(nlinea_1);
+        $('#lvl2l1bonoGP').text('0.00');
 
-    $("#lvl1l1pzaqp").val($('#lvl2l1pzaqp').val());
-    $('#lvl2l1pzaqp').val('0');
+        nlinea_1 = $('#lvl2l1puntaje').text();
+        $('#lvl1l1puntaje').text(nlinea_1);
+        $('#lvl2l1puntaje').text('0.00');
 
-    $("#lvl1l1pzop").val($('#lvl2l1pzop').val());
-    $('#lvl2l1pzop').val('0');
+        nlinea_1 = $('#lvl2l1kinya').text();
+        $('#lvl1l1kinya').text(nlinea_1);
+        $('#lvl2l1kinya').text('0.00');
 
-    var pzVenta = pzvendidasnivel2l1;
-    $('#lvl1l1pz_vendidas').text( $('#lvl2l1pz_vendidas').text());
-    $('#lvl2l1pz_vendidas').text('');
-    
-    pzvendidasnivel1l1 = pzvendidasnivel2l1;
-    pzvendidasnivel2l1 = pzVenta;
-    if(pzvendidasnivel1l1 >= 3){
-        $("#lvl1l1Avatar").attr("src","../SimuladorNC/img/ninja1.png");
-        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3){
-            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+        nlinea_1 = $('#lvl2l1kinyal1').text();
+        $('#lvl1l1kinyal1').text(nlinea_1);
+        $('#lvl2l1kinyal1').text('0.00');
+
+        nlinea_1 = $('#lvl2l1kinyal2').text();
+        $('#lvl1l1kinyal2').text(nlinea_1);
+        $('#lvl2l1kinyal2').text('0.00');
+
+        nlinea_1 = $('#lvl2l1kintai').text();
+        $('#lvl1l1kintai').text(nlinea_1);
+        $('#lvl2l1kintai').text('0.00');
+
+        nlinea_1 = $('#lvl2l1vc').text();
+        $('#lvl1l1vc').text(nlinea_1);
+        $('#lvl2l1vc').text('0.00');
+
+        $("select#lvl1l1rango")[0].selectedIndex = $("#lvl2l1rango").prop('selectedIndex');
+        $("select#lvl2l1rango")[0].selectedIndex = 0;
+        $("#lvl2l1rangoText").text($("#lvl2l1rango option:selected").text());
+
+        $("select#lvl1l1pais")[0].selectedIndex = $("#lvl2l1pais").prop('selectedIndex');
+        $("select#lvl2l1pais")[0].selectedIndex = 0;
+
+        $("#lvl1l1pzpiw").val($('#lvl2l1pzpiw').val());
+        $('#lvl2l1pzpiw').val('0');
+
+        $("#lvl1l1pzwa").val($('#lvl2l1pzwa').val());
+        $('#lvl2l1pzwa').val('0');
+
+        $("#lvl1l1pzaqp").val($('#lvl2l1pzaqp').val());
+        $('#lvl2l1pzaqp').val('0');
+
+        $("#lvl1l1pzop").val($('#lvl2l1pzop').val());
+        $('#lvl2l1pzop').val('0');
+
+        $('#lvl1l1pz_vendidas').text( $('#lvl2l1pz_vendidas').text());
+        $('#lvl2l1pz_vendidas').text('');
+        
+        pzvendidasnivel1l1 = pzvendidasnivel2l1;
+        pzvendidasnivel2l1 = 0;
+        if(pzvendidasnivel1l1 >= 3){
+            $("#lvl1l1Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+            if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3){
+                $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            }
         }
-    }
 
-    if(pzVenta >= 3){
         $("#lvl2l1Avatar").attr("src","../simuladornc/img/asesor.png");
         $('.productos11').css('background-color', '#bebebe');
         $('.productos1').css('background-color', '#ff9900');
@@ -497,7 +557,412 @@ function hideLinea1Nivel1(){
         $('.lvl1l1alcance').css('display', 'block');
         $('.lvl2l1alcance').css('display', 'none');
         $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
+
+        setPiezasVendidas()
+        setPiezasVendidaslvl1l1();
+        setPiezasVendidaslvl1l2();
+        setPiezasVendidaslvl1l3();
+        setPiezasVendidaslvl2l1();
+        setPiezasVendidaslvl2l2();
+        setPiezasVendidaslvl2l3();
+        $('#nivel2linea1').hide(500);
+        
+        hideLinea1Nivel1var = 1
     }
+    else{
+        showLinea1 = 0;
+        $(".addLevel1").removeAttr("disabled");
+        $('#lvl1l1retail').text('0.00');
+        $('#lvl1l1NCHtotal').text('0.00');
+        $('#lvl1l1bonificaciones').text('0.00');
+        $('#lvl1l1venta').text('0.00');
+        $('#lvl1l1bonoGP').text('0.00');
+        $('#lvl1l1puntaje').text('0.00');
+        $('#lvl1l1kinya').text('0.00');
+        $('#lvl1l1kinyal1').text('0.00');
+        $('#lvl1l1kinyal2').text('0.00');
+        $('#lvl1l1kintai').text('0.00');
+        $('#lvl1l1vc').text('0.00');
+        $("select#lvl1l1rango")[0].selectedIndex = 0;
+        $("#lvl1l1rangoText").text($("#lvl1l1rango option:selected").text());
+        $("select#lvl1l1pais")[0].selectedIndex = 0;
+        $('#lvl1l1pzpiw').val('0');
+        $('#lvl1l1pzwa').val('0');
+        $('#lvl1l1pzaqp').val('0');
+        $('#lvl1l1pzop').val('0');
+        $('#lvl1l1pz_vendidas').text('');
+        pzvendidasnivel1l1 = 0;
+
+        setPiezasVendidas()
+        setPiezasVendidaslvl1l1();
+        setPiezasVendidaslvl1l2();
+        setPiezasVendidaslvl1l3();
+        setPiezasVendidaslvl2l1();
+        setPiezasVendidaslvl2l2();
+        setPiezasVendidaslvl2l3();
+        $('#nivel1linea1').hide(500);
+        hideLinea1Nivel1var = 0;
+    }
+}
+
+function hideLinea1Nivel2(){
+    $('#lvl2l1retail').text('0.00');
+    $('#lvl2l1NCHtotal').text('0.00');
+    $('#lvl2l1bonificaciones').text('0.00');
+    $('#lvl2l1venta').text('0.00');
+    $('#lvl2l1bonoGP').text('0.00');
+    $('#lvl2l1puntaje').text('0.00');
+    $('#lvl2l1kinya').text('0.00');
+    $('#lvl2l1kinyal1').text('0.00');
+    $('#lvl2l1kinyal2').text('0.00');
+    $('#lvl2l1kintai').text('0.00');
+    $('#lvl2l1vc').text('0.00');
+    $("select#lvl2l1rango")[0].selectedIndex = 0;
+    $("#lvl2l1rangoText").text($("#lvl2l1rango option:selected").text());
+    $("select#lvl2l1pais")[0].selectedIndex = 0;
+    $('#lvl2l1pzpiw').val('0');
+    $('#lvl2l1pzwa').val('0');
+    $('#lvl2l1pzaqp').val('0');
+    $('#lvl2l1pzop').val('0');
+    $('#lvl2l1pz_vendidas').text('');
+    pzvendidasnivel2l1 = 0;
+    setPiezasVendidas()
+    setPiezasVendidaslvl1l1();
+    setPiezasVendidaslvl1l2();
+    setPiezasVendidaslvl1l3();
+    setPiezasVendidaslvl2l1();
+    setPiezasVendidaslvl2l2();
+    setPiezasVendidaslvl2l3();
+    $('#nivel2linea1').hide(500);
+    hideLinea1Nivel1var = 1;
+}
+
+function hideLinea2Nivel1(){
+    if(hideLinea2Nivel1var == 0){
+        var nlinea_1 = $('#lvl2l2retail').text();
+        $('#lvl1l2retail').text(nlinea_1);
+        $('#lvl2l2retail').text('0.00');
+
+        nlinea_1 = $('#lvl2l2NCHtotal').text();
+        $('#lvl1l2NCHtotal').text(nlinea_1);
+        $('#lvl2l2NCHtotal').text('0.00');
+
+        nlinea_1 = $('#lvl2l2bonificaciones').text();
+        $('#lvl1l2bonificaciones').text(nlinea_1);
+        $('#lvl2l2bonificaciones').text('0.00');
+
+        nlinea_1 = $('#lvl2l2venta').text();
+        $('#lvl1l2venta').text(nlinea_1);
+        $('#lvl2l2venta').text('0.00');
+
+        nlinea_1 = $('#lvl2l2bonoGP').text();
+        $('#lvl1l2bonoGP').text(nlinea_1);
+        $('#lvl2l2bonoGP').text('0.00');
+
+        nlinea_1 = $('#lvl2l2puntaje').text();
+        $('#lvl1l2puntaje').text(nlinea_1);
+        $('#lvl2l2puntaje').text('0.00');
+
+        nlinea_1 = $('#lvl2l2kinya').text();
+        $('#lvl1l2kinya').text(nlinea_1);
+        $('#lvl2l2kinya').text('0.00');
+
+        nlinea_1 = $('#lvl2l2kinyal1').text();
+        $('#lvl1l2kinyal1').text(nlinea_1);
+        $('#lvl2l2kinyal1').text('0.00');
+
+        nlinea_1 = $('#lvl2l2kinyal2').text();
+        $('#lvl1l2kinyal2').text(nlinea_1);
+        $('#lvl2l2kinyal2').text('0.00');
+
+        nlinea_1 = $('#lvl2l2kintai').text();
+        $('#lvl1l2kintai').text(nlinea_1);
+        $('#lvl2l2kintai').text('0.00');
+
+        nlinea_1 = $('#lvl2l2vc').text();
+        $('#lvl1l2vc').text(nlinea_1);
+        $('#lvl2l2vc').text('0.00');
+
+        $("select#lvl1l2rango")[0].selectedIndex = $("#lvl2l2rango").prop('selectedIndex');
+        $("select#lvl2l2rango")[0].selectedIndex = 0;
+        $("#lvl2l2rangoText").text($("#lvl2l2rango option:selected").text());
+
+        $("select#lvl1l2pais")[0].selectedIndex = $("#lvl2l2pais").prop('selectedIndex');
+        $("select#lvl2l2pais")[0].selectedIndex = 0;
+
+        $("#lvl1l2pzpiw").val($('#lvl2l2pzpiw').val());
+        $('#lvl2l2pzpiw').val('0');
+
+        $("#lvl1l2pzwa").val($('#lvl2l2pzwa').val());
+        $('#lvl2l2pzwa').val('0');
+
+        $("#lvl1l2pzaqp").val($('#lvl2l2pzaqp').val());
+        $('#lvl2l2pzaqp').val('0');
+
+        $("#lvl1l2pzop").val($('#lvl2l2pzop').val());
+        $('#lvl2l2pzop').val('0');
+
+        $('#lvl1l2pz_vendidas').text( $('#lvl2l2pz_vendidas').text());
+        $('#lvl2l2pz_vendidas').text('');
+        
+        pzvendidasnivel1l2 = pzvendidasnivel2l2;
+        pzvendidasnivel2l2 = 0;
+        if(pzvendidasnivel1l2 >= 3){
+            $("#lvl1l2Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+            if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3){
+                $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            }
+        }
+
+        $("#lvl2l2Avatar").attr("src","../simuladornc/img/asesor.png");
+        $('.productos22').css('background-color', '#bebebe');
+        $('.productos2').css('background-color', '#ff9900');
+        $('.5').css('border-top-width', '0px');
+        $('.2').css('border-top-width', '10px');
+        $('.2').css('border-top-color', '#ff9900');
+        $('.lvl1l2alcance').css('display', 'block');
+        $('.lvl2l2alcance').css('display', 'none');
+        $('#lvl1l2AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
+
+        setPiezasVendidas()
+        setPiezasVendidaslvl1l1();
+        setPiezasVendidaslvl1l2();
+        setPiezasVendidaslvl1l3();
+        setPiezasVendidaslvl2l1();
+        setPiezasVendidaslvl2l2();
+        setPiezasVendidaslvl2l3();
+        $('#nivel2linea2').hide(500);
+        hideLinea2Nivel1var = 1;
+    }
+    else{
+        showLinea1 = 1;
+        $(".addLevel1").removeAttr("disabled");
+        $('#lvl1l2retail').text('0.00');
+        $('#lvl1l2NCHtotal').text('0.00');
+        $('#lvl1l2bonificaciones').text('0.00');
+        $('#lvl1l2venta').text('0.00');
+        $('#lvl1l2bonoGP').text('0.00');
+        $('#lvl1l2puntaje').text('0.00');
+        $('#lvl1l2kinya').text('0.00');
+        $('#lvl1l2kinyal1').text('0.00');
+        $('#lvl1l2kinyal2').text('0.00');
+        $('#lvl1l2kintai').text('0.00');
+        $('#lvl1l2vc').text('0.00');
+        $("select#lvl1l2rango")[0].selectedIndex = 0;
+        $("#lvl1l2rangoText").text($("#lvl1l2rango option:selected").text());
+        $("select#lvl1l2pais")[0].selectedIndex = 0;
+        $('#lvl1l2pzpiw').val('0');
+        $('#lvl1l2pzwa').val('0');
+        $('#lvl1l2pzaqp').val('0');
+        $('#lvl1l2pzop').val('0');
+        $('#lvl1l2pz_vendidas').text('');
+        pzvendidasnivel1l2 = 0;
+        setPiezasVendidas()
+        setPiezasVendidaslvl1l1();
+        setPiezasVendidaslvl1l2();
+        setPiezasVendidaslvl1l3();
+        setPiezasVendidaslvl2l1();
+        setPiezasVendidaslvl2l2();
+        setPiezasVendidaslvl2l3();
+        $('#nivel1linea2').hide(500);
+        hideLinea2Nivel1var = 0;
+    }
+}
+
+function hideLinea2Nivel2(){
+    $('#lvl2l2retail').text('0.00');
+    $('#lvl2l2NCHtotal').text('0.00');
+    $('#lvl2l2bonificaciones').text('0.00');
+    $('#lvl2l2venta').text('0.00');
+    $('#lvl2l2bonoGP').text('0.00');
+    $('#lvl2l2puntaje').text('0.00');
+    $('#lvl2l2kinya').text('0.00');
+    $('#lvl2l2kinyal1').text('0.00');
+    $('#lvl2l2kinyal2').text('0.00');
+    $('#lvl2l2kintai').text('0.00');
+    $('#lvl2l2vc').text('0.00');
+    $("select#lvl2l2rango")[0].selectedIndex = 0;
+    $("#lvl2l2rangoText").text($("#lvl2l2rango option:selected").text());
+    $("select#lvl2l2pais")[0].selectedIndex = 0;
+    $('#lvl2l2pzpiw').val('0');
+    $('#lvl2l2pzwa').val('0');
+    $('#lvl2l2pzaqp').val('0');
+    $('#lvl2l2pzop').val('0');
+    $('#lvl2l2pz_vendidas').text('');
+    pzvendidasnivell2 = 0;
+    setPiezasVendidas()
+    setPiezasVendidaslvl1l1();
+    setPiezasVendidaslvl1l2();
+    setPiezasVendidaslvl1l3();
+    setPiezasVendidaslvl2l1();
+    setPiezasVendidaslvl2l2();
+    setPiezasVendidaslvl2l3();
+    $('#nivel2linea2').hide(500);
+    hideLinea2Nivel1var = 1;
+}
+
+function hideLinea3Nivel1(){
+    if(hideLinea3Nivel1var == 0){
+        var nlinea_1 = $('#lvl2l3retail').text();
+        $('#lvl1l3retail').text(nlinea_1);
+        $('#lvl2l3retail').text('0.00');
+
+        nlinea_1 = $('#lvl2l3NCHtotal').text();
+        $('#lvl1l3NCHtotal').text(nlinea_1);
+        $('#lvl2l3NCHtotal').text('0.00');
+
+        nlinea_1 = $('#lvl2l3bonificaciones').text();
+        $('#lvl1l3bonificaciones').text(nlinea_1);
+        $('#lvl2l3bonificaciones').text('0.00');
+
+        nlinea_1 = $('#lvl2l3venta').text();
+        $('#lvl1l3venta').text(nlinea_1);
+        $('#lvl2l3venta').text('0.00');
+
+        nlinea_1 = $('#lvl2l3bonoGP').text();
+        $('#lvl1l3bonoGP').text(nlinea_1);
+        $('#lvl2l3bonoGP').text('0.00');
+
+        nlinea_1 = $('#lvl2l3puntaje').text();
+        $('#lvl1l3puntaje').text(nlinea_1);
+        $('#lvl2l3puntaje').text('0.00');
+
+        nlinea_1 = $('#lvl2l3kinya').text();
+        $('#lvl1l3kinya').text(nlinea_1);
+        $('#lvl2l3kinya').text('0.00');
+
+        nlinea_1 = $('#lvl2l3kinyal1').text();
+        $('#lvl1l3kinyal1').text(nlinea_1);
+        $('#lvl2l3kinyal1').text('0.00');
+
+        nlinea_1 = $('#lvl2l3kinyal2').text();
+        $('#lvl1l3kinyal2').text(nlinea_1);
+        $('#lvl2l3kinyal2').text('0.00');
+
+        nlinea_1 = $('#lvl2l3kintai').text();
+        $('#lvl1l3kintai').text(nlinea_1);
+        $('#lvl2l3kintai').text('0.00');
+
+        nlinea_1 = $('#lvl2l3vc').text();
+        $('#lvl1l3vc').text(nlinea_1);
+        $('#lvl2l3vc').text('0.00');
+
+        $("select#lvl1l3rango")[0].selectedIndex = $("#lvl2l3rango").prop('selectedIndex');
+        $("select#lvl2l3rango")[0].selectedIndex = 0;
+        $("#lvl2l3rangoText").text($("#lvl2l3rango option:selected").text());
+
+        $("select#lvl1l3pais")[0].selectedIndex = $("#lvl2l3pais").prop('selectedIndex');
+        $("select#lvl2l3pais")[0].selectedIndex = 0;
+
+        $("#lvl1l3pzpiw").val($('#lvl2l3pzpiw').val());
+        $('#lvl2l3pzpiw').val('0');
+
+        $("#lvl1l3pzwa").val($('#lvl2l3pzwa').val());
+        $('#lvl2l3pzwa').val('0');
+
+        $("#lvl1l3pzaqp").val($('#lvl2l3pzaqp').val());
+        $('#lvl2l3pzaqp').val('0');
+
+        $("#lvl1l3pzop").val($('#lvl2l3pzop').val());
+        $('#lvl2l3pzop').val('0');
+
+        $('#lvl1l3pz_vendidas').text( $('#lvl2l3pz_vendidas').text());
+        $('#lvl2l3pz_vendidas').text('');
+        
+        pzvendidasnivel1l3 = pzvendidasnivel2l3;
+        pzvendidasnivel2l3 = 0;
+        if(pzvendidasnivel1l3 >= 3){
+            $("#lvl1l3Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+            if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3){
+                $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+            }
+        }
+
+        $("#lvl2l3Avatar").attr("src","../simuladornc/img/asesor.png");
+        $('.productos33').css('background-color', '#bebebe');
+        $('.productos3').css('background-color', '#ff9900');
+        $('.6').css('border-top-width', '0px');
+        $('.3').css('border-top-width', '10px');
+        $('.3').css('border-top-color', '#ff9900');
+        $('.lvl1l3alcance').css('display', 'block');
+        $('.lvl2l3alcance').css('display', 'none');
+        $('#lvl1l3AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
+
+        setPiezasVendidas()
+        setPiezasVendidaslvl1l1();
+        setPiezasVendidaslvl1l2();
+        setPiezasVendidaslvl1l3();
+        setPiezasVendidaslvl2l1();
+        setPiezasVendidaslvl2l2();
+        setPiezasVendidaslvl2l3();
+        $('#nivel2linea3').hide(500);
+        hideLinea3Nivel1var = 1;
+    }
+    else{
+        showLinea1 = 2;
+        $(".addLevel1").removeAttr("disabled");
+        $('#lvl1l3retail').text('0.00');
+        $('#lvl1l3NCHtotal').text('0.00');
+        $('#lvl1l3bonificaciones').text('0.00');
+        $('#lvl1l3venta').text('0.00');
+        $('#lvl1l3bonoGP').text('0.00');
+        $('#lvl1l3puntaje').text('0.00');
+        $('#lvl1l3kinya').text('0.00');
+        $('#lvl1l3kinyal1').text('0.00');
+        $('#lvl1l3kinyal2').text('0.00');
+        $('#lvl1l3kintai').text('0.00');
+        $('#lvl1l3vc').text('0.00');
+        $("select#lvl1l3rango")[0].selectedIndex = 0;
+        $("#lvl1l3rangoText").text($("#lvl1l3rango option:selected").text());
+        $("select#lvl1l3pais")[0].selectedIndex = 0;
+        $('#lvl1l3pzpiw').val('0');
+        $('#lvl1l3pzwa').val('0');
+        $('#lvl1l3pzaqp').val('0');
+        $('#lvl1l3pzop').val('0');
+        $('#lvl1l3pz_vendidas').text('');
+        pzvendidasnivel1l3 = 0;
+        setPiezasVendidas()
+        setPiezasVendidaslvl1l1();
+        setPiezasVendidaslvl1l2();
+        setPiezasVendidaslvl1l3();
+        setPiezasVendidaslvl2l1();
+        setPiezasVendidaslvl2l2();
+        setPiezasVendidaslvl2l3();
+        $('#nivel1linea3').hide(500);
+        hideLinea3Nivel1var = 0;
+    }
+}
+
+function hideLinea3Nivel2(){
+    $('#lvl2l3retail').text('0.00');
+    $('#lvl2l3NCHtotal').text('0.00');
+    $('#lvl2l3bonificaciones').text('0.00');
+    $('#lvl2l3venta').text('0.00');
+    $('#lvl2l3bonoGP').text('0.00');
+    $('#lvl2l3puntaje').text('0.00');
+    $('#lvl2l3kinya').text('0.00');
+    $('#lvl2l3kinyal1').text('0.00');
+    $('#lvl2l3kinyal2').text('0.00');
+    $('#lvl2l3kintai').text('0.00');
+    $('#lvl2l3vc').text('0.00');
+    $("select#lvl2l3rango")[0].selectedIndex = 0;
+    $("#lvl2l3rangoText").text($("#lvl2l3rango option:selected").text());
+    $("select#lvl2l3pais")[0].selectedIndex = 0;
+    $('#lvl2l3pzpiw').val('0');
+    $('#lvl2l3pzwa').val('0');
+    $('#lvl2l3pzaqp').val('0');
+    $('#lvl2l3pzop').val('0');
+    $('#lvl2l3pz_vendidas').text('');
+    pzvendidasnivel2l3 = 0;
+    setPiezasVendidas()
+    setPiezasVendidaslvl1l1();
+    setPiezasVendidaslvl1l2();
+    setPiezasVendidaslvl1l3();
+    setPiezasVendidaslvl2l1();
+    setPiezasVendidaslvl2l2();
+    setPiezasVendidaslvl2l3();
+    $('#nivel2linea3').hide(500);
+    hideLinea3Nivel1var = 1
 }
 
 var monedaMexicana = '$ ';
@@ -750,13 +1215,13 @@ function setPiezasVendidas(){
             $('.lvl0Alcancekinya').text('+1');
         }
 
-        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l3 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3){
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
             $('.lvl0Alcancekinya').text('+2');
         }
     }
     else{
         $("#lvl0Avatar").attr("src","../simuladornc/img/asesor.png");
-        $('#lvl0retail').text('$0.00');
+        $('#lvl0retail').text('0.00');
         $(".productos0").css('background-color', '#bebebe');
         $('.0').css('border-top-width', '0px');
 
@@ -770,6 +1235,7 @@ function setPiezasVendidas(){
             $('.0').css('border-top-width', '10px');
             $('.0').css('border-top-style', 'solid');
             $('.0').css('border-top-color', '#ff9900');
+            $('.lvl0Alcancekinya').text('');
         }
     }
 
@@ -873,14 +1339,14 @@ function setPiezasVendidaslvl1l1(){
             $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
         }
 
-        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l3 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3){
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
             $('.lvl0Alcancekinya').text('+2');
             $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
         }
     }
     else {
         $("#lvl1l1Avatar").attr("src","../simuladornc/img/asesor.png");
-        $('#lvl1l1retail').text('$0.00');
+        $('#lvl1l1retail').text('0.00');
         $('.1').css('border-top-width', '0px');
         $(".productos1").css('background-color', '#bebebe');
 
@@ -895,6 +1361,7 @@ function setPiezasVendidaslvl1l1(){
             $('.0').css('border-top-style', 'solid');
             $('.0').css('border-top-color', '#ff9900');
             $('.lvl1l1Alcancekinya').text('');
+            $('.lvl0Alcancekinya').text('');
             $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
         }
         if(pzvendidasnivel1l2 >= 3 && pzvendidasnivel0 >= 3){
@@ -1003,13 +1470,13 @@ function setPiezasVendidaslvl1l2(){
             $('#lvl1l2Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
         }
 
-        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l3 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3){
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
             $('.lvl0Alcancekinya').text('+2');
         }
     }
     else{
         $("#lvl1l2Avatar").attr("src","../simuladornc/img/asesor.png");
-        $('#lvl1l2retail').text('$0.00');
+        $('#lvl1l2retail').text('0.00');
         $('.2').css('border-top-width', '0px');
         
         $('.lvl1l2alcance').css('display', 'none');
@@ -1132,13 +1599,13 @@ function setPiezasVendidaslvl1l3(){
         if(pzvendidasnivel2l3 >= 3 && pzvendidasnivel1l3 >= 3){
             $('#lvl1l3Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
         }
-        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l3 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3){
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
             $('.lvl0Alcancekinya').text('+2');
         }
     }
     else{
         $("#lvl1l3Avatar").attr("src","../simuladornc/img/asesor.png");
-        $('#lvl1l3retail').text('$0.00');
+        $('#lvl1l3retail').text('0.00');
         $('.3').css('border-top-width', '0px');
         $(".productos3").css('background-color', '#bebebe');
         if(pzvendidasnivel1l1 < 3 && pzvendidasnivel0 >= 3){
@@ -1254,10 +1721,13 @@ function setPiezasVendidaslvl2l1(){
             $('.lvl1l1Alcancekinya').text('+1');
             $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
         }
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
+            $('.lvl0Alcancekinya').text('+2');
+        }
     }
     else{
         $("#lvl2l1Avatar").attr("src","../simuladornc/img/asesor.png");
-        $('#lvl2l1retail').text('$0.00');
+        $('#lvl2l1retail').text('0.00');
         $('.4').css('border-top-width', '0px');
         $(".productos11").css('background-color', '#bebebe');
         $('.lvl2l1alcance').css('display', 'none');
@@ -1367,10 +1837,14 @@ function setPiezasVendidaslvl2l2(){
             $('#lvl1l2AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
             $('.lvl1l2Alcancekinya').text('+1');
         }
+
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
+            $('.lvl0Alcancekinya').text('+2');
+        }
     }
     else{
         $("#lvl2l2Avatar").attr("src","../simuladornc/img/asesor.png");
-        $('#lvl2l2retail').text('$0.00');
+        $('#lvl2l2retail').text('0.00');
         $('.5').css('border-top-width', '0px');
         $(".productos22").css('background-color', '#bebebe');
         $('.lvl2l2alcance').css('display', 'none');
@@ -1475,13 +1949,17 @@ function setPiezasVendidaslvl2l3(){
             $('.3').css('border-top-width', '10px');
             $('.3').css('border-top-style', 'solid');
             $('.3').css('border-top-color', '#669933');
-
+            $('#lvl1l3AlcanceImg').attr("src","../SimuladorNC/img/kinya+.png");
             $('.lvl1l3Alcancekinya').text('+1');
+        }
+
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
+            $('.lvl0Alcancekinya').text('+2');
         }
     }
     else{
         $("#lvl2l3Avatar").attr("src","../simuladornc/img/asesor.png");
-        $('#lvl2l3retail').text('$0.00');
+        $('#lvl2l3retail').text('0.00');
         $('.6').css('border-top-width', '0px');
         $(".productos33").css('background-color', '#bebebe');
         $('.lvl2l3alcance').css('display', 'none');

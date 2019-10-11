@@ -243,6 +243,11 @@ input[type=number] { -moz-appearance:textfield; }
     .productos1 h6, .productos2 h6, .productos3 h6, .productos11 h6, .productos22 h6, .productos33 h6{
         font-size: 12px;
     }
+
+    .navigateCards{
+        display: none;
+    }
+
 }
 
 @media (max-width: 1500px) {
@@ -263,12 +268,16 @@ input[type=number] { -moz-appearance:textfield; }
     .productos0 img, .productos1 img, .productos2 img, .productos3 img, .productos11 img, .productos22 img, .productos33 img{
         height: 80px;
     }
+    .navigateCards{
+        display: block;
+    }
 }
 
 @media (max-width: 999px){
     .productos0 img, .productos1 img, .productos2 img, .productos3 img, .productos11 img, .productos22 img, .productos33 img{
         height: 50px;
     }
+
 }
 
 @media (max-width: 769px){

@@ -8,10 +8,10 @@
         <meta http-equiv="Expires" content="0" />
         <meta property="og:url"           content="http://services.nikken.com.mx/simulador" />
         <meta property="og:type"          content="website" />
-        <meta property="og:title"         content="Simulador Nikken Chalenge" />
+        <meta property="og:title"         content="Simulador NIKKEN Challenge" />
         <meta property="og:description"   content="Tú decides cómo jugar y cuánto ganar. Descubre tus posibilidades y alcances financieros al participar en esta increible dinámica. ¿Quieres intentarlo? Utiliza este simulador para predecir hasta dónde quieres llegar y cuántos ingresos extra puedes ganar." />
         <meta property="og:image"         content="https://services.nikken.com.mx/SimuladorNC/img/share.png" />
-        <title>Nikken Chalenge</title>
+        <title>NIKKEN Challenge</title>
         <link rel="shortcut icon" href="https://nikkenlatam.com/nikken-challenge/favicon.ico" type="image/x-icon">
         <link rel="icon" href="https://nikkenlatam.com/nikken-challenge/favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -65,16 +65,20 @@
                                 <h1 class="display-1">Bienvenido a tu simulador</h1>
                                 <div class="Rectángulo_1_copia"></div>
                                 <h2>
-                                    Tú decides cómo jugar y cuánto ganar. <br>
-                                    Descubre tus posibilidades y alcances financieros al participar en esta increible dinámica. <br>
-                                    ¿Quieres intentarlo? Utiliza este simulador para predecir hasta dónde quieres llegar y cuántos <br>
-                                    ingresos extra puedes ganar.
+                                    Tú decides cómo jugar y cuánto ganar.<br>
+                                    Utiliza este simulador para predecir hasta dónde quieres llegar y cuántos ingresos extras puedes lograr.<br>
+                                    ¿Quieres mejorar tus finanzas? <br><br>
+                                    ¡Inténtalo ahora!
                                 </h2>
-                                <a href="#gralForm">
+                                <a href="#startSimulador">
                                     <div class="elipse_1">
                                         <h1><i class="ni ni-bold-down"></i></h1>
                                     </div>
                                 </a>
+                                <br><br>
+                                <span id="startSimulador">
+                                    <br>Selecciona el país y rango. Luego, digita la cantidad de productos en los recuadros de acuerdo a las referencias indicadas, obtendrás una simulación de tus ganancias.
+                                </span>
                             </center>
                         </div>
                     </div>
@@ -86,7 +90,7 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="fixed-action-btn my-custom-btn justify-content-center col col-lg-2 col-xl-2">
+                                    <div class="fixed-action-btn my-custom-btn justify-content-center col col-lg-2 col-xl-2 col-sm-3 col-xs-3">
                                         <button type="submit" class="btn btn-success" id="sendForm">Calcular</button>
                                         <br>
                                         <a href="" class="btn btn-success" >Jugar de nuevo</a>
@@ -128,13 +132,13 @@
                                                                 </a>    
                                                             </p>
                                                             <p>
-                                                                <a target="_blank" href="https://wa.me/?text=http://services.nikken.com.mx/simulador/&amp;text=Simulador Nikken Chalenge" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
+                                                                <a target="_blank" href="https://wa.me/?text=http://services.nikken.com.mx/simulador/&amp;text=Simulador NIKKEN Challenge" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
                                                                     <img src="{{asset('SimuladorNC/img/whatsapp.png')}}" width="20%">
                                                                     Compartir
                                                                 </a>    
                                                             </p>
                                                             <p>
-                                                                <a target="_blank" href="mailto:?Subject=Nikken Calenge&amp;Body=Simulador Nikken Chalenge http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
+                                                                <a target="_blank" href="mailto:?Subject=Nikken Calenge&amp;Body=Simulador NIKKEN Challenge http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
                                                                     <img src="{{asset('SimuladorNC/img/message.png')}}" width="20%">
                                                                     Compartir
                                                                 </a>    
@@ -147,11 +151,33 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="modal fade" id="modal-notification-info" tabindex="-1000" role="dialog" aria-labelledby="modal-notification-info" aria-hidden="true">
+                                            <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                                                <div class="modal-content bg-gradient-primary">
+                                                    <div class="modal-header">
+                                                        <h2 class="modal-title" id="modal-title-notification">Bonificación por grupo personal</h2>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="py-3 text-center">
+                                                            <p>
+                                                                Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-white ml-auto" data-dismiss="modal">Cerrar</button> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-xl-3 order-xl-1 mb-5 mb-xl-0"></div>
-                                    <div class="col-xl-6 order-xl-2 mb-5 mb-xl-0">
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-6 order-xl-2 mb-xl-0">
                                         <div class="card card-profile shadow 0">
                                             <div class="row justify-content-center">
                                                 <div class="col-lg-3 order-lg-2">
@@ -172,7 +198,7 @@
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -196,7 +222,7 @@
                                                 <div class="card-profile-stats mt-md-1">
                                                     <center>
                                                         <span class="text-warning font-weight-bold">
-                                                            Total Bonificacion:
+                                                            Total Ganancia:
                                                             <span class="lvl0retail"></span>
                                                             <span id="lvl0retail">0.00</span>
                                                         </span>
@@ -209,15 +235,82 @@
                                                     </center>
                                                 </div>
                                                 <div class="row">
+                                                    <div class="productos0 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                        <div class="row">
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="65%" height="auto">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzpiw" id="lvl0pzpiw">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="65%" height="auto">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzwa" id="lvl0pzwa">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="65%" height="auto">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzaqp" id="lvl0pzaqp">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="lvl0pzop text-white">OPTIMIZER</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="65%" height="auto">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzop" id="lvl0pzop">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
                                                     <div class="col-md-6 col-sm-12 table-responsive">
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Bonificaciones <i class="ni ni-bold-down"></i></th>
+                                                                    <th colspan="2">Bonificaciones </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
-                                                                        <span>Total nikken challenge:</span>
+                                                                        <span>Total NIKKEN Challenge:</span>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl0NCHtotal"></span><span id="lvl0NCHtotal">0.00</span>
@@ -241,10 +334,12 @@
                                                                 </tr>
                                                                 <tr class="inpar">
                                                                     <th>
-                                                                        <span>Bonificacion por grupo personal:</span> &nbsp;
-                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
-                                                                            <i class="fa fa-question"></i>
-                                                                        </span>
+                                                                        <span>Bonificación por grupo personal:</span> &nbsp;
+                                                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-info">
+                                                                            <span class="badge badge-danger">
+                                                                                <i class="fa fa-question"></i>
+                                                                            </span>
+                                                                        </a>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl0bonoGP"></span><span id="lvl0bonoGP">0.00</span>
@@ -252,7 +347,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <th>
-                                                                        <span class="text-warning font-weight-bold">Total Bonificacion:</span>
+                                                                        <span class="text-warning font-weight-bold">Total Ganancia:</span>
                                                                     </th>
                                                                     <td class="text-warning font-weight-bold">
                                                                         <span class="lvl0retail"></span>
@@ -269,7 +364,7 @@
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <td class="text-default font-weight-bold">
-                                                                        Volumen personal:
+                                                                        Volumen personal (VP):
                                                                     </td>
                                                                     <td class="text-default font-weight-bold">
                                                                         <span id="lvl0puntaje">0</span>
@@ -282,7 +377,7 @@
                                                         <table class="table striped">
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Nikken Chalenge <i class="ni ni-bold-down"></i></th>
+                                                                    <th colspan="2">NIKKEN Challenge </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -318,7 +413,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <td class="text-default font-weight-bold">
-                                                                        Volumen personal:
+                                                                        Volumen personal (VP):
                                                                     </td>
                                                                     <td class="text-default font-weight-bold">
                                                                         <span id="lvl0puntaje">0</span>
@@ -326,7 +421,7 @@
                                                                 </tr>-->
                                                                 <tr class="par">
                                                                     <td class="text-default font-weight-bold">
-                                                                        VGP:
+                                                                        Volumen de grupo personal (VGP):
                                                                     </td>
                                                                     <td class="text-default font-weight-bold">
                                                                         <span id="lvl0vc">0</span>
@@ -336,105 +431,11 @@
                                                         </table>
                                                     </div>
                                                 </div>
-                                                <!--<div class="row">
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        País:
-                                                        <select class="form-control" id="lvl0pais" name="lvl0pais" onchange="hideProducts( this.id, 'lvl0pzaqp', 'lvl0pzop')">
-                                                            <option value="Lat">México</option>
-                                                            <option value="Col">Colombia</option>
-                                                            <option value="Cri">Costa Rica</option>
-                                                            <option value="Pan">Panamá</option>
-                                                            <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
-                                                            <option value="Slv">El Salvador</option>
-                                                            <option value="Gtm">Guatemala</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Rango:
-                                                        <select class="form-control" id="lvl0rango" name="lvl0rango" onchange="setTextRango(this.id, 'lvl0rangoText')">
-                                                            <option value="1">Directo</option>
-                                                            <option value="3">Ejecutivo</option>
-                                                            <option value="5">Plata</option>
-                                                            <option value="6">Oro</option>
-                                                            <option value="7">Platino</option>
-                                                            <option value="8">Diamante</option>
-                                                            <option value="9">Diamante Real</option>
-                                                        </select>
-                                                    </div>
-                                                </div>-->
-                                                <br>
-                                                <div class="row">
-                                                    <div class="productos0 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                        <div class="row">
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="65%" height="auto">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzpiw" id="lvl0pzpiw">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="65%" height="auto">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzwa" id="lvl0pzwa">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-        
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="65%" height="auto">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzaqp" id="lvl0pzaqp">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-        
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="lvl0pzop text-white">OPTIMIZER</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="65%" height="auto">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzop" id="lvl0pzop">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                                                    </div>
-                                                </div>
                                                 <br>
                                             </div>
                                         </div>
                                         <center>
-                                            <button class="btn btn-icon btn-2 addLevel1" type="button" onclick="addNodeLinea1()">
+                                            <button class="btn btn-icon btn-2 addLevel1 mt--4" type="button" onclick="addNodeLinea1()">
                                                 <span class="btn-inner--icon"><i class="ni ni-fat-add"></i> Añadir jugador</span>
                                             </button>
                                         </center>
@@ -443,8 +444,8 @@
 
                                 <hr>
 
-                                <div class="row justify-content-center">
-                                    <div class="col-xl-4 order-xl-1 mb-5 mb-xl-0" id="nivel1linea1">
+                                <div class="row justify-content-center genealogia" style="overflow-x: auto">
+                                    <div class="col-xl-4 order-xl-1 mb-5 mb-xl-0 mt-6" id="nivel1linea1">
                                         <div class="card card-profile shadow 1">
                                             <div class="row justify-content-center">
                                                 <div class="col-lg-3 order-lg-2">
@@ -456,7 +457,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()" data-toggle="tooltip" data-placement="top" title="Quitar jugador">
                                                     <span class="badge badge-danger text-right">
                                                         <i class="fa fa-minus-circle"></i>
                                                     </span>
@@ -470,7 +471,7 @@
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -489,7 +490,7 @@
                                                 <div class="card-profile-stats mt-md-1">
                                                     <center>
                                                         <span class="text-warning font-weight-bold">
-                                                            Total Bonificacion:
+                                                            Total Ganancia:
                                                             <span class="lvl1l1retail"></span>
                                                             <span id="lvl1l1retail">0.00</span>
                                                         </span>
@@ -502,15 +503,82 @@
                                                     </center>
                                                 </div>
                                                 <div class="row">
+                                                    <div class="productos1 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                        <div class="row">
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzpiw" id="lvl1l1pzpiw">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzwa" id="lvl1l1pzwa">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzaqp" id="lvl1l1pzaqp">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="lvl1l1pzop text-white">OPTIMIZER</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzop" id="lvl1l1pzop">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
                                                     <div class="col-md-6 col-sm-12 table-responsive">
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Bonificaciones <i class="ni ni-bold-down"></i></th>
+                                                                    <th colspan="2">Bonificaciones </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
-                                                                        <span>Total nikken challenge:</span>
+                                                                        <span>Total NIKKEN Challenge:</span>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l1NCHtotal"></span><span id="lvl1l1NCHtotal">0.00</span>
@@ -534,10 +602,12 @@
                                                                 </tr>
                                                                 <tr class="inpar">
                                                                     <th>
-                                                                        <span>Bonificacion por <br> grupo personal:</span>
-                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
-                                                                            <i class="fa fa-question"></i>
-                                                                        </span>
+                                                                        <span>Bonificación por <br> grupo personal:</span>
+                                                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-info">
+                                                                            <span class="badge badge-danger">
+                                                                                <i class="fa fa-question"></i>
+                                                                            </span>
+                                                                        </a>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l1bonoGP"></span><span id="lvl1l1bonoGP">0.00</span>
@@ -545,7 +615,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <th>
-                                                                        <span class="text-warning">Total Bonificacion:</span>
+                                                                        <span class="text-warning">Total Ganancia:</span>
                                                                     </th>
                                                                     <td class="text-warning">
                                                                         <span class="lvl1l1retail"></span>
@@ -562,7 +632,7 @@
                                                                 </tr>
                                                                 <tr class="par">
                                                                         <td class="text-default font-weight-bold">
-                                                                            Volumen personal:
+                                                                            Volumen personal (VP):
                                                                         </td>
                                                                         <td class="text-default font-weight-bold">
                                                                             <span id="lvl1l1puntaje">0</span>
@@ -575,7 +645,7 @@
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Nikken Chalenge <i class="ni ni-bold-down"></i></th>
+                                                                    <th colspan="2">NIKKEN Challenge </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -619,7 +689,7 @@
                                                                 </tr>-->
                                                                 <tr class="par">
                                                                     <td class="text-default font-weight-bold">
-                                                                        VGP:
+                                                                        Volumen de grupo personal (VGP):
                                                                     </td>
                                                                     <td class="text-default font-weight-bold">
                                                                         <span id="lvl1l1vc">0</span>
@@ -629,100 +699,11 @@
                                                         </table>
                                                     </div>
                                                 </div>
-                                                <!--<div class="row">
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        País:
-                                                        <select class="form-control" id="lvl1l1pais" name="lvl1l1pais" onchange="hideProducts(this.id, 'lvl1l1pzaqp', 'lvl1l1pzop')">
-                                                            <option value="Lat">México</option>
-                                                            <option value="Col">Colombia</option>
-                                                            <option value="Cri">Costa Rica</option>
-                                                            <option value="Pan">Panamá</option>
-                                                            <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
-                                                            <option value="Slv">El Salvador</option>
-                                                            <option value="Gtm">Guatemala</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Rango:
-                                                        <select class="form-control" id="lvl1l1rango" name="lvl1l1rango" onchange="setTextRango(this.id, 'lvl1l1rangoText')">
-                                                            <option value="1">Directo</option>
-                                                            <option value="3">Ejecutivo</option>
-                                                        </select>
-                                                    </div>
-                                                </div>-->
-                                                <br>
-                                                <div class="row">
-                                                    <div class="productos1 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                        <div class="row">
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzpiw" id="lvl1l1pzpiw">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzwa" id="lvl1l1pzwa">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-        
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzaqp" id="lvl1l1pzaqp">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-        
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="lvl1l1pzop text-white">OPTIMIZER</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzop" id="lvl1l1pzop">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                                                    </div>
-                                                </div>
                                                 <br>
                                             </div>
                                         </div>
                                         <center>
-                                            <button class="btn btn-icon btn-2 mt- addLevel2" type="button" onclick="addLinea3('nivel2linea1')">
+                                            <button class="btn btn-icon btn-2 mt--4 addLevel2" type="button" onclick="addLinea3('nivel2linea1')">
                                                 <span class="btn-inner--icon"><i class="ni ni-fat-add"></i> Añadir jugador</span>
                                             </button>
                                         </center>
@@ -740,7 +721,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel2()" data-toggle="tooltip" data-placement="top" title="Quitar jugador">
                                                             <span class="badge badge-danger text-right">
                                                                 <i class="fa fa-minus-circle"></i>
                                                             </span>
@@ -754,7 +735,7 @@
                                                                     <option value="Cri">Costa Rica</option>
                                                                     <option value="Pan">Panamá</option>
                                                                     <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
+                                                                    <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
@@ -773,7 +754,7 @@
                                                         <div class="card-profile-stats mt-md-1">
                                                             <center>
                                                                 <span class="text-warning font-weight-bold">
-                                                                    Total Bonificacion:
+                                                                    Total Ganancia:
                                                                     <span class="lvl2l1retail"></span>
                                                                     <span id="lvl2l1retail">0.00</span>
                                                                 </span>
@@ -785,15 +766,83 @@
                                                             </center>
                                                         </div>
                                                         <div class="row">
+                                                            <div class="productos11 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                                <div class="row">
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzpiw" id="lvl2l1pzpiw">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzwa" id="lvl2l1pzwa">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzaqp" id="lvl2l1pzaqp">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="lvl2l1pzop text-white">OPTIMIZER</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzop" id="lvl2l1pzop">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
                                                             <div class="col-md-6 col-sm-12 table-responsive">
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">Bonificaciones <i class="ni ni-bold-down"></i></th>
+                                                                            <th colspan="2">Bonificaciones </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
-                                                                                <span>Total nikken challenge:</span>
+                                                                                <span>Total NIKKEN Challenge:</span>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l1NCHtotal"></span><span id="lvl2l1NCHtotal">0.00</span>
@@ -817,10 +866,12 @@
                                                                         </tr>
                                                                         <tr class="inpar">
                                                                             <th>
-                                                                                <span>Bonificacion por <br> grupo personal:</span>
-                                                                                <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
+                                                                                <span>Bonificación por <br> grupo personal:</span>
+                                                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-info">
+                                                                                <span class="badge badge-danger">
                                                                                     <i class="fa fa-question"></i>
                                                                                 </span>
+                                                                            </a>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l1bonoGP"></span><span id="lvl2l1bonoGP">0.00</span>
@@ -828,7 +879,7 @@
                                                                         </tr>
                                                                         <!--<tr class="par">
                                                                             <th>
-                                                                                <span class="text-warning">Total Bonificacion:</span>
+                                                                                <span class="text-warning">Total Ganancia:</span>
                                                                             </th>
                                                                             <td class="text-warning">
                                                                                 <span class="lvl2l1retail"></span>
@@ -845,7 +896,7 @@
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <td class="text-default font-weight-bold">
-                                                                                Volumen personal:
+                                                                                Volumen personal (VP):
                                                                             </td>
                                                                             <td class="text-default font-weight-bold">
                                                                                 <span id="lvl2l1puntaje">0</span>
@@ -858,7 +909,7 @@
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">Bonificaciones <i class="ni ni-bold-down"></i></th>
+                                                                            <th colspan="2">Bonificaciones </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
@@ -894,7 +945,7 @@
                                                                         </tr>
                                                                         <!--<tr class="par">
                                                                             <td>
-                                                                                Volumen personal:
+                                                                                Volumen personal (VP):
                                                                             </td>
                                                                             <td>
                                                                                 <span id="lvl2l1puntaje">0</span>
@@ -902,7 +953,7 @@
                                                                         </tr>-->
                                                                         <tr class="par">
                                                                             <td class="text-default font-weight-bold">
-                                                                                VGP:
+                                                                                Volumen de grupo personal (VGP):
                                                                             </td>
                                                                             <td class="text-default font-weight-bold">
                                                                                 <span id="lvl2l1vc">0</span>
@@ -912,103 +963,14 @@
                                                                 </table>
                                                             </div>
                                                         </div>
-                                                        <!--<div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                País:
-                                                                <select class="form-control" id="lvl2l1pais" name="lvl2l1pais" onchange="hideProducts(this.id, 'lvl2l1pzaqp', 'lvl2l1pzop')">
-                                                                    <option value="Lat">México</option>
-                                                                    <option value="Col">Colombia</option>
-                                                                    <option value="Cri">Costa Rica</option>
-                                                                    <option value="Pan">Panamá</option>
-                                                                    <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
-                                                                    <option value="Slv">El Salvador</option>
-                                                                    <option value="Gtm">Guatemala</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                Rango:
-                                                                <select class="form-control" id="lvl2l1rango" name="lvl2l1rango" onchange="setTextRango(this.id, 'lvl2l1rangoText')">
-                                                                    <option value="1">Directo</option>
-                                                                    <option value="3">Ejecutivo</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>-->
                                                         <br>
-                                                        <div class="row">
-                                                            <div class="productos11 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                                <div class="row">
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzpiw" id="lvl2l1pzpiw">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzwa" id="lvl2l1pzwa">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzaqp" id="lvl2l1pzaqp">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="lvl2l1pzop text-white">OPTIMIZER</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzop" id="lvl2l1pzop">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <br>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0" id="nivel1linea2">
+                                    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0 mt-6" id="nivel1linea2">
                                         <div class="card card-profile shadow 2">
                                             <div class="row justify-content-center">
                                                 <div class="col-lg-3 order-lg-2">
@@ -1020,7 +982,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea2Nivel1()" data-toggle="tooltip" data-placement="top" title="Quitar jugador">
                                                     <span class="badge badge-danger text-right">
                                                         <i class="fa fa-minus-circle"></i>
                                                     </span>
@@ -1034,7 +996,7 @@
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -1053,7 +1015,7 @@
                                                 <div class="card-profile-stats mt-md-1">
                                                     <center>
                                                         <span class="text-warning font-weight-bold">
-                                                            Total Bonificacion:
+                                                            Total Ganancia:
                                                             <span class="lvl1l2retail"></span>
                                                             <span id="lvl1l2retail">0.00</span>
                                                         </span>
@@ -1066,15 +1028,82 @@
                                                     </center>
                                                 </div>
                                                 <div class="row">
+                                                    <div class="productos2 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                        <div class="row">
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%" >
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzpiw" id="lvl1l2pzpiw">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%" >
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzwa" id="lvl1l2pzwa">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%" >
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzaqp" id="lvl1l2pzaqp">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="lvl1l2pzop text-white">OPTIMIZER</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" >
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzop" id="lvl1l2pzop">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
                                                     <div class="col-md-6 col-sm-12 table-responsive">
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Bonificaciones <i class="ni ni-bold-down"></i></th>
+                                                                    <th colspan="2">Bonificaciones </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
-                                                                        <span>Total nikken challenge:</span>
+                                                                        <span>Total NIKKEN Challenge:</span>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l2NCHtotal"></span><span id="lvl1l2NCHtotal">0.00</span>
@@ -1098,10 +1127,12 @@
                                                                 </tr>
                                                                 <tr class="inpar">
                                                                     <th>
-                                                                        <span>Bonificacion por <br> grupo personal:</span>
-                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
-                                                                            <i class="fa fa-question"></i>
-                                                                        </span>
+                                                                        <span>Bonificación por <br> grupo personal:</span>
+                                                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-info">
+                                                                            <span class="badge badge-danger">
+                                                                                <i class="fa fa-question"></i>
+                                                                            </span>
+                                                                        </a>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l2bonoGP"></span><span id="lvl1l2bonoGP">0.00</span>
@@ -1109,7 +1140,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <th>
-                                                                        <span class="text-warning">Total Bonificacion:</span>
+                                                                        <span class="text-warning">Total Ganancia:</span>
                                                                     </th>
                                                                     <td class="text-warning">
                                                                         <span class="lvl1l2retail"></span>
@@ -1126,7 +1157,7 @@
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <td class="text-default font-weight-bold">
-                                                                        Volumen personal:
+                                                                        Volumen personal (VP):
                                                                     </td>
                                                                     <td class="text-default font-weight-bold">
                                                                         <span id="lvl1l2puntaje">0</span>
@@ -1139,7 +1170,7 @@
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Nikken Chalenge <i class="ni ni-bold-down"></i></th>
+                                                                    <th colspan="2">NIKKEN Challenge </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -1175,7 +1206,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <td>
-                                                                        Volumen personal:
+                                                                        Volumen personal (VP):
                                                                     </td>
                                                                     <td>
                                                                         <span id="lvl1l2puntaje">0</span>
@@ -1183,7 +1214,7 @@
                                                                 </tr>-->
                                                                 <tr class="par">
                                                                     <td class="text-default font-weight-bold">
-                                                                        VGP:
+                                                                        Volumen de grupo personal (VGP):
                                                                     </td>
                                                                     <td class="text-default font-weight-bold">
                                                                         <span id="lvl1l2vc">0.00</span>
@@ -1193,100 +1224,11 @@
                                                         </table>
                                                     </div>
                                                 </div>
-                                                <!--<div class="row">
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        País:
-                                                        <select class="form-control" id="lvl1l2pais" name="lvl1l2pais" onchange="hideProducts(this.id, 'lvl1l2pzaqp', 'lvl1l2pzop')">
-                                                            <option value="Lat">México</option>
-                                                            <option value="Col">Colombia</option>
-                                                            <option value="Cri">Costa Rica</option>
-                                                            <option value="Pan">Panamá</option>
-                                                            <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
-                                                            <option value="Slv">El Salvador</option>
-                                                            <option value="Gtm">Guatemala</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Rango:
-                                                        <select class="form-control" id="lvl1l2rango" name="lvl1l2rango" onclick="setTextRango(this.id, 'lvl1l2rangoText')">
-                                                            <option value="1">Directo</option>
-                                                            <option value="3">Ejecutivo</option>
-                                                        </select>
-                                                    </div>
-                                                </div>-->
-                                                <br>
-                                                <div class="row">
-                                                    <div class="productos2 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                        <div class="row">
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%" >
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzpiw" id="lvl1l2pzpiw">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%" >
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzwa" id="lvl1l2pzwa">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-        
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%" >
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzaqp" id="lvl1l2pzaqp">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-        
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="lvl1l2pzop text-white">OPTIMIZER</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" >
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzop" id="lvl1l2pzop">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                                                    </div>
-                                                </div>
                                                 <br>
                                             </div>
                                         </div>
                                         <center>
-                                            <button class="btn btn-icon btn-2 addLevel2" type="button" onclick="addLinea3('nivel2linea2')">
+                                            <button class="btn btn-icon btn-2 addLevel2 mt--4" type="button" onclick="addLinea3('nivel2linea2')">
                                                 <span class="btn-inner--icon"><i class="ni ni-fat-add"></i> Añadir jugador</span>
                                             </button>
                                         </center>
@@ -1304,7 +1246,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea2Nivel2()" data-toggle="tooltip" data-placement="top" title="Quitar jugador">
                                                             <span class="badge badge-danger text-right">
                                                                 <i class="fa fa-minus-circle"></i>
                                                             </span>
@@ -1318,7 +1260,7 @@
                                                                     <option value="Cri">Costa Rica</option>
                                                                     <option value="Pan">Panamá</option>
                                                                     <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
+                                                                    <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
@@ -1337,7 +1279,7 @@
                                                         <div class="card-profile-stats mt-md-1">
                                                             <center>
                                                                 <span class="text-warning font-weight-bold">
-                                                                    Total Bonificacion:
+                                                                    Total Ganancia:
                                                                     <span class="lvl2l2retail"></span>
                                                                     <span id="lvl2l2retail">0.00</span>
                                                                 </span>
@@ -1349,15 +1291,82 @@
                                                             </center>
                                                         </div>
                                                         <div class="row">
+                                                            <div class="productos22 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                                <div class="row">
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzpiw" id="lvl2l2pzpiw">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzwa" id="lvl2l2pzwa">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzaqp" id="lvl2l2pzaqp">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="lvl2l2pzop text-white">OPTIMIZER</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzop" id="lvl2l2pzop">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
                                                             <div class="col-md-6 col-sm-12 table-responsive">
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">Bonificaciones <i class="ni ni-bold-down"></i></th>
+                                                                            <th colspan="2">Bonificaciones </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
-                                                                                <span>Total nikken challenge:</span>
+                                                                                <span>Total NIKKEN Challenge:</span>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l2NCHtotal"></span><span id="lvl2l2NCHtotal">0.00</span>
@@ -1381,10 +1390,12 @@
                                                                         </tr>
                                                                             <tr class="inpar">
                                                                             <th>
-                                                                                <span>Bonificacion por <br> grupo personal:</span>
-                                                                                <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
-                                                                                    <i class="fa fa-question"></i>
-                                                                                </span>
+                                                                                <span>Bonificación por <br> grupo personal:</span>
+                                                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-info">
+                                                                                    <span class="badge badge-danger">
+                                                                                        <i class="fa fa-question"></i>
+                                                                                    </span>
+                                                                                </a>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l2bonoGP"></span><span id="lvl2l2bonoGP">0.00</span>
@@ -1392,7 +1403,7 @@
                                                                         </tr>
                                                                         <!--<tr class="par">
                                                                             <th>
-                                                                                <span class="text-warning">Total Bonificacion:</span>
+                                                                                <span class="text-warning">Total Ganancia:</span>
                                                                             </th>
                                                                             <td class="text-warning">
                                                                                 <span class="lvl2l2retail"></span>
@@ -1409,7 +1420,7 @@
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <td class="text-default font-weight-bold">
-                                                                                Volumen personal:
+                                                                                Volumen personal (VP):
                                                                             </td>
                                                                             <td class="text-default font-weight-bold">
                                                                                 <span id="lvl2l2puntaje">0</span>
@@ -1422,7 +1433,7 @@
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">Nikken Chalenge <i class="ni ni-bold-down"></i></th>
+                                                                            <th colspan="2">NIKKEN Challenge </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
@@ -1458,7 +1469,7 @@
                                                                         </tr>
                                                                         <!--<tr class="par">
                                                                             <td>
-                                                                                Volumen personal:
+                                                                                Volumen personal (VP):
                                                                             </td>
                                                                             <td>
                                                                                 <span id="lvl2l2puntaje">0</span>
@@ -1466,7 +1477,7 @@
                                                                         </tr>-->
                                                                         <tr class="par">
                                                                             <td class="text-default font-weight-bold">
-                                                                                VGP:
+                                                                                Volumen de grupo personal (VGP):
                                                                             </td>
                                                                             <td class="text-default font-weight-bold">
                                                                                 <span id="lvl2l2vc">0</span>
@@ -1476,102 +1487,14 @@
                                                                 </table>
                                                             </div>
                                                         </div>
-                                                        <!--<div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                País:
-                                                                <select class="form-control" id="lvl2l2pais" name="lvl2l2pais" onchange="hideProducts(this.id, 'lvl2l2pzaqp', 'lvl2l2pzop')">
-                                                                    <option value="Lat">México</option>
-                                                                    <option value="Col">Colombia</option>
-                                                                    <option value="Cri">Costa Rica</option>
-                                                                    <option value="Pan">Panamá</option>
-                                                                    <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
-                                                                    <option value="Slv">El Salvador</option>
-                                                                    <option value="Gtm">Guatemala</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                Rango:
-                                                                <select class="form-control" id="lvl2l2rango" name="lvl2l2rango" onchange="setTextRango(this.id, 'lvl2l2rangoText')">
-                                                                    <option value="1">Directo</option>
-                                                                    <option value="3">Ejecutivo</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>-->
                                                         <br>
-                                                        <div class="row">
-                                                            <div class="productos22 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                                <div class="row">
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzpiw" id="lvl2l2pzpiw">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzwa" id="lvl2l2pzwa">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzaqp" id="lvl2l2pzaqp">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="lvl2l2pzop text-white">OPTIMIZER</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzop" id="lvl2l2pzop">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <br>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-xl-4 order-xl-3 mb-5 mb-xl-0" id="nivel1linea3">
+                                    <div class="col-xl-4 order-xl-3 mb-5 mb-xl-0 mt-6" id="nivel1linea3">
                                         <div class="card card-profile shadow 3">
                                             <div class="row justify-content-center">
                                                 <div class="col-lg-3 order-lg-2">
@@ -1583,7 +1506,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea3Nivel1()" data-toggle="tooltip" data-placement="top" title="Quitar jugador">
                                                     <span class="badge badge-danger text-right">
                                                         <i class="fa fa-minus-circle"></i>
                                                     </span>
@@ -1597,7 +1520,7 @@
                                                             <option value="Cri">Costa Rica</option>
                                                             <option value="Pan">Panamá</option>
                                                             <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
+                                                            <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
                                                         </select>
@@ -1616,7 +1539,7 @@
                                                 <div class="card-profile-stats mt-md-1">
                                                     <center>
                                                         <span class="text-warning font-weight-bold">
-                                                            Total Bonificacion:
+                                                            Total Ganancia:
                                                             <span class="lvl1l3retail"></span>
                                                             <span id="lvl1l3retail">0.00</span>
                                                         </span>
@@ -1629,15 +1552,83 @@
                                                     </center>
                                                 </div>
                                                 <div class="row">
+                                                    <div class="productos3 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                        <div class="row">
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzpiw" id="lvl1l3pzpiw">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzwa" id="lvl1l3pzwa">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzaqp" id="lvl1l3pzaqp">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="media-body">
+                                                                    <span class="mb-0 text-sm"><h6 class="lvl1l3pzop text-white">OPTIMIZER</h6></span>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
+                                                                        </div>
+                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzop" id="lvl1l3pzop">
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
                                                     <div class="col-md-6 col-sm-12 table-responsive">
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Bonificaciones <i class="ni ni-bold-down"></i></th>
+                                                                    <th colspan="2">Bonificaciones </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
-                                                                        <span>Total nikken challenge:</span>
+                                                                        <span>Total NIKKEN Challenge:</span>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l3NCHtotal"></span><span id="lvl1l3NCHtotal">0.00</span>
@@ -1661,10 +1652,12 @@
                                                                 </tr>
                                                                 <tr class="inpar">
                                                                     <th>
-                                                                        <span>Bonificacion por <br> grupo personal:</span>
-                                                                        <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
-                                                                            <i class="fa fa-question"></i>
-                                                                        </span>
+                                                                        <span>Bonificación por <br> grupo personal:</span>
+                                                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-info">
+                                                                            <span class="badge badge-danger">
+                                                                                <i class="fa fa-question"></i>
+                                                                            </span>
+                                                                        </a>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l3bonoGP"></span><span id="lvl1l3bonoGP">0.00</span>
@@ -1672,7 +1665,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <th>
-                                                                        <span class="text-warning">Total Bonificacion:</span>
+                                                                        <span class="text-warning">Total Ganancia:</span>
                                                                     </th>
                                                                     <td class="text-warning">
                                                                         <span class="lvl1l3retail"></span>
@@ -1689,7 +1682,7 @@
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <td class="text-default font-weight-bold">
-                                                                        Volumen personal:
+                                                                        Volumen personal (VP):
                                                                     </td>
                                                                     <td class="text-default font-weight-bold">
                                                                         <span id="lvl1l3puntaje">0</span>
@@ -1702,7 +1695,7 @@
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Nikken Chalenge <i class="ni ni-bold-down"></i></th>
+                                                                    <th colspan="2">NIKKEN Challenge </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -1738,7 +1731,7 @@
                                                                 </tr>
                                                                 <!--<tr class="par">
                                                                     <td>
-                                                                        Volumen personal:
+                                                                        Volumen personal (VP):
                                                                     </td>
                                                                     <td>
                                                                         <span id="lvl1l3puntaje">0</span>
@@ -1746,111 +1739,21 @@
                                                                 </tr>-->
                                                                 <tr class="par">
                                                                     <td class="text-default font-weight-bold">
-                                                                        VGP
+                                                                        Volumen de grupo personal (VGP):
                                                                     </td>
                                                                     <td class="text-default font-weight-bold">
-                                                                        <span id="lvl1l3vc">0</span>
+                                                                        <span id="lvl1l3vc">0.00</span>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>
                                                 </div>
-                                                <!--<div class="row">
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        País:
-                                                        <select class="form-control" id="lvl1l3pais" name="lvl1l3pais" onchange="hideProducts(this.id, 'lvl1l3pzaqp', 'lvl1l3pzop')">
-                                                            <option value="Lat">México</option>
-                                                            <option value="Col">Colombia</option>
-                                                            <option value="Cri">Costa Rica</option>
-                                                            <option value="Pan">Panamá</option>
-                                                            <option value="Ecu">Ecuador</option>
-                                                            <option value="Per">Peru</option>
-                                                            <option value="Slv">El Salvador</option>
-                                                            <option value="Gtm">Guatemala</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                        Rango:
-                                                        <select class="form-control" id="lvl1l3rango" name="lvl1l3rango" onchange="setTextRango(this.id, 'lvl1l3rangoText')">
-                                                            <option value="1">Directo</option>
-                                                            <option value="3">Ejecutivo</option>
-                                                        </select>
-                                                    </div>
-                                                </div>-->
-                                                <br>
-                                                <div class="row">
-                                                    <div class="productos3 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                        <div class="row">
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzpiw" id="lvl1l3pzpiw">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzwa" id="lvl1l3pzwa">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-        
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzaqp" id="lvl1l3pzaqp">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-        
-                                                            <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                <div class="media-body">
-                                                                    <span class="mb-0 text-sm"><h6 class="lvl1l3pzop text-white">OPTIMIZER</h6></span>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
-                                                                        </div>
-                                                                        <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzop" id="lvl1l3pzop">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                                                    </div>
-                                                </div>
                                                 <br>
                                             </div>
                                         </div>
                                         <center>
-                                            <button class="btn btn-icon btn-2 addLevel2" type="button" onclick="addLinea3('nivel2linea3')">
+                                            <button class="btn btn-icon btn-2 addLevel2 mt--4" type="button" onclick="addLinea3('nivel2linea3')">
                                                 <span class="btn-inner--icon"><i class="ni ni-fat-add"></i> Añadir jugador</span>
                                             </button>
                                         </center>
@@ -1868,7 +1771,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-header border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea1Nivel1()">
+                                                        <a href="javascript:void(0)" style="position: absolute; top: 0px;" onclick="hideLinea3Nivel2()" data-toggle="tooltip" data-placement="top" title="Quitar jugador">
                                                             <span class="badge badge-danger text-right">
                                                                 <i class="fa fa-minus-circle"></i>
                                                             </span>
@@ -1882,7 +1785,7 @@
                                                                     <option value="Cri">Costa Rica</option>
                                                                     <option value="Pan">Panamá</option>
                                                                     <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
+                                                                    <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
                                                                 </select>
@@ -1901,7 +1804,7 @@
                                                         <div class="card-profile-stats mt-md-1">
                                                             <center>
                                                                 <span class="text-warning font-weight-bold">
-                                                                    Total Bonificacion:
+                                                                    Total Ganancia:
                                                                     <span class="lvl2l3retail"></span>
                                                                     <span id="lvl2l3retail">0.00</span>
                                                                 </span>
@@ -1913,15 +1816,82 @@
                                                             </center>
                                                         </div>
                                                         <div class="row">
+                                                            <div class="productos33 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                                <div class="row">
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzpiw" id="lvl2l3pzpiw">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzwa" id="lvl2l3pzwa">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzaqp" id="lvl2l3pzaqp">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                
+                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                                                        <div class="media-body">
+                                                                            <span class="mb-0 text-sm"><h6 class="lvl2l3pzop text-white">OPTIMIZER</h6></span>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
+                                                                                </div>
+                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzop" id="lvl2l3pzop">
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
                                                             <div class="col-md-6 col-sm-12 table-responsive">
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">Bonificaciones <i class="ni ni-bold-down"></i></th>
+                                                                            <th colspan="2">Bonificaciones </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
-                                                                                <span>Total nikken challenge:</span>
+                                                                                <span>Total NIKKEN Challenge:</span>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l3NCHtotal"></span><span id="lvl2l3NCHtotal">0.00</span>
@@ -1945,10 +1915,12 @@
                                                                         </tr>
                                                                         <tr class="inpar">
                                                                             <th>
-                                                                                <span>Bonificacion por <br> grupo personal:</span>
-                                                                                <span class="badge badge-danger" data-toggle="tooltip" data-placement="left" title="Es el valor que se obtiene de la suma del Volumen Personal más el Volumen de Grupo del asesor de bienestar independiente durante un período de tiempo determinado que puede ser mensual y/o anual.">
-                                                                                    <i class="fa fa-question"></i>
-                                                                                </span>
+                                                                                <span>Bonificación por <br> grupo personal:</span>
+                                                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-info">
+                                                                                    <span class="badge badge-danger">
+                                                                                        <i class="fa fa-question"></i>
+                                                                                    </span>
+                                                                                </a>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l3bonoGP"></span><span id="lvl2l3bonoGP">0.00</span>
@@ -1956,7 +1928,7 @@
                                                                         </tr>
                                                                         <!--<tr class="par">
                                                                             <th>
-                                                                                <span class="text-warning">Total Bonificacion:</span>
+                                                                                <span class="text-warning">Total Ganancia:</span>
                                                                             </th>
                                                                             <td class="text-warning">
                                                                                 <span class="lvl2l3retail"></span>
@@ -1973,7 +1945,7 @@
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <td class="text-default font-weight-bold">
-                                                                                Volumen personal:
+                                                                                Volumen personal (VP):
                                                                             </td>
                                                                             <td class="text-default font-weight-bold">
                                                                                 <span id="lvl2l3puntaje">0</span>
@@ -1986,7 +1958,7 @@
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">Niken Chalenge <i class="ni ni-bold-down"></i></th>
+                                                                            <th colspan="2">NIKKEN Challenge </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
@@ -2022,7 +1994,7 @@
                                                                         </tr>
                                                                         <!--<tr class="par">
                                                                             <td>
-                                                                                Volumen personal:
+                                                                                Volumen personal (VP):
                                                                             </td>
                                                                             <td>
                                                                                 <span id="lvl2l3puntaje">0</span>
@@ -2030,7 +2002,7 @@
                                                                         </tr>-->
                                                                         <tr class="par">
                                                                             <td class="text-default font-weight-bold">
-                                                                                VGP:
+                                                                                Volumen de grupo personal (VGP):
                                                                             </td>
                                                                             <td class="text-default font-weight-bold">
                                                                                 <span id="lvl2l3vc">0</span>
@@ -2040,101 +2012,16 @@
                                                                 </table>
                                                             </div>
                                                         </div>
-                                                        <!--<div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                País:
-                                                                <select class="form-control" id="lvl2l3pais" name="lvl2l3pais" onchange="hideProducts(this.id, 'lvl2l3pzaqp', 'lvl2l3pzop')">
-                                                                    <option value="Lat">México</option>
-                                                                    <option value="Col">Colombia</option>
-                                                                    <option value="Cri">Costa Rica</option>
-                                                                    <option value="Pan">Panamá</option>
-                                                                    <option value="Ecu">Ecuador</option>
-                                                                    <option value="Per">Peru</option>
-                                                                    <option value="Slv">El Salvador</option>
-                                                                    <option value="Gtm">Guatemala</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col">
-                                                                Rango:
-                                                                <select class="form-control" id="lvl2l3rango" name="lvl2l3rango" onchange="setTextRango(this.id, 'lvl2l3rangoText')">
-                                                                    <option value="1">Directo</option>
-                                                                    <option value="3">Ejecutivo</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>-->
                                                         <br>
-                                                        <div class="row">
-                                                            <div class="productos33 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                                <div class="row">
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="text-white">PI WATER</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzpiw" id="lvl2l3pzpiw">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="text-white">WATERFALL</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzwa" id="lvl2l3pzwa">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="text-white">AQUA POUR</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzaqp" id="lvl2l3pzaqp">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                
-                                                                    <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                                                        <div class="media-body">
-                                                                            <span class="mb-0 text-sm"><h6 class="lvl2l3pzop text-white">OPTIMIZER</h6></span>
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
-                                                                                </div>
-                                                                                <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzop" id="lvl2l3pzop">
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <br>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div style="position: fixed; background-color: blue; z-index: 1000">
+                                <br><br><br><br>&nbsp;
                             </div>
                         </form>
                     </div>

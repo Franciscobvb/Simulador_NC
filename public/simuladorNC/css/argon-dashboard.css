@@ -639,7 +639,7 @@ pre code {
 
 .row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: inherit;
   margin-right: -15px;
   margin-left: -15px;
 }
