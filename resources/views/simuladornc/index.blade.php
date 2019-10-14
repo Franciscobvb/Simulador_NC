@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="{{asset('simuladornc/css/custom.css')}}">
         <link href="https://services.nikken.com.mx/SimuladorNC/img/share.png" rel="image_src" />
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="main-content">
@@ -132,7 +133,7 @@
                                                                 </a>    
                                                             </p>
                                                             <p>
-                                                                <a target="_blank" href="https://wa.me/?text=http://services.nikken.com.mx/simulador/&amp;text=Simulador NIKKEN Challenge" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
+                                                                <a target="_blank" href="https://wa.me/?text=Simulador NIKKEN Challenge http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
                                                                     <img src="{{asset('SimuladorNC/img/whatsapp.png')}}" width="20%">
                                                                     Compartir
                                                                 </a>    
@@ -174,6 +175,29 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="modal fade" id="modal-notification-help" tabindex="-1000" role="dialog" aria-labelledby="modal-notification-info" aria-hidden="true">
+                                                <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                                                    <div class="modal-content bg-gradient-primary">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title" id="modal-title-notification">Ganancias a sugerido</h2>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="py-3 text-center">
+                                                                <p>
+                                                                    Es el lucro que representa la diferencia del precio de mayoreo y el precio de venta al público sugerido.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-white ml-auto" data-dismiss="modal">Cerrar</button> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
@@ -287,7 +311,7 @@
                                                                     <span class="mb-0 text-sm"><h6 class="lvl0pzop text-white">OPTIMIZER</h6></span>
                                                                     <div class="row">
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="65%" height="auto">
+                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="65%" height="auto" class="lvl0pzopimg">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
                                                                             <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzop" id="lvl0pzop">
@@ -306,7 +330,7 @@
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Bonificaciones </th>
+                                                                    <th colspan="2" style="font-size: 15px; color: #000;">Detalle de Ganancias </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -318,7 +342,12 @@
                                                                 </tr>
                                                                 <tr class="inpar">
                                                                     <th>
-                                                                        <span>Ganancias a sugerido:</span>
+                                                                        <span>Ganancias a sugerido:</span> &nbsp;
+                                                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-help">
+                                                                            <span class="badge badge-danger">
+                                                                                <i class="fa fa-question"></i>
+                                                                            </span>
+                                                                        </a>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl0bonificaciones"></span><span id="lvl0bonificaciones">0.00</span>
@@ -377,7 +406,7 @@
                                                         <table class="table striped">
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">NIKKEN Challenge </th>
+                                                                    <th colspan="2" style="font-size: 15px; color: #000;">Detalle NIKKEN Challenge </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -424,7 +453,7 @@
                                                                         Volumen de grupo personal (VGP):
                                                                     </td>
                                                                     <td class="text-default font-weight-bold">
-                                                                        <span id="lvl0vc">0</span>
+                                                                        <span id="lvl0vc">0.00</span>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -435,12 +464,21 @@
                                             </div>
                                         </div>
                                         <center>
-                                            <button class="btn btn-icon btn-2 addLevel1 mt--4" type="button" onclick="addNodeLinea1()">
+                                            <button class="btn btn-icon btn-2 addLevel1 mt--4 show-toast" type="button" onclick="addNodeLinea1()">
                                                 <span class="btn-inner--icon"><i class="ni ni-fat-add"></i> Añadir jugador</span>
                                             </button>
                                         </center>
                                     </div>
                                 </div>
+                                <center>
+                                    <div class="row justify-content-center mt-2 help">
+                                        <div class="col-xl-6 col-lg-6 mb-xl-0">
+                                            <div class="card">
+                                                <a>Desliza para ver los jugadores <i class="fa fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </center>
 
                                 <hr>
 
@@ -555,7 +593,7 @@
                                                                     <span class="mb-0 text-sm"><h6 class="lvl1l1pzop text-white">OPTIMIZER</h6></span>
                                                                     <div class="row">
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
+                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl1l1pzopimg">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
                                                                             <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzop" id="lvl1l1pzop">
@@ -574,7 +612,7 @@
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Bonificaciones </th>
+                                                                    <th colspan="2" style="font-size: 15px; color: #000;">Detalle de Ganancias </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -586,7 +624,12 @@
                                                                 </tr>
                                                                 <tr class="inpar">
                                                                     <th>
-                                                                        <span>Ganancias a sugerido:</span>
+                                                                        <span>Ganancias a sugerido:</span> &nbsp;
+                                                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-help">
+                                                                            <span class="badge badge-danger">
+                                                                                <i class="fa fa-question"></i>
+                                                                            </span>
+                                                                        </a>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l1bonificaciones"></span><span id="lvl1l1bonificaciones">0.00</span>
@@ -645,7 +688,7 @@
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">NIKKEN Challenge </th>
+                                                                    <th colspan="2" style="font-size: 15px; color: #000;">Detalle NIKKEN Challenge </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -818,7 +861,7 @@
                                                                             <span class="mb-0 text-sm"><h6 class="lvl2l1pzop text-white">OPTIMIZER</h6></span>
                                                                             <div class="row">
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
+                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl2l1pzopimg">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
                                                                                     <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzop" id="lvl2l1pzop">
@@ -838,7 +881,7 @@
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">Bonificaciones </th>
+                                                                            <th colspan="2" style="font-size: 15px; color: #000;">Detalle de Ganancias </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
@@ -850,7 +893,12 @@
                                                                         </tr>
                                                                         <tr class="inpar">
                                                                             <th>
-                                                                                <span>Ganancias a sugerido:</span>
+                                                                                <span>Ganancias a sugerido:</span> &nbsp;
+                                                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-help">
+                                                                                    <span class="badge badge-danger">
+                                                                                        <i class="fa fa-question"></i>
+                                                                                    </span>
+                                                                                </a>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l1bonificaciones"></span><span id="lvl2l1bonificaciones">0.00</span>
@@ -909,7 +957,7 @@
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">Bonificaciones </th>
+                                                                            <th colspan="2" style="font-size: 15px; color: #000;">Detalle de Ganancias </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
@@ -1080,7 +1128,7 @@
                                                                     <span class="mb-0 text-sm"><h6 class="lvl1l2pzop text-white">OPTIMIZER</h6></span>
                                                                     <div class="row">
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" >
+                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl1l2pzopimg">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
                                                                             <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzop" id="lvl1l2pzop">
@@ -1099,7 +1147,7 @@
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Bonificaciones </th>
+                                                                    <th colspan="2" style="font-size: 15px; color: #000;">Detalle de Ganancias </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -1111,7 +1159,12 @@
                                                                 </tr>
                                                                 <tr class="inpar">
                                                                     <th>
-                                                                        <span>Ganancias a sugerido:</span>
+                                                                        <span>Ganancias a sugerido:</span> &nbsp;
+                                                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-help">
+                                                                            <span class="badge badge-danger">
+                                                                                <i class="fa fa-question"></i>
+                                                                            </span>
+                                                                        </a>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l2bonificaciones"></span><span id="lvl1l2bonificaciones">0.00</span>
@@ -1170,7 +1223,7 @@
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">NIKKEN Challenge </th>
+                                                                    <th colspan="2" style="font-size: 15px; color: #000;">Detalle NIKKEN Challenge </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -1343,7 +1396,7 @@
                                                                             <span class="mb-0 text-sm"><h6 class="lvl2l2pzop text-white">OPTIMIZER</h6></span>
                                                                             <div class="row">
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
+                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl2l2pzopimg">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
                                                                                     <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzop" id="lvl2l2pzop">
@@ -1362,7 +1415,7 @@
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">Bonificaciones </th>
+                                                                            <th colspan="2" style="font-size: 15px; color: #000;">Detalle de Ganancias </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
@@ -1374,7 +1427,12 @@
                                                                         </tr>
                                                                         <tr class="inpar">
                                                                             <th>
-                                                                                <span>Ganancias a sugerido:</span>
+                                                                                <span>Ganancias a sugerido:</span> &nbsp;
+                                                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-help">
+                                                                                    <span class="badge badge-danger">
+                                                                                        <i class="fa fa-question"></i>
+                                                                                    </span>
+                                                                                </a>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l2bonificaciones"></span><span id="lvl2l2bonificaciones">0.00</span>
@@ -1433,7 +1491,7 @@
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">NIKKEN Challenge </th>
+                                                                            <th colspan="2" style="font-size: 15px; color: #000;">Detalle NIKKEN Challenge </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
@@ -1604,7 +1662,7 @@
                                                                     <span class="mb-0 text-sm"><h6 class="lvl1l3pzop text-white">OPTIMIZER</h6></span>
                                                                     <div class="row">
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
+                                                                            <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl1l3pzopimg">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
                                                                             <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzop" id="lvl1l3pzop">
@@ -1624,7 +1682,7 @@
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">Bonificaciones </th>
+                                                                    <th colspan="2" style="font-size: 15px; color: #000;">Detalle de Ganancias </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -1636,7 +1694,12 @@
                                                                 </tr>
                                                                 <tr class="inpar">
                                                                     <th>
-                                                                        <span>Ganancias a sugerido:</span>
+                                                                        <span>Ganancias a sugerido:</span> &nbsp;
+                                                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-help">
+                                                                            <span class="badge badge-danger">
+                                                                                <i class="fa fa-question"></i>
+                                                                            </span>
+                                                                        </a>
                                                                     </th>
                                                                     <td>
                                                                         <span class="lvl1l3bonificaciones"></span><span id="lvl1l3bonificaciones">0.00</span>
@@ -1695,7 +1758,7 @@
                                                         <table class="table striped" >
                                                             <tbody class="list">
                                                                 <tr class="table-warning font-weight-bold">
-                                                                    <th colspan="2">NIKKEN Challenge </th>
+                                                                    <th colspan="2" style="font-size: 15px; color: #000;">Detalle NIKKEN Challenge </th>
                                                                 </tr>
                                                                 <tr class="par">
                                                                     <th>
@@ -1868,7 +1931,7 @@
                                                                             <span class="mb-0 text-sm"><h6 class="lvl2l3pzop text-white">OPTIMIZER</h6></span>
                                                                             <div class="row">
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%">
+                                                                                    <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl2l3pzopimg">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
                                                                                     <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzop" id="lvl2l3pzop">
@@ -1887,7 +1950,7 @@
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">Bonificaciones </th>
+                                                                            <th colspan="2" style="font-size: 15px; color: #000;">Detalle de Ganancias </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
@@ -1899,7 +1962,12 @@
                                                                         </tr>
                                                                         <tr class="inpar">
                                                                             <th>
-                                                                                <span>Ganancias a sugerido:</span>
+                                                                                <span>Ganancias a sugerido:</span> &nbsp;
+                                                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-help">
+                                                                                    <span class="badge badge-danger">
+                                                                                        <i class="fa fa-question"></i>
+                                                                                    </span>
+                                                                                </a>
                                                                             </th>
                                                                             <td>
                                                                                 <span class="lvl2l3bonificaciones"></span><span id="lvl2l3bonificaciones">0.00</span>
@@ -1958,7 +2026,7 @@
                                                                 <table class="table striped" >
                                                                     <tbody class="list">
                                                                         <tr class="table-warning font-weight-bold">
-                                                                            <th colspan="2">NIKKEN Challenge </th>
+                                                                            <th colspan="2" style="font-size: 15px; color: #000;">Detalle NIKKEN Challenge </th>
                                                                         </tr>
                                                                         <tr class="par">
                                                                             <th>
@@ -2019,6 +2087,14 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-xl-12 col-lg-12 mb-xl-0">
+                                        <div class="card p-2 bg-gradient-success">
+                                            <a>En este simulador los valores que se muestran son antes del efecto de impuestos de tu país.</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div style="position: fixed; background-color: blue; z-index: 1000">
                                 <br><br><br><br>&nbsp;
@@ -2044,4 +2120,5 @@
     <script src="{{asset('simuladornc/js/argon-dashboard.min.js?v=1.1.0')}}"></script>
     <script src="{{asset('simuladornc/js/custom.js')}}"></script>
     <script src="{{asset('simuladornc/js/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 </html>

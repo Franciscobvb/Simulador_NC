@@ -18,7 +18,7 @@ function myFunction(x) {
         $('.genealogia').addClass('justify-content-center');
     }
 }
-  
+
 var x = window.matchMedia("(max-width: 1200px)");
 myFunction(x);
 x.addListener(myFunction);
@@ -144,14 +144,15 @@ function addNodeLinea1(){
         case 1:
             $('#nivel1linea1').show(1000); 
             hideLinea1Nivel1var = 1;
+            console.log(showLinea1);
             break;
         case 2:
             $('#nivel1linea2').show(1000);
             hideLinea2Nivel1var = 1;
+            console.log(showLinea1);
             break;
         case 3:
             $('#nivel1linea3').show(1000);
-            $('.addLevel1').attr('disabled','disabled');
             hideLinea3Nivel1var = 1;
             showLinea1 = 0;
             break;
@@ -164,8 +165,10 @@ function addLinea3(nodo){
 
 $(function(){
     $('#gralForm').submit(function(e){
+        e.preventDefault();
         $('#sendForm').text('Recalcular');
         var route = $('#gralForm').data('route');
+        
         var form_data = $(this);
 
         if (pzvendidasnivel1l1 < 3 && pzvendidasnivel2l1 >= 3) {
@@ -208,8 +211,15 @@ $(function(){
                 $("#lvl1l1Avatar").attr("src","../SimuladorNC/img/ninja1.png");
                 if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3){
                     $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+                    $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
+                    $('.lvl0alcance').css('display', 'block');
+                    $('.lvl0Alcancekinya').text('+1');
+                    if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
+                        $('.lvl0Alcancekinya').text('+2');
+                    }
                 }
             }
+            $('.lvl1l1Alcancekinya').text('');
 
             $("#lvl2l1Avatar").attr("src","../simuladornc/img/asesor.png");
             $('.productos11').css('background-color', '#bebebe');
@@ -264,8 +274,15 @@ $(function(){
                 $("#lvl1l2Avatar").attr("src","../SimuladorNC/img/ninja1.png");
                 if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3){
                     $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+                    $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
+                    $('.lvl0alcance').css('display', 'block');
+                    $('.lvl0Alcancekinya').text('+1');
+                    if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
+                        $('.lvl0Alcancekinya').text('+2');
+                    }
                 }
             }
+            $('.lvl1l2Alcancekinya').text('');
 
             $("#lvl2l2Avatar").attr("src","../simuladornc/img/asesor.png");
             $('.productos22').css('background-color', '#bebebe');
@@ -320,8 +337,15 @@ $(function(){
                 $("#lvl1l3Avatar").attr("src","../SimuladorNC/img/ninja1.png");
                 if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3){
                     $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+                    $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
+                    $('.lvl0alcance').css('display', 'block');
+                    $('.lvl0Alcancekinya').text('+1');
+                    if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
+                        $('.lvl0Alcancekinya').text('+2');
+                    }
                 }
             }
+            $('.lvl1l3Alcancekinya').text('');
 
             $("#lvl2l3Avatar").attr("src","../simuladornc/img/asesor.png");
             $('.productos33').css('background-color', '#bebebe');
@@ -467,7 +491,6 @@ $(function(){
                 $('#lvl2l3venta').text(formatCurrency(Response[6].Ganancias_Compras));
             }
         })
-        e.preventDefault();
     });
 })
 
@@ -968,10 +991,10 @@ function hideLinea3Nivel2(){
 var monedaMexicana = '$ ';
 var monedaColombia = '$ ';
 var monedaCostaRica = '₡ ';
-var monedaPanama = 'B ';
+var monedaPanama = '$ ';
 var monedaEcuador = 'USD ';
 var monedaPeru = 'S/. ';
-var monedaSalvador = '₡ ';
+var monedaSalvador = '$  ';
 var monedaGuatemala = 'Q ';
 
 var monedaSelec = monedaMexicana;
@@ -991,51 +1014,55 @@ function hideProducts(id, aquapour, optimizer){
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
         $("." + optimizer).show();
+        $('.' + optimizer + 'img').show();
     }
     else if($('#' + id).val() == 'Col'){
         monedaSelec = monedaColombia;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
         $("." + optimizer).show();
+        $('.' + optimizer + 'img').show();
     }
     else if($('#' + id).val() == 'Cri'){
         monedaSelec = monedaCostaRica;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
         $("." + optimizer).show();
+        $('.' + optimizer + 'img').show();
     }
     else if($('#' + id).val() == 'Pan'){
         monedaSelec = monedaPanama;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
         $("." + optimizer).show();
+        $('.' + optimizer + 'img').show();
     }
     else if($('#' + id).val() == 'Ecu'){
         monedaSelec = monedaEcuador;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
         $("." + optimizer).show();
+        $('.' + optimizer + 'img').show();
     }
     else if($('#' + id).val() == 'Per'){
         monedaSelec = monedaPeru;
         $("#" + aquapour).parent('div').show();
         $("#" + optimizer).parent('div').show();
         $("." + optimizer).show();
+        $('.' + optimizer + 'img').show();
     }
     else if($('#' + id).val() == 'Gtm'){
-        //$("#" + aquapour).parent('div').hide();
         $("#" + optimizer).parent('div').hide();
         $("." + optimizer).hide();
-        //$("#" + aquapour).val(0);
         $("#" + optimizer).val(0);
+        $('.' + optimizer + 'img').hide();
         monedaSelec = monedaGuatemala;
     }
     else if( $('#' + id).val() == 'Slv'){
-        //$("#" + aquapour).parent('div').hide();
         $("#" + optimizer).parent('div').hide();
         $("." + optimizer).hide();
-        //$("#" + aquapour).val(0);
         $("#" + optimizer).val(0);
+        $('.' + optimizer + 'img').hide();
         monedaSelec = monedaSalvador;
     }
 

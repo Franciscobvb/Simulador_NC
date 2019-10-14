@@ -248,6 +248,9 @@ input[type=number] { -moz-appearance:textfield; }
         display: none;
     }
 
+    .help{
+        display: none;
+    }
 }
 
 @media (max-width: 1500px) {
@@ -257,6 +260,9 @@ input[type=number] { -moz-appearance:textfield; }
 
     .productos0 h6, .productos1 h6, .productos2 h6, .productos3 h6, .productos11 h6, .productos22 h6, .productos33 h6{
         font-size: 15px;
+    }
+    .help{
+        display: none;
     }
 }
 
@@ -271,6 +277,10 @@ input[type=number] { -moz-appearance:textfield; }
     .navigateCards{
         display: block;
     }
+
+    .help{
+        display: block;
+    }
 }
 
 @media (max-width: 999px){
@@ -282,16 +292,25 @@ input[type=number] { -moz-appearance:textfield; }
 
 @media (max-width: 769px){
     .productos0 img, .productos1 img, .productos2 img, .productos3 img, .productos11 img, .productos22 img, .productos33 img{
-        width: 35%;
+        width: 100%;
     }
 
     .productos0 input, .productos1 input, .productos2 input, .productos3 input, .productos11 input, .productos22 input, .productos33 input{
-        width: 40%;
+        width: 100%;
         margin-top: 10px;
     }
 
     .productos1 img, .productos2 img, .productos3 img, .productos11 img, .productos22 img, .productos33 img{
         width: 35%;
+    }
+
+    .productos0 .col-md-6, .productos1 .col-md-6, .productos2 .col-md-6, .productos3 .col-md-6, .productos11 .col-md-6, .productos22 .col-md-6, .productos33 .col-md-6{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .card-profile .row{
+        flex-wrap: wrap;
     }
 }
 
@@ -299,12 +318,19 @@ input[type=number] { -moz-appearance:textfield; }
     .productos0 h6, .productos1 h6, .productos2 h6, .productos3 h6, .productos11 h6, .productos22 h6, .productos33 h6{
         font-size: 12px;
     }
+
+    .productos1 .col-md-6, .productos2 .col-md-6, .productos3 .col-md-6, .productos11 .col-md-6, .productos22 .col-md-6, .productos33 .col-md-6{
+        padding-right: 8px;
+        padding-left: 11px;
+    }
 }
 
 @media (max-width: 510px){
     .productos0 h6, .productos1 h6, .productos2 h6, .productos3 h6, .productos11 h6, .productos22 h6, .productos33 h6{
         font-size: 10px;
     }
+
+    
 }
 
 @media (max-width: 450px){
@@ -329,11 +355,16 @@ input[type=number] { -moz-appearance:textfield; }
     }
     .productos0 img, .productos1 img, .productos2 img, .productos3 img, .productos11 img, .productos22 img, .productos33 img{
         width: 100%;
-        height: 60px;
+        height: 50px;
     }
 
     .productos0 input, .productos1 input, .productos2 input, .productos3 input, .productos11 input, .productos22 input, .productos33 input{
         width: 100%;
         margin-top: 10px;
+    }
+
+    .productos0 .col-md-6, .productos1 .col-md-6, .productos2 .col-md-6, .productos3 .col-md-6, .productos11 .col-md-6, .productos22 .col-md-6, .productos33 .col-md-6{
+        padding-right: 5px;
+        padding-left: 5px;
     }
 }
