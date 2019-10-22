@@ -10,6 +10,13 @@ var hideLinea1Nivel1var = 0;
 var hideLinea2Nivel1var = 0;
 var hideLinea3Nivel1var = 0;
 
+function stopVideo(){
+    $('iframe').contents().find('video').each(function () {
+        this.currentTime = 0;
+        this.pause();
+    });
+}
+
 function myFunction(x) {
     if (x.matches) {
         $('.genealogia').removeClass('justify-content-center');

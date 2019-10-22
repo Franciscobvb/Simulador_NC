@@ -96,9 +96,14 @@
                                         <br>
                                         <a href="" class="btn btn-success" >Jugar de nuevo</a>
                                         <br>
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-tutorial" class="btn btn-success">
+                                            <i class="fa fa-question"></i> Tutorial
+                                        </a>
+                                        <br>
                                         <button type="button" class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3 btn btn-block" data-toggle="modal" data-target="#modal-notification">
                                             <img src="{{asset('SimuladorNC/img/shareIcon.png')}}" width="100%">
                                         </button>
+
                                         <div class="modal fade" id="modal-notification" tabindex="-1000" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
                                             <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
                                                 <div class="modal-content bg-gradient-primary">
@@ -177,27 +182,48 @@
                                         </div>
 
                                         <div class="modal fade" id="modal-notification-help" tabindex="-1000" role="dialog" aria-labelledby="modal-notification-info" aria-hidden="true">
-                                                <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-                                                    <div class="modal-content bg-gradient-primary">
-                                                        <div class="modal-header">
-                                                            <h2 class="modal-title" id="modal-title-notification">Ganancias a sugerido</h2>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">×</span>
-                                                            </button>
+                                            <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                                                <div class="modal-content bg-gradient-primary">
+                                                    <div class="modal-header">
+                                                        <h2 class="modal-title" id="modal-title-notification">Ganancias a sugerido</h2>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="py-3 text-center">
+                                                            <p>
+                                                                Es el lucro que representa la diferencia del precio de mayoreo y el precio de venta al público sugerido.
+                                                            </p>
                                                         </div>
-                                                        <div class="modal-body">
-                                                            <div class="py-3 text-center">
-                                                                <p>
-                                                                    Es el lucro que representa la diferencia del precio de mayoreo y el precio de venta al público sugerido.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-white ml-auto" data-dismiss="modal">Cerrar</button> 
-                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-white ml-auto" data-dismiss="modal">Cerrar</button> 
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <div class="modal fade" id="modal-notification-tutorial" tabindex="-1000" role="dialog" aria-labelledby="modal-notification-info" aria-hidden="true" onclick="stopVideo()">
+                                            <div class="modal-dialog modal-tutorial modal-danger modal-dialog-centered modal-" role="document">
+                                                <div class="modal-content bg-gradient-primary">
+                                                    <div class="modal-header">
+                                                        <h2 class="modal-title" id="modal-title-notification">Tutorial Simulador NIKKEN Challenge</h2>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="stopVideo()">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="py-3 text-center">
+                                                            <iframe width="100%" height="400" id="tutorial" src="{{asset('SimuladorNC/img/tutorial.mp4')}}" frameborder="0" allowfullscreen></iframe>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-white ml-auto" data-dismiss="modal" onclick="stopVideo()">Cerrar</button> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">

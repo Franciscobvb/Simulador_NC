@@ -6217,6 +6217,11 @@ button.close {
     margin: 1.75rem auto;
   }
 
+  .modal-tutorial{
+    max-width: 800px;
+    margin: 1.75rem auto;
+  }
+
   .modal-dialog-centered {
     min-height: calc(100% - (1.75rem * 2));
   }
