@@ -46,7 +46,7 @@
                 </div>
             </header>
             
-            <div class="header pb-5 pt-5">
+            <div class="header pb-5 pt-5 jumbotron">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
@@ -92,72 +92,6 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="fixed-action-btn my-custom-btn justify-content-center col col-lg-2 col-xl-2 col-sm-3 col-xs-3">
-                                        <button type="submit" class="btn btn-success" id="sendForm">Calcular</button>
-                                        <br>
-                                        <a href="" class="btn btn-success" >Jugar de nuevo</a>
-                                        <br>
-                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-notification-tutorial" class="btn btn-success">
-                                            <i class="fa fa-question"></i> Tutorial
-                                        </a>
-                                        <br>
-                                        <button type="button" class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3 btn btn-block" data-toggle="modal" data-target="#modal-notification">
-                                            <img src="{{asset('SimuladorNC/img/shareIcon.png')}}" width="100%">
-                                        </button>
-
-                                        <div class="modal fade" id="modal-notification" tabindex="-1000" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
-                                            <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-                                                <div class="modal-content bg-gradient-primary">
-                                                    <div class="modal-header">
-                                                        <h2 class="modal-title" id="modal-title-notification">Compartir en redes sociales</h2>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">×</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="py-3 text-center">
-                                                            <img src="{{asset('SimuladorNC/img/shareIcon.png')}}" width="10%">
-                                                            <br>&nbsp;
-                                                            <p>
-                                                                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v4.0"></script>
-                                                                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
-                                                                    <img src="{{asset('SimuladorNC/img/facebook.png')}}" width="20%">
-                                                                    Compartir
-                                                                </a>
-                                                            </p>
-                                                            <p>
-                                                                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                                                <a target="_blank" href="https://twitter.com/share?url=http://services.nikken.com.mx/simulador/&amp;text=Simulador%20Nikken%20Chalenge" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
-                                                                    <img src="{{asset('SimuladorNC/img/twitter.png')}}" width="20%">
-                                                                    Compartir
-                                                                </a>
-                                                            </p>
-                                                            <p>
-                                                                <a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
-                                                                    <img src="{{asset('SimuladorNC/img/linkedin.png')}}" width="20%">
-                                                                    Compartir
-                                                                </a>    
-                                                            </p>
-                                                            <p>
-                                                                <a target="_blank" href="https://wa.me/?text=Simulador NIKKEN Challenge http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
-                                                                    <img src="{{asset('SimuladorNC/img/whatsapp.png')}}" width="20%">
-                                                                    Compartir
-                                                                </a>    
-                                                            </p>
-                                                            <p>
-                                                                <a target="_blank" href="mailto:?Subject=Nikken Calenge&amp;Body=Simulador NIKKEN Challenge http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
-                                                                    <img src="{{asset('SimuladorNC/img/message.png')}}" width="20%">
-                                                                    Compartir
-                                                                </a>    
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-white ml-auto" data-dismiss="modal">Cerrar</button> 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         <div class="modal fade" id="modal-notification-info" tabindex="-1000" role="dialog" aria-labelledby="modal-notification-info" aria-hidden="true">
                                             <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
                                                 <div class="modal-content bg-gradient-primary">
@@ -215,7 +149,9 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="py-3 text-center">
-                                                            <iframe width="100%" height="400" id="tutorial" src="{{asset('SimuladorNC/img/tutorial.mp4')}}" frameborder="0" allowfullscreen></iframe>
+                                                            <video controls="true" class="embed-responsive-item" width="85%">
+                                                                <source src="{{ asset('SimuladorNC/img/tutorial.mp4') }}" type="video/mp4" />
+                                                            </video>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -224,8 +160,141 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="modal fade" id="modal-notification" tabindex="-1000" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+                                            <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                                                <div class="modal-content bg-gradient-primary">
+                                                    <div class="modal-header">
+                                                        <h2 class="modal-title" id="modal-title-notification">Compartir en redes sociales</h2>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="py-3 text-center">
+                                                            <img src="http://services.nikken.com.mx/SimuladorNC/img/shareIcon.png" width="10%">
+                                                            <br>&nbsp;
+                                                            <p>
+                                                                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v4.0"></script>
+                                                                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
+                                                                    <img src="http://services.nikken.com.mx/SimuladorNC/img/facebook.png" width="20%">
+                                                                    Compartir
+                                                                </a>
+                                                            </p>
+                                                            <p>
+                                                                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                                                <a target="_blank" href="https://twitter.com/share?url=http://services.nikken.com.mx/simulador/&amp;text=Simulador%20Nikken%20Chalenge" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
+                                                                    <img src="http://services.nikken.com.mx/SimuladorNC/img/twitter.png" width="20%">
+                                                                    Compartir
+                                                                </a>
+                                                            </p>
+                                                            <p>
+                                                                <a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
+                                                                    <img src="http://services.nikken.com.mx/SimuladorNC/img/linkedin.png" width="20%">
+                                                                    Compartir
+                                                                </a>    
+                                                            </p>
+                                                            <p>
+                                                                <a target="_blank" href="https://wa.me/?text=Simulador NIKKEN Challenge http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
+                                                                    <img src="http://services.nikken.com.mx/SimuladorNC/img/whatsapp.png" width="20%">
+                                                                    Compartir
+                                                                </a>    
+                                                            </p>
+                                                            <p>
+                                                                <a target="_blank" href="mailto:?Subject=Nikken Calenge&amp;Body=Simulador NIKKEN Challenge http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
+                                                                    <img src="http://services.nikken.com.mx/SimuladorNC/img/message.png" width="20%">
+                                                                    Compartir
+                                                                </a>    
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-white ml-auto" data-dismiss="modal">Cerrar</button> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                
+                                <nav id="navbar-main" class="sticky navbar navbar-horizontal bg-white navbar-main navbar-expand-lg navbar-light mb-5">
+                                    <div class="container">
+                                        <button type="submit" class="btn btn-gradient-primary" id="sendForm">
+                                            <i class="fa fa-calculator"></i>
+                                            Calcular
+                                        </button>
+                                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                            <span class="navbar-toggler-icon"></span>
+                                        </button>
+                                        <div class="navbar-collapse navbar-custom-collapse collapse br-left-30 pl-4 pr-4 pt-2 pb-2 br-right-30" id="navbar-collapse">
+                                            <div class="navbar-collapse-header">
+                                                <div class="row">
+                                                    <div class="col-6 collapse-brand">
+                                                        <a href="javascript:void(0)"></a>
+                                                    </div>
+                                                    <div class="col-6 collapse-close">
+                                                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                                            <span></span>
+                                                            <span></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="navbar-nav">
+                                                <li class="nav-item">
+                                                    <button type="reload" class="btn btn-gradient-primary li-menu" onClick="window.location.reload();">
+                                                        <i class="fa fa-sync"></i>
+                                                        Jugar de nuevo
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <button type="reload" class="btn btn-gradient-primary li-menu" data-toggle="modal" data-target="#modal-notification-tutorial">
+                                                        <i class="fa fa-life-ring"></i>
+                                                        Tutorial
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item d-lg-none">
+                                                    <button type="reload" class="btn btn-gradient-primary li-menu" data-toggle="modal" data-target="#modal-notification">
+                                                        <i class="fa fa-share"></i>
+                                                        Compartir
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item d-sm-none d-xs-none d-lg-block">
+                                                    <div class="btn-group btn-group-md ">
+                                                        <button class="btn dropdown-toggle btn-gradient-primary li-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="fa fa-share"></i>
+                                                            Compartir
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://services.nikken.com.mx/simulador/" class="dropdown-item" target="_blank">
+                                                                <i class="fa fa-facebook-square facebook"></i>
+                                                                Facebook
+                                                            </a>
+                                                            <a href="https://twitter.com/share?url=http://services.nikken.com.mx/simulador/&amp;text=Simulador%20Nikken%20Chalenge" class="dropdown-item" target="_blank">
+                                                                <i class="fa fa-twitter-square twitter"></i>
+                                                                Twitter
+                                                            </a>
+                                                            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://services.nikken.com.mx/simulador/" class="dropdown-item" target="_blank">
+                                                                <i class="fa fa-linkedin linkedin"></i>
+                                                                Linkedin
+                                                            </a>
+                                                            <a href="https://wa.me/?text=Simulador NIKKEN Challenge http://services.nikken.com.mx/simulador/" class="dropdown-item" target="_blank">
+                                                                <i class="fa fa-whatsapp whatsapp"></i>
+                                                                Whatsapp
+                                                            </a>
+                                                            <a href="mailto:?Subject=Nikken Calenge&amp;Body=Simulador NIKKEN Challenge http://services.nikken.com.mx/simulador/" class="dropdown-item" target="_blank">
+                                                                <i class="fa fa-envelope email"></i>
+                                                                Correo
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <hr class="d-lg-none" />
+                                        </div>
+                                    </div>
+                                </nav>
+                                <br>
                                 <div class="row justify-content-center">
                                     <div class="col-xl-6 order-xl-2 mb-xl-0">
                                         <div class="card card-profile shadow 0">
@@ -251,6 +320,7 @@
                                                             <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
+                                                            <option value="Chl">Chile</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-4 "></div>
@@ -284,6 +354,34 @@
                                                         </h1>
                                                     </center>
                                                 </div>
+                                                <div class="row" hidden>
+                                                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                                            <input class="custom-control-input" id="lvl0Registro" type="checkbox">
+                                                            <label class="custom-control-label" for="lvl0Registro" onclick="showKit('lvl0Registro', 'lvl0kitDiv', 'lvl0KitInicio', 'lvl0rango')">Registro</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl0kitDiv">
+                                                        <div class="form-group row">
+                                                            <label for="example-text-input" class="col col-form-label form-control-label">Kit de inicio: </label>
+                                                            <div class="col-md-8">
+                                                                <select class="form-control" id="lvl0KitInicio" name="lvl0KitInicio">
+                                                                    <option value="0" selected>Seleccione...</option>
+                                                                    <option value="1">PI WATER</option>
+                                                                    <option value="2">WATERFALL </option>
+                                                                    <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="text-warning font-weight-bold labelbonoLvl0">
+                                                        Total Ganancia Influencer:
+                                                        <span class="lvl0BonoInfluencer"></span>
+                                                        <span id="lvl0BonoInfluencer">0.00</span>
+                                                    </span>
+                                                </div>
                                                 <div class="row">
                                                     <div class="productos0 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                         <div class="row">
@@ -295,7 +393,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="65%" height="auto">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzpiw" id="lvl0pzpiw">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzpiw" id="lvl0pzpiw" onchange="lvl0pzpiwf($('#lvl0pzpiw'))">
                                                                             
                                                                         </div>
                                                                     </div>
@@ -310,7 +408,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="65%" height="auto">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzwa" id="lvl0pzwa">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzwa" id="lvl0pzwa" onchange="lvl0pzwaf($('#lvl0pzwa'))">
                                                                             
                                                                         </div>
                                                                     </div>
@@ -340,7 +438,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="65%" height="auto" class="lvl0pzopimg">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzop" id="lvl0pzop">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl0pzop" id="lvl0pzop" onchange="lvl0pzopf($('#lvl0pzop'))">
                                                                             
                                                                         </div>
                                                                     </div>
@@ -507,6 +605,7 @@
                                 </center>
 
                                 <hr>
+                                <input type="hidden" id="type" name="type" value="0">
 
                                 <div class="row justify-content-center genealogia" style="overflow-x: auto">
                                     <div class="col-xl-4 order-xl-1 mb-5 mb-xl-0 mt-6" id="nivel1linea1">
@@ -538,6 +637,7 @@
                                                             <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
+                                                            <option value="Chl">Chile</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-6 "></div>
@@ -567,6 +667,34 @@
                                                     </center>
                                                 </div>
                                                 <div class="row">
+                                                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                                            <input class="custom-control-input" id="lvl1l1Registro" type="checkbox">
+                                                            <label class="custom-control-label" for="lvl1l1Registro" onclick="showKit('lvl1l1Registro', 'lvl1l1kitDiv', 'lvl1l1KitInicio', 'lvl1l1rango', 'lvl1l1pzpiw', 'lvl1l1pzwa', 'lvl1l1pzop')">Registro</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl1l1kitDiv">
+                                                        <div class="form-group row">
+                                                            <label for="example-text-input" class="col col-form-label form-control-label">Kit de inicio: </label>
+                                                            <div class="col-md-8">
+                                                                <select class="form-control" id="lvl1l1KitInicio" name="lvl1l1KitInicio" onchange="setPzKitIni('lvl1l1KitInicio', 'lvl1l1pzpiw', 'lvl1l1pzwa', 'lvl1l1pzop')">
+                                                                    <option value="0" selected>Seleccione...</option>
+                                                                    <option value="1">PI WATER</option>
+                                                                    <option value="2">WATERFALL </option>
+                                                                    <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="text-warning font-weight-bold labelbonoLvl1l1">
+                                                        Total Ganancia Influencer:
+                                                        <span class="lvl1l1BonoInfluencer"></span>
+                                                        <span id="lvl1l1BonoInfluencer">0.00</span>
+                                                    </span>
+                                                </div>
+                                                <div class="row">
                                                     <div class="productos1 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                         <div class="row">
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
@@ -577,8 +705,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzpiw" id="lvl1l1pzpiw">
-                                                                            
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzpiw" id="lvl1l1pzpiw" onchange="lvl1l1pzpiwf($('#lvl1l1pzpiw'))">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -592,8 +719,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzwa" id="lvl1l1pzwa">
-                                                                            
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzwa" id="lvl1l1pzwa" onchange="lvl1l1pzwaf($('#lvl1l1pzwa'))">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -607,8 +733,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/WATERFALL.png')}}" width="100%">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzaqp" id="lvl1l1pzaqp">
-                                                                            
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzaqp" id="lvl1l1pzaqp" >
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -622,7 +747,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl1l1pzopimg">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzop" id="lvl1l1pzop">
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l1pzop" id="lvl1l1pzop" onchange="lvl1l1pzopf($('#lvl1l1pzop'))">
                                                                             
                                                                         </div>
                                                                     </div>
@@ -807,6 +932,7 @@
                                                                     <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
+                                                                    <option value="Chl">Chile</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-sm-6 "></div>
@@ -835,6 +961,34 @@
                                                             </center>
                                                         </div>
                                                         <div class="row">
+                                                            <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                                <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                                                    <input class="custom-control-input" id="lvl2l1Registro" type="checkbox">
+                                                                    <label class="custom-control-label" for="lvl2l1Registro" onclick="showKit('lvl2l1Registro', 'lvl2l1kitDiv', 'lvl2l1KitInicio', 'lvl2l1rango', 'lvl2l1pzpiw', 'lvl2l1pzwa', 'lvl2l1pzop')">Registro</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl2l1kitDiv">
+                                                                <div class="form-group row">
+                                                                    <label for="example-text-input" class="col col-form-label form-control-label">Kit de inicio: </label>
+                                                                    <div class="col-md-8">
+                                                                        <select class="form-control" id="lvl2l1KitInicio" name="lvl2l1KitInicio" onchange="setPzKitIni('lvl2l1KitInicio', 'lvl2l1pzpiw', 'lvl2l1pzwa', 'lvl2l1pzop')">
+                                                                            <option value="0" selected>Seleccione...</option>
+                                                                            <option value="1">PI WATER</option>
+                                                                            <option value="2">WATERFALL </option>
+                                                                            <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <span class="text-warning font-weight-bold labelbonoLvl2l1">
+                                                                Total Ganancia Influencer:
+                                                                <span class="lvl2l1BonoInfluencer"></span>
+                                                                <span id="lvl2l1BonoInfluencer">0.00</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="row">
                                                             <div class="productos11 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                                 <div class="row">
                                                                     <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
@@ -845,8 +999,7 @@
                                                                                     <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzpiw" id="lvl2l1pzpiw">
-                                                                                    
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzpiw" id="lvl2l1pzpiw" onchange="lvl2l1pzpiwf($('#lvl2l1pzpiw'))">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -860,8 +1013,7 @@
                                                                                     <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzwa" id="lvl2l1pzwa">
-                                                                                    
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzwa" id="lvl2l1pzwa" onchange="lvl2l1pzwaf($('#lvl2l1pzwa'))">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -876,7 +1028,6 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
                                                                                     <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzaqp" id="lvl2l1pzaqp">
-                                                                                    
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -890,8 +1041,7 @@
                                                                                     <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl2l1pzopimg">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzop" id="lvl2l1pzop">
-                                                                                    
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l1pzop" id="lvl2l1pzop" onchange="lvl2l1pzopf($('#lvl2l1pzop'))">
                                                                                 </div>
                                                                             </div>
                                                                             
@@ -1073,6 +1223,7 @@
                                                             <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
+                                                            <option value="Chl">Chile</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-6 "></div>
@@ -1102,6 +1253,34 @@
                                                     </center>
                                                 </div>
                                                 <div class="row">
+                                                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                                            <input class="custom-control-input" id="lvl1l2Registro" type="checkbox">
+                                                            <label class="custom-control-label" for="lvl1l2Registro" onclick="showKit('lvl1l2Registro', 'lvl1l2kitDiv', 'lvl1l2KitInicio', 'lvl1l2rango', 'lvl1l2pzpiw', 'lvl1l2pzwa', 'lvl1l2pzop')">Registro</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl1l2kitDiv">
+                                                        <div class="form-group row">
+                                                            <label for="example-text-input" class="col col-form-label form-control-label">Kit de inicio: </label>
+                                                            <div class="col-md-8">
+                                                                <select class="form-control" id="lvl1l2KitInicio" name="lvl1l2KitInicio" onchange="setPzKitIni('lvl1l2KitInicio', 'lvl1l2pzpiw', 'lvl1l2pzwa', 'lvl1l2pzop')">
+                                                                    <option value="0" selected>Seleccione...</option>
+                                                                    <option value="1">PI WATER</option>
+                                                                    <option value="2">WATERFALL </option>
+                                                                    <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="text-warning font-weight-bold labelbonoLvl1l2">
+                                                        Total Ganancia Influencer:
+                                                        <span class="lvl1l2BonoInfluencer"></span>
+                                                        <span id="lvl1l2BonoInfluencer">0.00</span>
+                                                    </span>
+                                                </div>
+                                                <div class="row">
                                                     <div class="productos2 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                         <div class="row">
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
@@ -1112,8 +1291,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%" >
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzpiw" id="lvl1l2pzpiw">
-                                                                            
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzpiw" id="lvl1l2pzpiw" onchange="lvl1l2pzpiwf($('#lvl1l2pzpiw'))">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1127,8 +1305,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%" >
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzwa" id="lvl1l2pzwa">
-                                                                            
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzwa" id="lvl1l2pzwa" onchange="lvl1l2pzwaf($('#lvl1l2pzwa'))">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1157,8 +1334,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl1l2pzopimg">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzop" id="lvl1l2pzop">
-                                                                            
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l2pzop" id="lvl1l2pzop" onchange="lvl1l2pzopf($('#lvl1l2pzop'))">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1342,6 +1518,7 @@
                                                                     <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
+                                                                    <option value="Chl">Chile</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-sm-6 "></div>
@@ -1370,6 +1547,34 @@
                                                             </center>
                                                         </div>
                                                         <div class="row">
+                                                            <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                                <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                                                    <input class="custom-control-input" id="lvl2l2Registro" type="checkbox">
+                                                                    <label class="custom-control-label" for="lvl2l2Registro" onclick="showKit('lvl2l2Registro', 'lvl2l2kitDiv', 'lvl2l2KitInicio', 'lvl2l2rango', 'lvl2l2pzpiw', 'lvl2l2pzwa', 'lvl2l2pzop')">Registro</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl2l2kitDiv">
+                                                                <div class="form-group row">
+                                                                    <label for="example-text-input" class="col col-form-label form-control-label">Kit de inicio: </label>
+                                                                    <div class="col-md-8">
+                                                                        <select class="form-control" id="lvl2l2KitInicio" name="lvl2l2KitInicio" onchange="setPzKitIni('lvl2l2KitInicio', 'lvl2l2pzpiw', 'lvl2l2pzwa', 'lvl2l2pzop')">
+                                                                            <option value="0" selected>Seleccione...</option>
+                                                                            <option value="1">PI WATER</option>
+                                                                            <option value="2">WATERFALL </option>
+                                                                            <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <span class="text-warning font-weight-bold labelbonoLvl2l2">
+                                                                Total Ganancia Influencer:
+                                                                <span class="lvl2l2BonoInfluencer"></span>
+                                                                <span id="lvl2l2BonoInfluencer">0.00</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="row">
                                                             <div class="productos22 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                                 <div class="row">
                                                                     <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
@@ -1380,8 +1585,7 @@
                                                                                     <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzpiw" id="lvl2l2pzpiw">
-                                                                                    
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzpiw" id="lvl2l2pzpiw" onchange="lvl2l2pzpiwf($('#lvl2l2pzpiw'))">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1395,8 +1599,7 @@
                                                                                     <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzwa" id="lvl2l2pzwa">
-                                                                                    
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzwa" id="lvl2l2pzwa" onchange="lvl2l2pzwaf($('#lvl2l2pzwa'))">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1425,8 +1628,7 @@
                                                                                     <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl2l2pzopimg">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzop" id="lvl2l2pzop">
-                                                                                    
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l2pzop" id="lvl2l2pzop" onchange="lvl2l2pzopf($('#lvl2l2pzop'))">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1607,6 +1809,7 @@
                                                             <option value="Per">Perú</option>
                                                             <option value="Slv">El Salvador</option>
                                                             <option value="Gtm">Guatemala</option>
+                                                            <option value="Chl">Chile</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-6 "></div>
@@ -1636,6 +1839,34 @@
                                                     </center>
                                                 </div>
                                                 <div class="row">
+                                                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                                            <input class="custom-control-input" id="lvl1l3Registro" type="checkbox">
+                                                            <label class="custom-control-label" for="lvl1l3Registro" onclick="showKit('lvl1l3Registro', 'lvl1l3kitDiv', 'lvl1l3KitInicio', 'lvl1l3rango', 'lvl1l3pzpiw', 'lvl1l3pzwa', 'lvl1l3pzop')">Registro</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl1l3kitDiv">
+                                                        <div class="form-group row">
+                                                            <label for="example-text-input" class="col col-form-label form-control-label">Kit de inicio: </label>
+                                                            <div class="col-md-8">
+                                                                <select class="form-control" id="lvl1l3KitInicio" name="lvl1l3KitInicio" onchange="setPzKitIni('lvl1l3KitInicio', 'lvl1l3pzpiw', 'lvl1l3pzwa', 'lvl1l3pzop')">
+                                                                    <option value="0" selected>Seleccione...</option>
+                                                                    <option value="1">PI WATER</option>
+                                                                    <option value="2">WATERFALL </option>
+                                                                    <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="text-warning font-weight-bold labelbonoLvl1l3">
+                                                        Total Ganancia Influencer:
+                                                        <span class="lvl1l3BonoInfluencer"></span>
+                                                        <span id="lvl1l3BonoInfluencer">0.00</span>
+                                                    </span>
+                                                </div>
+                                                <div class="row">
                                                     <div class="productos3 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                         <div class="row">
                                                             <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
@@ -1646,8 +1877,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzpiw" id="lvl1l3pzpiw">
-                                                                            
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzpiw" id="lvl1l3pzpiw" onchange="lvl1l3pzpiwf($('#lvl1l3pzpiw'))">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1661,8 +1891,7 @@
                                                                             <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzwa" id="lvl1l3pzwa">
-                                                                            
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzwa" id="lvl1l3pzwa" onchange="lvl1l3pzwaf($('#lvl1l3pzwa'))">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1691,11 +1920,9 @@
                                                                             <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl1l3pzopimg">
                                                                         </div>
                                                                         <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzop" id="lvl1l3pzop">
-                                                                            
+                                                                            <input class="form-control" type="number" maxlength="2" value="0" name="lvl1l3pzop" id="lvl1l3pzop" onchange="lvl1l3pzopf($('#lvl1l3pzop'))">
                                                                         </div>
                                                                     </div>
-                                                                    
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1842,7 +2069,7 @@
                                             </div>
                                         </div>
                                         <center>
-                                            <button class="btn btn-icon btn-2 addLevel2 mt--4" type="button" onclick="addLinea3('nivel2linea3')">
+                                            <button class="btn btn-icon btn-2 addLevel2 mt--4" type="button" onclick="addLinea3('nivel2linea3', 'labelbonoLvl1l3')">
                                                 <span class="btn-inner--icon"><i class="ni ni-fat-add"></i> Añadir jugador</span>
                                             </button>
                                         </center>
@@ -1877,6 +2104,7 @@
                                                                     <option value="Per">Perú</option>
                                                                     <option value="Slv">El Salvador</option>
                                                                     <option value="Gtm">Guatemala</option>
+                                                                    <option value="Chl">Chile</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-sm-6 "></div>
@@ -1905,6 +2133,34 @@
                                                             </center>
                                                         </div>
                                                         <div class="row">
+                                                            <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                                <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                                                    <input class="custom-control-input" id="lvl2l3Registro" type="checkbox">
+                                                                    <label class="custom-control-label" for="lvl2l3Registro" onclick="showKit('lvl2l3Registro', 'lvl2l3kitDiv', 'lvl2l3KitInicio', 'lvl2l3rango', 'lvl2l3pzpiw', 'lvl2l3pzwa', 'lvl2l3pzop')">Registro</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl2l3kitDiv">
+                                                                <div class="form-group row">
+                                                                    <label for="example-text-input" class="col col-form-label form-control-label">Kit de inicio: </label>
+                                                                    <div class="col-md-8">
+                                                                        <select class="form-control" id="lvl2l3KitInicio" name="lvl2l3KitInicio" onchange="setPzKitIni('lvl2l3KitInicio', 'lvl2l3pzpiw', 'lvl2l3pzwa', 'lvl2l3pzop')">
+                                                                            <option value="0" selected>Seleccione...</option>
+                                                                            <option value="1">PI WATER</option>
+                                                                            <option value="2">WATERFALL </option>
+                                                                            <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <span class="text-warning font-weight-bold labelbonoLvl2l3">
+                                                                Total Ganancia Influencer:
+                                                                <span class="lvl2l3BonoInfluencer"></span>
+                                                                <span id="lvl2l3BonoInfluencer">0.00</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="row">
                                                             <div class="productos33 col col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                                 <div class="row">
                                                                     <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
@@ -1915,8 +2171,7 @@
                                                                                     <img src="{{asset('SimuladorNC/img/PI-WATER.png')}}" width="100%">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzpiw" id="lvl2l3pzpiw">
-                                                                                    
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzpiw" id="lvl2l3pzpiw" onchange="lvl2l3pzpiwf($('#lvl2l3pzpiw'))">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1930,8 +2185,7 @@
                                                                                     <img src="{{asset('SimuladorNC/img/AQUA-POUR.png')}}" width="100%">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzwa" id="lvl2l3pzwa">
-                                                                                    
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzwa" id="lvl2l3pzwa" onchange="lvl2l3pzwaf($('#lvl2l3pzwa'))">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1946,7 +2200,6 @@
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
                                                                                     <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzaqp" id="lvl2l3pzaqp">
-                                                                                    
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1960,8 +2213,7 @@
                                                                                     <img src="{{asset('SimuladorNC/img/OPTIMIZER.png')}}" width="100%" class="lvl2l3pzopimg">
                                                                                 </div>
                                                                                 <div class="col-md-6 col-lg-6 col-xl-6 formulario">
-                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzop" id="lvl2l3pzop">
-                                                                                    
+                                                                                    <input class="form-control" type="number" maxlength="2" value="0" name="lvl2l3pzop" id="lvl2l3pzop" onchange="lvl2l3pzopf($('#lvl2l3pzop'))">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -2128,17 +2380,16 @@
                         </form>
                     </div>
                 </div>
-
-                <footer class="footer">
-                    <div class="row align-items-center justify-content-xl-between">
-                        <div class="col-xl-6">
-                            <div class="copyleft text-center text-xl-left text-muted">
-                                &copy; 2019 <a href="https://nikkenlatam.com" class="font-weight-bold ml-1" target="_blank">Nikken Latam.</a> Todos los derechos reservados.
-                            </div>
+            </div>
+            <footer class="footer">
+                <div class="row align-items-center justify-content-xl-between" style="max-width: 100%">
+                    <div class="col-xl-6">
+                        <div class="copyleft text-center text-xl-left text-muted ml-2">
+                            &copy; 2019 <a href="https://nikkenlatam.com" class="font-weight-bold ml-1" target="_blank">Nikken Latinoamérica.</a> Todos los derechos reservados.
                         </div>
                     </div>
-                </footer>
-            </div>
+                </div>
+            </footer>
         </div>
     </body>
     <script src="{{asset('simuladornc/js/plugins/jquery/dist/jquery.min.js')}}"></script>
@@ -2147,4 +2398,12 @@
     <script src="{{asset('simuladornc/js/custom.js')}}"></script>
     <script src="{{asset('simuladornc/js/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153399142-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-153399142-1');
+    </script>
 </html>

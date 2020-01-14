@@ -6,10 +6,10 @@ header {
     width: 100%;
     background: 
     #D64000;
-        background-position-x: 0%;
-        background-position-y: 0%;
-        background-attachment: scroll;
-        background-size: auto;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-attachment: scroll;
+    background-size: auto;
     background-size: cover;
     background-attachment: fixed;
     background-position: center 0;
@@ -35,10 +35,10 @@ header {
 
 .home {
     background: url('https://services.nikken.com.mx/img/slider/nikken-challenge-kin-ya.png');
-        background-position-x: 0%;
-        background-position-y: 0%;
-        background-attachment: scroll;
-        background-size: auto;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-attachment: scroll;
+    background-size: auto;
     background-size: inherit;
     background-position: center left;
     background-attachment: inherit;
@@ -46,10 +46,10 @@ header {
 
 .about {
     background: url('https://services.nikken.com.mx/img/slider/nikken-challenge-kin-ya-mas.png');
-        background-position-x: 0%;
-        background-position-y: 0%;
-        background-attachment: scroll;
-        background-size: auto;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-attachment: scroll;
+    background-size: auto;
     background-size: inherit;
     background-position: center left;
     background-attachment: inherit;
@@ -57,10 +57,10 @@ header {
 
 .contact {
     background: url('https://services.nikken.com.mx/img/slider/nikken-challenge-kin-tai.png');
-        background-position-x: 0%;
-        background-position-y: 0%;
-        background-attachment: scroll;
-        background-size: auto;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-attachment: scroll;
+    background-size: auto;
     background-size: inherit;
     background-position: center left;
     background-attachment: inherit;
@@ -68,10 +68,10 @@ header {
 
 .work {
     background: url('https://services.nikken.com.mx/img/slider/nikken-challenge-kin-master.png');
-        background-position-x: 0%;
-        background-position-y: 0%;
-        background-attachment: scroll;
-        background-size: auto;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-attachment: scroll;
+    background-size: auto;
     background-size: inherit;
     background-position: center left;
     background-attachment: inherit;
@@ -104,8 +104,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 .flex-title {
-    color: 
-    #f1f1f1;
+    color: #f1f1f1;
     position: relative;
     font-size: 6vw;
     margin: auto;
@@ -124,9 +123,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 .flex-slide img {
     max-width: 85%;
     min-width: 90px;
-    background: linear-gradient(
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7));
+    background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
     padding: 5px 2px;
     border-radius: 5px;
 }
@@ -167,7 +164,6 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 input[type=number] { -moz-appearance:textfield; }
 
 .header{
-    border-bottom-size: 1px;
     border-bottom-style: solid;
     border-bottom-color: #D64000;
 }
@@ -188,11 +184,6 @@ input[type=number] { -moz-appearance:textfield; }
     width: 36px;
     height: 36px;
     z-index: 915;
-}
-  
-.addLevel1, .addLevel2{
-    background-color: rgb( 0, 102, 204 );
-    color: #fff;
 }
 
 .par{
@@ -288,6 +279,9 @@ input[type=number] { -moz-appearance:textfield; }
         height: 50px;
     }
 
+    .btn-gradient-primary {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 769px){
@@ -322,6 +316,10 @@ input[type=number] { -moz-appearance:textfield; }
     .productos1 .col-md-6, .productos2 .col-md-6, .productos3 .col-md-6, .productos11 .col-md-6, .productos22 .col-md-6, .productos33 .col-md-6{
         padding-right: 8px;
         padding-left: 11px;
+    }
+
+    .d-xs-none{
+        display: none;
     }
 }
 
@@ -367,4 +365,86 @@ input[type=number] { -moz-appearance:textfield; }
         padding-right: 5px;
         padding-left: 5px;
     }
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.br-left-30 {
+    border-top-left-radius: 30px !important;
+    border-bottom-left-radius: 30px !important;
+}
+
+.btn-gradient-primary {
+    color: #fff;
+    background-image: linear-gradient(to top,#4481eb 0%,#04befe 100%);
+    background-color:#04befe;
+    border: 0;
+}
+
+.li-menu{
+    width: 100%;
+}
+
+.addLevel1, .addLevel2{
+    color: #000;
+    background-image: linear-gradient(to top,#4481eb 0%,#04befe 100%);
+    background-color:#04befe;
+}
+
+.addLevel1:hover, .addLevel2:hover{
+    background-image: linear-gradient(to right, #3862f5 7%, #07e0c4 100%);
+}
+
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.br-right-30 {
+    border-top-right-radius: 30px !important;
+    border-bottom-right-radius: 30px !important;
+}
+
+.btn-group{
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.0312rem;
+}
+
+.facebook{
+    color: #475993;
+}
+
+.twitter{
+    color: #76a9ea;
+}
+
+.linkedin{
+    color: #0077b7;
+}
+
+.whatsapp{
+    color: #7ad06d;
+}
+
+.email{
+    color: #ff7127;
+}
+
+.jumbotron{
+    background: url('https://nikkenlatam.com/nikken-challenge/custom/img/bg-pattern-header.jpg');
+}
+
+.reload{
+    color: #fff;;
+}
+
+.btn-2{
+    border: 0;
 }

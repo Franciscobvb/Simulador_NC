@@ -11,13 +11,10 @@ var hideLinea2Nivel1var = 0;
 var hideLinea3Nivel1var = 0;
 
 function stopVideo(){
-    $('iframe').contents().find('video').each(function () {
-        this.currentTime = 0;
-        this.pause();
-    });
+    $('video')[0].pause();
 }
 
-function myFunction(x) {
+function removeClassFunction(x) {
     if (x.matches) {
         $('.genealogia').removeClass('justify-content-center');
     }
@@ -27,8 +24,8 @@ function myFunction(x) {
 }
 
 var x = window.matchMedia("(max-width: 1200px)");
-myFunction(x);
-x.addListener(myFunction);
+removeClassFunction(x);
+x.addListener(removeClassFunction);
 
 function addProd(prod){
     var actual = $('#' + prod).val();
@@ -40,6 +37,169 @@ function remProd(prod){
     $('#' + prod).val(($('#' + prod).val() - 1));
 }
 
+function setPzKitIni(KitSelect, inppzpiw, inppzwa, inppzop){
+    var numkitIni = $("#"+ KitSelect).val();
+    if(numkitIni == 1 ){
+        $("#" + inppzpiw).val('1');
+        $("#" + inppzwa).val('0');
+        $("#" + inppzop).val('0');
+
+        var lvl0pzpiw = $("#lvl0pzpiw").val();
+        (inppzpiw == "lvl1l1pzpiw") ? $("#lvl0pzpiw").val((parseInt(lvl0pzpiw) + parseInt(1))) : null;
+        (inppzpiw == "lvl1l2pzpiw") ? $("#lvl0pzpiw").val((parseInt(lvl0pzpiw) + parseInt(1))) : null;
+        (inppzpiw == "lvl1l3pzpiw") ? $("#lvl0pzpiw").val((parseInt(lvl0pzpiw) + parseInt(1))) : null;
+
+        var lvl1l1pzpiw = $("#lvl1l1pzpiw").val();
+        var lvl1l2pzpiw = $("#lvl1l2pzpiw").val();
+        var lvl1l3pzpiw = $("#lvl1l3pzpiw").val();
+        (inppzpiw == "lvl2l1pzpiw") ? $("#lvl1l1pzpiw").val((parseInt(lvl1l1pzpiw) + parseInt(1))) : null;
+        (inppzpiw == "lvl2l2pzpiw") ? $("#lvl1l2pzpiw").val((parseInt(lvl1l2pzpiw) + parseInt(1))) : null;
+        (inppzpiw == "lvl2l3pzpiw") ? $("#lvl1l3pzpiw").val((parseInt(lvl1l3pzpiw) + parseInt(1))) : null;
+    }
+
+    if(numkitIni == 2 ){
+        $("#" + inppzpiw).val('0');
+        $("#" + inppzwa).val('1');
+        $("#" + inppzop).val('0');
+
+        var lvl0pzwa = $("#lvl0pzwa").val();
+        (inppzwa == "lvl1l1pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl1l2pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl1l3pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
+
+        var lvl1l1pzwa = $("#lvl1l1pzwa").val();
+        var lvl1l2pzwa = $("#lvl1l2pzwa").val();
+        var lvl1l3pzwa = $("#lvl1l3pzwa").val();
+        (inppzwa == "lvl2l1pzwa") ? $("#lvl1l1pzwa").val((parseInt(lvl1l1pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl2l2pzwa") ? $("#lvl1l2pzwa").val((parseInt(lvl1l2pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl2l3pzwa") ? $("#lvl1l3pzwa").val((parseInt(lvl1l3pzwa) + parseInt(1))) : null;
+    }
+
+    if(numkitIni == 3 ){
+        $("#" + inppzpiw).val('0');
+        $("#" + inppzwa).val('1');
+        $("#" + inppzop).val('1');
+
+        var lvl0pzwa = $("#lvl0pzwa").val();
+        (inppzwa == "lvl1l1pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl1l2pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl1l3pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
+
+        var lvl0pzop = $("#lvl0pzop").val();
+        (inppzop == "lvl1l1pzop") ? $("#lvl0pzop").val((parseInt(lvl0pzop) + parseInt(1))) : null;
+        (inppzop == "lvl1l2pzop") ? $("#lvl0pzop").val((parseInt(lvl0pzop) + parseInt(1))) : null;
+        (inppzop == "lvl1l3pzop") ? $("#lvl0pzop").val((parseInt(lvl0pzop) + parseInt(1))) : null;
+
+        var lvl1l1pzwa = $("#lvl1l1pzwa").val();
+        var lvl1l2pzwa = $("#lvl1l2pzwa").val();
+        var lvl1l3pzwa = $("#lvl1l3pzwa").val();
+        (inppzwa == "lvl2l1pzwa") ? $("#lvl1l1pzwa").val((parseInt(lvl1l1pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl2l2pzwa") ? $("#lvl1l2pzwa").val((parseInt(lvl1l2pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl2l3pzwa") ? $("#lvl1l3pzwa").val((parseInt(lvl1l3pzwa) + parseInt(1))) : null;
+
+        var lvl1l1pzop = $("#lvl1l1pzop").val();
+        var lvl1l2pzop = $("#lvl1l2pzop").val();
+        var lvl1l3pzop = $("#lvl1l3pzop").val();
+        (inppzop == "lvl2l1pzop") ? $("#lvl1l1pzop").val((parseInt(lvl1l1pzop) + parseInt(1))) : null;
+        (inppzop == "lvl2l2pzop") ? $("#lvl1l2pzop").val((parseInt(lvl1l2pzop) + parseInt(1))) : null;
+        (inppzop == "lvl2l3pzop") ? $("#lvl1l3pzop").val((parseInt(lvl1l3pzop) + parseInt(1))) : null;
+    }
+
+    lvl0pzpiwf($("#lvl0pzpiw"));
+    lvl0pzwaf($("#lvl0pzwa"));
+    lvl0pzopf($("#lvl0pzop"));
+
+    lvl1l1pzpiwf($("#lvl1l1pzpiw"));
+    lvl1l1pzwaf($("#lvl1l1pzwa"));
+    lvl1l1pzopf($("#lvl1l1pzop"));
+    lvl2l1pzpiwf($("#lvl2l1pzpiw"));
+    lvl2l1pzwaf($("#lvl2l1pzwa"));
+    lvl2l1pzopf($("#lvl2l1pzop"));
+
+    lvl1l2pzpiwf($("#lvl1l2pzpiw"));
+    lvl1l2pzwaf($("#lvl1l2pzwa"));
+    lvl1l2pzopf($("#lvl1l2pzop"));
+    lvl2l2pzpiwf($("#lvl2l2pzpiw"));
+    lvl2l2pzwaf($("#lvl2l2pzwa"));
+    lvl2l2pzopf($("#lvl2l2pzop"));
+
+    lvl1l3pzpiwf($("#lvl1l3pzpiw"));
+    lvl1l3pzwaf($("#lvl1l3pzwa"));
+    lvl1l3pzopf($("#lvl1l3pzop"));
+    lvl2l3pzpiwf($("#lvl2l3pzpiw"));
+    lvl2l3pzwaf($("#lvl2l3pzwa"));
+    lvl2l3pzopf($("#lvl2l3pzop"));
+}
+
+function showKit(chk, idDivKit, KitSelect, selectRango, inppzpiw, inppzwa, inppzop){
+    var checkbox = document.querySelector('#' + chk);
+    checkbox.addEventListener( 'change', function() {
+        if(this.checked) {
+            $("." + idDivKit).show();
+            $("#" + selectRango).val('1');
+            $("#" + KitSelect).val('1');
+            activeLevel3(chk);
+            if($('#lvl1l1Registro').prop("checked") || $('#lvl2l1Registro').prop("checked") || $('#lvl1l2Registro').prop("checked") || $('#lvl2l2Registro').prop("checked") || $('#lvl1l3Registro').prop("checked") || $('#lvl2l3Registro').prop("checked")){
+                $("#type").val(1);
+            }
+            setPzKitIni(KitSelect, inppzpiw, inppzwa, inppzop);
+        }
+        else {
+            $("." + idDivKit).hide();
+            $("#" + KitSelect).val('0');
+            unActiveLevel3(chk)
+            if(!$('#lvl1l1Registro').prop("checked") && !$('#lvl2l1Registro').prop("checked") && !$('#lvl1l2Registro').prop("checked") && !$('#lvl2l2Registro').prop("checked") && !$('#lvl1l3Registro').prop("checked") && !$('#lvl2l3Registro').prop("checked")){
+                $("#type").val(0);
+            }
+            $("#" + inppzpiw).val('0');
+            $("#" + inppzwa).val('0');
+            $("#" + inppzop).val('0');
+        }
+    });
+}
+
+function activeLevel3(chk){
+    if (chk == "lvl1l1Registro") {
+        $("#lvl2l1Registro").prop("checked", true);
+        $(".lvl2l1kitDiv").show();
+        $("#lvl2l1rango").val('1');
+        //$("#lvl2l1KitInicio").val('1');
+    }
+    else if(chk == "lvl1l2Registro"){
+        $("#lvl2l2Registro").prop("checked", true);
+        $(".lvl2l2kitDiv").show();
+        $("#lvl2l2rango").val('1');
+        //$("#lvl2l2KitInicio").val('1');
+    }
+    else if(chk == "lvl1l3Registro"){
+        $("#lvl2l3Registro").prop("checked", true);
+        $(".lvl2l3kitDiv").show();
+        $("#lvl2l3rango").val('1');
+        //$("#lvl2l3KitInicio").val('1');
+    }
+}
+
+function unActiveLevel3(chk){
+    if (chk == "lvl1l1Registro") {
+        $("#lvl2l1Registro").prop("checked", false);
+        $(".lvl2l1kitDiv").hide();
+        $("#lvl2l1rango").val('1');
+        $("#lvl2l1KitInicio").val('0');
+    }
+    else if(chk == "lvl1l2Registro"){
+        $("#lvl2l2Registro").prop("checked", false);
+        $(".lvl2l2kitDiv").hide();
+        $("#lvl2l2rango").val('1');
+        $("#lvl2l2KitInicio").val('0');
+    }
+    else if(chk == "lvl1l3Registro"){
+        $("#lvl2l3Registro").prop("checked", false);
+        $(".lvl2l3kitDiv").hide();
+        $("#lvl2l3rango").val('1');
+        $("#lvl2l3KitInicio").val('0');
+    }
+}
+
 $().ready(function(){
     showLinea1 = 0;
 
@@ -49,6 +209,21 @@ $().ready(function(){
     $('#nivel2linea1').hide();
     $('#nivel2linea2').hide();
     $('#nivel2linea3').hide();
+    $(".lvl0kitDiv").hide();
+    $(".lvl1l1kitDiv").hide();
+    $(".lvl2l1kitDiv").hide();
+    $(".lvl1l2kitDiv").hide();
+    $(".lvl2l2kitDiv").hide();
+    $(".lvl1l3kitDiv").hide();
+    $(".lvl2l3kitDiv").hide();
+
+    //$(".labelbonoLvl0").hide();
+    //$(".labelbonoLvl1l1").hide();
+    $(".labelbonoLvl2l1").hide();
+    //$(".labelbonoLvl1l2").hide();
+    $(".labelbonoLvl2l2").hide();
+    //$(".labelbonoLvl1l3").hide();
+    $(".labelbonoLvl2l3").hide();
 
     $("#gralForm").trigger("reset");
 
@@ -83,6 +258,7 @@ $().ready(function(){
     $('.lvl0bonoGP').text(monedaSelec);
     $('.lvl0kintai').text(monedaSelec);
     $('.lvl0retail').text(monedaSelec);
+    $('.lvl0BonoInfluencer').text(monedaSelec);
 
     $('.lvl1l1NCHtotal').text(monedaSelec);
     $('.lvl1l1kinya').text(monedaSelec);
@@ -93,6 +269,7 @@ $().ready(function(){
     $('.lvl1l1bonoGP').text(monedaSelec);
     $('.lvl1l1kintai').text(monedaSelec);
     $('.lvl1l1retail').text(monedaSelec);
+    $('.lvl1l1BonoInfluencer').text(monedaSelec);
 
     $('.lvl2l1NCHtotal').text(monedaSelec);
     $('.lvl2l1kinya').text(monedaSelec);
@@ -103,6 +280,7 @@ $().ready(function(){
     $('.lvl2l1bonoGP').text(monedaSelec);
     $('.lvl2l1kintai').text(monedaSelec);
     $('.lvl2l1retail').text(monedaSelec);
+    $('.lvl2l1BonoInfluencer').text(monedaSelec);
 
     $('.lvl1l2NCHtotal').text(monedaSelec);
     $('.lvl1l2kinya').text(monedaSelec);
@@ -113,6 +291,7 @@ $().ready(function(){
     $('.lvl1l2bonoGP').text(monedaSelec);
     $('.lvl1l2kintai').text(monedaSelec);
     $('.lvl1l2retail').text(monedaSelec);
+    $('.lvl1l2BonoInfluencer').text(monedaSelec);
     
     $('.lvl2l2NCHtotal').text(monedaSelec);
     $('.lvl2l2kinya').text(monedaSelec);
@@ -123,6 +302,7 @@ $().ready(function(){
     $('.lvl2l2bonoGP').text(monedaSelec);
     $('.lvl2l2kintai').text(monedaSelec);
     $('.lvl2l2retail').text(monedaSelec);
+    $('.lvl2l2BonoInfluencer').text(monedaSelec);
     
     $('.lvl1l3NCHtotal').text(monedaSelec);
     $('.lvl1l3kinya').text(monedaSelec);
@@ -133,6 +313,7 @@ $().ready(function(){
     $('.lvl1l3bonoGP').text(monedaSelec);
     $('.lvl1l3kintai').text(monedaSelec);
     $('.lvl1l3retail').text(monedaSelec);
+    $('.lvl1l3BonoInfluencer').text(monedaSelec);
     
     $('.lvl2l3NCHtotal').text(monedaSelec);
     $('.lvl2l3kinya').text(monedaSelec);
@@ -143,6 +324,7 @@ $().ready(function(){
     $('.lvl2l3bonoGP').text(monedaSelec);
     $('.lvl2l3kintai').text(monedaSelec);
     $('.lvl2l3retail').text(monedaSelec);
+    $('.lvl2l3BonoInfluencer').text(monedaSelec);
 });
 
 function addNodeLinea1(){
@@ -151,29 +333,33 @@ function addNodeLinea1(){
         case 1:
             $('#nivel1linea1').show(1000); 
             hideLinea1Nivel1var = 1;
-            console.log(showLinea1);
+            $(".labelbonoLvl0").show();
             break;
         case 2:
             $('#nivel1linea2').show(1000);
             hideLinea2Nivel1var = 1;
-            console.log(showLinea1);
+            $(".labelbonoLvl0").show();
             break;
         case 3:
             $('#nivel1linea3').show(1000);
             hideLinea3Nivel1var = 1;
+            $(".labelbonoLvl0").show();
             showLinea1 = 0;
             break;
     }
 }
 
-function addLinea3(nodo){
+function addLinea3(nodo, lvlBonoInf){
     $('#' + nodo).show(1000);
+    $('.' + lvlBonoInf).show();
 }
 
 $(function(){
     $('#gralForm').submit(function(e){
         e.preventDefault();
+
         $('#sendForm').text('Recalcular');
+        $('#sendForm').prepend('<i class="fa fa-calculator"></i> ');
         var route = $('#gralForm').data('route');
         
         var form_data = $(this);
@@ -375,6 +561,12 @@ $(function(){
                     if (pzvendidasnivel0 >= 3) {
                         var totalfinal = (parseFloat(Response[0].Ganancias_Sugerido) + parseFloat(Response[0].Ganancias_Compras) + parseFloat(Response[0].TotalAmount) + parseFloat((Response[0].VGP > 1500 ? Response[0].Total_Adicional : 0)));
                         $('#lvl0retail').text(formatCurrency(totalfinal));
+                        if (typeof Response[0].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null) {
+                            $("#lvl0BonoInfluencer").text('0.00');
+                        }
+                        else{
+                            (Response[0].Gan_Influencer != '.00' ? $('#lvl0BonoInfluencer').text(formatCurrency(Response[0].Gan_Influencer)) : $('#lvl0BonoInfluencer').text(formatCurrency('0')));
+                        }
                         (Response[0].VC != '.00' ? $('#lvl0vc').text(Response[0].VGP) : null);
                         (Response[0].Puntos != '.00' ? (Response[0].Puntos > 100 ? $('#lvl0puntaje').text(Response[0].Puntos) : 0) : 0);
                         (Response[0].Kinya != '.00' ? $('#lvl0kinya').text(formatCurrency(Response[0].Kinya)) : $('#lvl0kinya').text(formatCurrency('0')));
@@ -405,6 +597,12 @@ $(function(){
                 if (Response[1].TotalAmount != '.00') {
                     var totalfinal = (parseFloat(Response[1].Ganancias_Sugerido) + parseFloat(Response[1].Ganancias_Compras) + parseFloat(Response[1].TotalAmount) + parseFloat((Response[1].VGP > 1500 ? Response[1].Total_Adicional : 0)));
                     $('#lvl1l1retail').text(formatCurrency(totalfinal));
+                }
+                if (typeof Response[1].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null) {
+                    $("#lvl1l1BonoInfluencer").text('0.00');
+                }
+                else{
+                    (Response[1].Gan_Influencer != '.00' ? $('#lvl1l1BonoInfluencer').text(formatCurrency(Response[1].Gan_Influencer)) : $('#lvl1l1BonoInfluencer').text(formatCurrency('0')));
                 }
                 (Response[1].VC != '.00' ? $('#lvl1l1vc').text(Response[1].VGP) : null);
                 (Response[1].Puntos != '.00' ? $('#lvl1l1puntaje').text(Response[1].Puntos) : null);
@@ -438,6 +636,12 @@ $(function(){
                     var totalfinal = (parseFloat(Response[3].Ganancias_Sugerido) + parseFloat(Response[3].Ganancias_Compras) + parseFloat(Response[3].TotalAmount) + parseFloat((Response[3].VGP > 1500 ? Response[3].Total_Adicional : 0)));
                     $('#lvl1l2retail').text(formatCurrency(totalfinal));
                 }
+                if (typeof Response[3].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null) {
+                    $("#lvl1l2BonoInfluencer").text('0.00');
+                }
+                else{
+                    (Response[3].Gan_Influencer != '.00' ? $('#lvl1l2BonoInfluencer').text(formatCurrency(Response[3].Gan_Influencer)) : $('#lvl1l2BonoInfluencer').text(formatCurrency('0')));
+                }
                 (Response[3].VC != '.00' ? $('#lvl1l2vc').text(Response[3].VGP) : null);
                 (Response[3].Puntos != '.00' ? $('#lvl1l2puntaje').text(Response[3].Puntos) : null);
                 (Response[3].Kinya != '.00' ? $('#lvl1l2kinya').text(formatCurrency(Response[3].Kinya)) : null);
@@ -469,6 +673,12 @@ $(function(){
                 if (Response[5].TotalAmount != '.00') {
                     var totalfinal = (parseFloat(Response[5].Ganancias_Sugerido) + parseFloat(Response[5].Ganancias_Compras) + parseFloat(Response[5].TotalAmount) + parseFloat((Response[5].VGP > 1500 ? Response[5].Total_Adicional : 0)));
                     $('#lvl1l3retail').text(formatCurrency(totalfinal));
+                }
+                if (typeof Response[5].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null) {
+                    $("#lvl1l3BonoInfluencer").text('0.00');
+                }
+                else{
+                    (Response[5].Gan_Influencer != '.00' ? $('#lvl1l3BonoInfluencer').text(formatCurrency(Response[5].Gan_Influencer)) : $('#lvl1l3BonoInfluencer').text(formatCurrency('0')));
                 }
                 (Response[5].VC != '.00' ? $('#lvl1l3vc').text(Response[5].VGP) : null);
                 (Response[5].Puntos != '.00' ? $('#lvl1l3puntaje').text(Response[5].Puntos) : null);
@@ -1001,8 +1211,9 @@ var monedaCostaRica = '₡ ';
 var monedaPanama = '$ ';
 var monedaEcuador = 'USD ';
 var monedaPeru = 'S/. ';
-var monedaSalvador = '$  ';
+var monedaSalvador = '$ ';
 var monedaGuatemala = 'Q ';
+var monedaChilena = '$ ';
 
 var monedaSelec = monedaMexicana;
 
@@ -1072,6 +1283,13 @@ function hideProducts(id, aquapour, optimizer){
         $('.' + optimizer + 'img').hide();
         monedaSelec = monedaSalvador;
     }
+    else if( $('#' + id).val() == 'Chl'){
+        $("#" + aquapour).parent('div').show();
+        $("#" + optimizer).parent('div').show();
+        $("." + optimizer).show();
+        $('.' + optimizer + 'img').show();
+        monedaSelec = monedaChilena;
+    }
 
     switch(id){
         case 'lvl0pais':
@@ -1084,6 +1302,7 @@ function hideProducts(id, aquapour, optimizer){
             $('.lvl0bonoGP').text(monedaSelec);
             $('.lvl0kintai').text(monedaSelec);
             $('.lvl0retail').text(monedaSelec);
+            $('.lvl0BonoInfluencer').text(monedaSelec);
             break;
         case 'lvl1l1pais':
             $('.lvl1l1NCHtotal').text(monedaSelec);
@@ -1095,6 +1314,7 @@ function hideProducts(id, aquapour, optimizer){
             $('.lvl1l1bonoGP').text(monedaSelec);
             $('.lvl1l1kintai').text(monedaSelec);
             $('.lvl1l1retail').text(monedaSelec);
+            $('.lvl1l1BonoInfluencer').text(monedaSelec);
             break;
         case 'lvl2l1pais':  
             $('.lvl2l1NCHtotal').text(monedaSelec);
@@ -1106,6 +1326,7 @@ function hideProducts(id, aquapour, optimizer){
             $('.lvl2l1bonoGP').text(monedaSelec);
             $('.lvl2l1kintai').text(monedaSelec);
             $('.lvl2l1retail').text(monedaSelec);
+            $('.lvl2l1BonoInfluencer').text(monedaSelec);
             break;
         case 'lvl1l2pais':
             $('.lvl1l2NCHtotal').text(monedaSelec);
@@ -1117,6 +1338,7 @@ function hideProducts(id, aquapour, optimizer){
             $('.lvl1l2bonoGP').text(monedaSelec);
             $('.lvl1l2kintai').text(monedaSelec);
             $('.lvl1l2retail').text(monedaSelec);
+            $('.lvl1l2BonoInfluencer').text(monedaSelec);
             break;
         case 'lvl2l2pais':
             $('.lvl2l2NCHtotal').text(monedaSelec);
@@ -1128,6 +1350,7 @@ function hideProducts(id, aquapour, optimizer){
             $('.lvl2l2bonoGP').text(monedaSelec);
             $('.lvl2l2kintai').text(monedaSelec);
             $('.lvl2l2retail').text(monedaSelec);
+            $('.lvl2l2BonoInfluencer').text(monedaSelec);
             break;
         case 'lvl1l3pais':
             $('.lvl1l3NCHtotal').text(monedaSelec);
@@ -1139,6 +1362,7 @@ function hideProducts(id, aquapour, optimizer){
             $('.lvl1l3bonoGP').text(monedaSelec);
             $('.lvl1l3kintai').text(monedaSelec);
             $('.lvl1l3retail').text(monedaSelec);
+            $('.lvl1l3BonoInfluencer').text(monedaSelec);
             break;
         case 'lvl2l3pais':
             $('.lvl2l3NCHtotal').text(monedaSelec);
@@ -1150,6 +1374,7 @@ function hideProducts(id, aquapour, optimizer){
             $('.lvl2l3bonoGP').text(monedaSelec);
             $('.lvl2l3kintai').text(monedaSelec);
             $('.lvl2l3retail').text(monedaSelec);
+            $('.lvl2l3BonoInfluencer').text(monedaSelec);
             break;
     }
     
@@ -1177,29 +1402,29 @@ var lvl0pzwa = 0;
 var lvl0pzaqp = 0;
 var lvl0pzop = 0;
 
-$("#lvl0pzpiw").change(function(){
-    var inputenter = this.value;
+function lvl0pzpiwf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl0pzpiw = this.value;
+        lvl0pzpiw = input.val();
         pzvendidasnivel0 = (parseInt(lvl0pzpiw) + parseInt(lvl0pzwa) + parseInt(lvl0pzaqp) + parseInt(lvl0pzop));
         setPiezasVendidas();
     }
-});
+}
 
-$("#lvl0pzwa").change(function(){
-    var inputenter = this.value;
+function lvl0pzwaf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl0pzwa = this.value;
+        lvl0pzwa = input.val();
         pzvendidasnivel0 = (parseInt(lvl0pzpiw) + parseInt(lvl0pzwa) + parseInt(lvl0pzaqp) + parseInt(lvl0pzop));
         setPiezasVendidas();
     }
-});
+}
 
 $("#lvl0pzaqp").change(function(){
     var inputenter = this.value;
@@ -1211,21 +1436,19 @@ $("#lvl0pzaqp").change(function(){
         pzvendidasnivel0 = (parseInt(lvl0pzpiw) + parseInt(lvl0pzwa) + parseInt(lvl0pzaqp) + parseInt(lvl0pzop));
         setPiezasVendidas(); 
     }
-    
 });
 
-$("#lvl0pzop").change(function(){
-    var inputenter = this.value;
+function lvl0pzopf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl0pzop = this.value;
+        lvl0pzop = input.val();
         pzvendidasnivel0 = (parseInt(lvl0pzpiw) + parseInt(lvl0pzwa) + parseInt(lvl0pzaqp) + parseInt(lvl0pzop));
             setPiezasVendidas();
     }
-    
-});
+}
 
 function setPiezasVendidas(){
     $('#lvl0pz_vendidas').text(pzvendidasnivel0);
@@ -1292,29 +1515,29 @@ var lvl1l1pzwa = 0;
 var lvl1l1pzaqp = 0;
 var lvl1l1pzop = 0;
 
-$("#lvl1l1pzpiw").change(function(){
-    var inputenter = this.value;
+function lvl1l1pzpiwf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl1l1pzpiw = this.value;
+        lvl1l1pzpiw = input.val();
         pzvendidasnivel1l1 = (parseInt(lvl1l1pzpiw) + parseInt(lvl1l1pzwa) + parseInt(lvl1l1pzaqp) + parseInt(lvl1l1pzop));
         setPiezasVendidaslvl1l1();
     }
-});
+}
 
-$("#lvl1l1pzwa").change(function(){
-    var inputenter = this.value;
+function lvl1l1pzwaf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl1l1pzwa = this.value;
+        lvl1l1pzwa = input.val();
         pzvendidasnivel1l1 = (parseInt(lvl1l1pzpiw) + parseInt(lvl1l1pzwa) + parseInt(lvl1l1pzaqp) + parseInt(lvl1l1pzop));
         setPiezasVendidaslvl1l1();
     }
-});
+};
 
 $("#lvl1l1pzaqp").change(function(){
     var inputenter = this.value;
@@ -1329,18 +1552,17 @@ $("#lvl1l1pzaqp").change(function(){
     
 });
 
-$("#lvl1l1pzop").change(function(){
-    var inputenter = this.value;
+function lvl1l1pzopf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl1l1pzop = this.value;
+        lvl1l1pzop = input.val();
         pzvendidasnivel1l1 = (parseInt(lvl1l1pzpiw) + parseInt(lvl1l1pzwa) + parseInt(lvl1l1pzaqp) + parseInt(lvl1l1pzop));
-            setPiezasVendidaslvl1l1();
+        setPiezasVendidaslvl1l1();
     }
-    
-});
+}
 
 function setPiezasVendidaslvl1l1(){
     $('#lvl1l1pz_vendidas').text(pzvendidasnivel1l1);
@@ -1431,29 +1653,29 @@ var lvl1l2pzwa = 0;
 var lvl1l2pzaqp = 0;
 var lvl1l2pzop = 0;
 
-$("#lvl1l2pzpiw").change(function(){
-    var inputenter = this.value;
+function lvl1l2pzpiwf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl1l2pzpiw = this.value;
+        lvl1l2pzpiw = input.val();
         pzvendidasnivel1l2 = (parseInt(lvl1l2pzpiw) + parseInt(lvl1l2pzwa) + parseInt(lvl1l2pzaqp) + parseInt(lvl1l2pzop));
         setPiezasVendidaslvl1l2();
     }
-});
+}
 
-$("#lvl1l2pzwa").change(function(){
-    var inputenter = this.value;
+function lvl1l2pzwaf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl1l2pzwa = this.value;
+        lvl1l2pzwa = input.val();
         pzvendidasnivel1l2 = (parseInt(lvl1l2pzpiw) + parseInt(lvl1l2pzwa) + parseInt(lvl1l2pzaqp) + parseInt(lvl1l2pzop));
         setPiezasVendidaslvl1l2();
     }
-});
+}
 
 $("#lvl1l2pzaqp").change(function(){
     var inputenter = this.value;
@@ -1468,18 +1690,17 @@ $("#lvl1l2pzaqp").change(function(){
     
 });
 
-$("#lvl1l2pzop").change(function(){
-    var inputenter = this.value;
+function lvl1l2pzopf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl1l2pzop = this.value;
+        lvl1l2pzop = input.val();
         pzvendidasnivel1l2 = (parseInt(lvl1l2pzpiw) + parseInt(lvl1l2pzwa) + parseInt(lvl1l2pzaqp) + parseInt(lvl1l2pzop));
             setPiezasVendidaslvl1l2();
-    }
-    
-});
+    }   
+}
 
 function setPiezasVendidaslvl1l2(){
     $('#lvl1l2pz_vendidas').text(pzvendidasnivel1l2);
@@ -1560,29 +1781,29 @@ var lvl1l3pzwa = 0;
 var lvl1l3pzaqp = 0;
 var lvl1l3pzop = 0;
 
-$("#lvl1l3pzpiw").change(function(){
-    var inputenter = this.value;
+function lvl1l3pzpiwf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl1l3pzpiw = this.value;
+        lvl1l3pzpiw = input.val();
         pzvendidasnivel1l3 = (parseInt(lvl1l3pzpiw) + parseInt(lvl1l3pzwa) + parseInt(lvl1l3pzaqp) + parseInt(lvl1l3pzop));
         setPiezasVendidaslvl1l3();
     }
-});
+}
 
-$("#lvl1l3pzwa").change(function(){
-    var inputenter = this.value;
+function lvl1l3pzwaf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl1l3pzwa = this.value;
+        lvl1l3pzwa = input.val();
         pzvendidasnivel1l3 = (parseInt(lvl1l3pzpiw) + parseInt(lvl1l3pzwa) + parseInt(lvl1l3pzaqp) + parseInt(lvl1l3pzop));
         setPiezasVendidaslvl1l3();
     }
-});
+}
 
 $("#lvl1l3pzaqp").change(function(){
     var inputenter = this.value;
@@ -1597,18 +1818,17 @@ $("#lvl1l3pzaqp").change(function(){
     
 });
 
-$("#lvl1l3pzop").change(function(){
-    var inputenter = this.value;
+function lvl1l3pzopf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl1l3pzop = this.value;
+        lvl1l3pzop = input.val();
         pzvendidasnivel1l3 = (parseInt(lvl1l3pzpiw) + parseInt(lvl1l3pzwa) + parseInt(lvl1l3pzaqp) + parseInt(lvl1l3pzop));
             setPiezasVendidaslvl1l3();
     }
-    
-});
+}
 
 function setPiezasVendidaslvl1l3(){
     $('#lvl1l3pz_vendidas').text(pzvendidasnivel1l3);
@@ -1684,29 +1904,29 @@ var lvl2l1pzwa = 0;
 var lvl2l1pzaqp = 0;
 var lvl2l1pzop = 0;
 
-$("#lvl2l1pzpiw").change(function(){
-    var inputenter = this.value;
+function lvl2l1pzpiwf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl2l1pzpiw = this.value;
+        lvl2l1pzpiw = input.val();
         pzvendidasnivel2l1 = (parseInt(lvl2l1pzpiw) + parseInt(lvl2l1pzwa) + parseInt(lvl2l1pzaqp) + parseInt(lvl2l1pzop));
         setPiezasVendidaslvl2l1();
     }
-});
+}
 
-$("#lvl2l1pzwa").change(function(){
-    var inputenter = this.value;
+function lvl2l1pzwaf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl2l1pzwa = this.value;
+        lvl2l1pzwa = input.val();
         pzvendidasnivel2l1 = (parseInt(lvl2l1pzpiw) + parseInt(lvl2l1pzwa) + parseInt(lvl2l1pzaqp) + parseInt(lvl2l1pzop));
         setPiezasVendidaslvl2l1();
     }
-});
+}
 
 $("#lvl2l1pzaqp").change(function(){
     var inputenter = this.value;
@@ -1721,18 +1941,17 @@ $("#lvl2l1pzaqp").change(function(){
     
 });
 
-$("#lvl2l1pzop").change(function(){
-    var inputenter = this.value;
+function lvl2l1pzopf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl2l1pzop = this.value;
+        lvl2l1pzop = input.val();
         pzvendidasnivel2l1 = (parseInt(lvl2l1pzpiw) + parseInt(lvl2l1pzwa) + parseInt(lvl2l1pzaqp) + parseInt(lvl2l1pzop));
             setPiezasVendidaslvl2l1();
     }
-    
-});
+}
 
 function setPiezasVendidaslvl2l1(){
     $('#lvl2l1pz_vendidas').text(pzvendidasnivel2l1);
@@ -1800,29 +2019,29 @@ var lvl2l2pzwa = 0;
 var lvl2l2pzaqp = 0;
 var lvl2l3pzop = 0;
 
-$("#lvl2l2pzpiw").change(function(){
-    var inputenter = this.value;
+function lvl2l2pzpiwf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl2l2pzpiw = this.value;
+        lvl2l2pzpiw = input.val();
         pzvendidasnivel2l2 = (parseInt(lvl2l2pzpiw) + parseInt(lvl2l2pzwa) + parseInt(lvl2l2pzaqp) + parseInt(lvl2l3pzop));
         setPiezasVendidaslvl2l2();
     }
-});
+}
 
-$("#lvl2l2pzwa").change(function(){
-    var inputenter = this.value;
+function lvl2l2pzwaf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl2l2pzwa = this.value;
+        lvl2l2pzwa = input.val();
         pzvendidasnivel2l2 = (parseInt(lvl2l2pzpiw) + parseInt(lvl2l2pzwa) + parseInt(lvl2l2pzaqp) + parseInt(lvl2l3pzop));
         setPiezasVendidaslvl2l2();
     }
-});
+}
 
 $("#lvl2l2pzaqp").change(function(){
     var inputenter = this.value;
@@ -1837,18 +2056,17 @@ $("#lvl2l2pzaqp").change(function(){
     
 });
 
-$("#lvl2l2pzop").change(function(){
-    var inputenter = this.value;
+function lvl2l2pzopf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl2l3pzop = this.value;
+        lvl2l3pzop = input.val();
         pzvendidasnivel2l2 = (parseInt(lvl2l2pzpiw) + parseInt(lvl2l2pzwa) + parseInt(lvl2l2pzaqp) + parseInt(lvl2l3pzop));
             setPiezasVendidaslvl2l2();
     }
-    
-});
+}
 
 function setPiezasVendidaslvl2l2(){
     $('#lvl2l2pz_vendidas').text(pzvendidasnivel2l2);
@@ -1915,29 +2133,29 @@ var lvl2l3pzwa = 0;
 var lvl2l3pzaqp = 0;
 var lvl2l3pzop = 0;
 
-$("#lvl2l3pzpiw").change(function(){
-    var inputenter = this.value;
+function lvl2l3pzpiwf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl2l3pzpiw = this.value;
+        lvl2l3pzpiw = input.val();
         pzvendidasnivel2l3 = (parseInt(lvl2l3pzpiw) + parseInt(lvl2l3pzwa) + parseInt(lvl2l3pzaqp) + parseInt(lvl2l3pzop));
         setPiezasVendidaslvl2l3();
     }
-});
+}
 
-$("#lvl2l3pzwa").change(function(){
-    var inputenter = this.value;
+function lvl2l3pzwaf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl2l3pzwa = this.value;
+        lvl2l3pzwa = input.val();
         pzvendidasnivel2l3 = (parseInt(lvl2l3pzpiw) + parseInt(lvl2l3pzwa) + parseInt(lvl2l3pzaqp) + parseInt(lvl2l3pzop));
         setPiezasVendidaslvl2l3();
     }
-});
+}
 
 $("#lvl2l3pzaqp").change(function(){
     var inputenter = this.value;
@@ -1952,18 +2170,17 @@ $("#lvl2l3pzaqp").change(function(){
     
 });
 
-$("#lvl2l3pzop").change(function(){
-    var inputenter = this.value;
+function lvl2l3pzopf(input){
+    var inputenter = input.val();
     if(inputenter == ''){
-        this.value = 0;
+        input.val(0);
     }
     else{
-        lvl2l3pzop = this.value;
+        lvl2l3pzop = input.val();
         pzvendidasnivel2l3 = (parseInt(lvl2l3pzpiw) + parseInt(lvl2l3pzwa) + parseInt(lvl2l3pzaqp) + parseInt(lvl2l3pzop));
             setPiezasVendidaslvl2l3();
     }
-    
-});
+}
 
 function setPiezasVendidaslvl2l3(){
     $('#lvl2l3pz_vendidas').text(pzvendidasnivel2l3);
