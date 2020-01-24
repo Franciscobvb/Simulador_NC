@@ -10,6 +10,10 @@ var hideLinea1Nivel1var = 0;
 var hideLinea2Nivel1var = 0;
 var hideLinea3Nivel1var = 0;
 
+function consolelog(data){
+    console.log(data);
+}
+
 function stopVideo(){
     $('video')[0].pause();
 }
@@ -37,17 +41,70 @@ function remProd(prod){
     $('#' + prod).val(($('#' + prod).val() - 1));
 }
 
+var contador = 0;
+var counter = 0;
 function setPzKitIni(KitSelect, inppzpiw, inppzwa, inppzop){
     var numkitIni = $("#"+ KitSelect).val();
+    var countInfluencerslvl0 = $("#countInfluencerslvl0").val();
+    var countInfluencerslvl1l1 = $("#countInfluencerslvl1l1").val();
+    var countInfluencerslvl1l2 = $("#countInfluencerslvl1l2").val();
+    var countInfluencerslvl1l3 = $("#countInfluencerslvl1l3").val();
     if(numkitIni == 1 ){
-        $("#" + inppzpiw).val('1');
+        $("#" + inppzpiw).val(parseInt($("#" + inppzpiw).val()) + 1);
         $("#" + inppzwa).val('0');
         $("#" + inppzop).val('0');
+        
+        (inppzpiw == "lvl1l1pzpiw" || inppzpiw == "lvl1l2pzpiw" || inppzpiw == "lvl1l3pzpiw") ? $("#countInfluencerslvl0").val((parseInt(countInfluencerslvl0) + parseInt(1))) : null;
+
+        /*var lvl1l1pzpiw = $("#lvl1l1pzpiw").val();
+        var lvl1l2pzpiw = $("#lvl1l2pzpiw").val();
+        var lvl1l3pzpiw = $("#lvl1l3pzpiw").val();
+        (inppzpiw == "lvl2l1pzpiw") ? $("#lvl1l1pzpiw").val((parseInt(lvl1l1pzpiw) + parseInt(1))) : null;
+        (inppzpiw == "lvl2l2pzpiw") ? $("#lvl1l2pzpiw").val((parseInt(lvl1l2pzpiw) + parseInt(1))) : null;
+        (inppzpiw == "lvl2l3pzpiw") ? $("#lvl1l3pzpiw").val((parseInt(lvl1l3pzpiw) + parseInt(1))) : null;
+
+        if(inppzpiw == "lvl1l1pzpiw" && $("#lvl0pzwa").val() > 0 || inppzpiw == "lvl1l2pzpiw" && $("#lvl0pzwa").val() > 0 || inppzpiw == "lvl1l3pzpiw" && $("#lvl0pzwa").val() > 0){
+            $("#lvl0pzwa").val($("#lvl0pzwa").val() - 1);
+        }
+
+        if(inppzpiw == "lvl1l1pzpiw" && $("#lvl0pzop").val() > 0 || inppzpiw == "lvl1l2pzpiw" && $("#lvl0pzop").val() > 0 || inppzpiw == "lvl1l3pzpiw" && $("#lvl0pzop").val() > 0){
+            $("#lvl0pzop").val($("#lvl0pzop").val() - 1);
+        }*/
+    }
+
+    if(numkitIni == 2 ){
+        $("#" + inppzpiw).val('0');
+        $("#" + inppzwa).val(parseInt($("#" + inppzwa).val()) + 1);
+        $("#" + inppzop).val('0');
+
+        var countInfluencerslvl0 = $("#countInfluencerslvl0").val();
+        (inppzwa == "lvl1l1pzwa" || inppzwa == "lvl1l2pzwa" || inppzwa == "lvl1l3pzwa") ? $("#countInfluencerslvl0").val((parseInt(countInfluencerslvl0) + parseInt(1))) : null;
+
+        /*var lvl1l1pzwa = $("#lvl1l1pzwa").val();
+        var lvl1l2pzwa = $("#lvl1l2pzwa").val();
+        var lvl1l3pzwa = $("#lvl1l3pzwa").val();
+        (inppzwa == "lvl2l1pzwa") ? $("#lvl1l1pzwa").val((parseInt(lvl1l1pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl2l2pzwa") ? $("#lvl1l2pzwa").val((parseInt(lvl1l2pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl2l3pzwa") ? $("#lvl1l3pzwa").val((parseInt(lvl1l3pzwa) + parseInt(1))) : null;
+
+        if(inppzwa == "lvl1l1pzwa" && $("#lvl0pzpiw").val() > 0 || inppzwa == "lvl1l2pzwa" && $("#lvl0pzpiw").val() > 0 || inppzwa == "lvl1l3pzwa" && $("#lvl0pzpiw").val() > 0){
+            $("#lvl0pzpiw").val($("#lvl0pzpiw").val() - 1);
+        }
+        if(inppzwa == "lvl1l1pzwa" && $("#lvl0pzop").val() > 0 || inppzwa == "lvl1l2pzwa" && $("#lvl0pzop").val() > 0 || inppzwa == "lvl1l3pzwa" && $("#lvl0pzop").val() > 0){
+            $("#lvl0pzop").val($("#lvl0pzop").val() - 1);
+        }*/
+    }
+
+    if(numkitIni == 3 ){
+        $("#" + inppzpiw).val(parseInt($("#" + inppzpiw).val()) + 1);
+        $("#" + inppzwa).val('0');
+        $("#" + inppzop).val(parseInt($("#" + inppzop).val()) + 1);
 
         var lvl0pzpiw = $("#lvl0pzpiw").val();
-        (inppzpiw == "lvl1l1pzpiw") ? $("#lvl0pzpiw").val((parseInt(lvl0pzpiw) + parseInt(1))) : null;
-        (inppzpiw == "lvl1l2pzpiw") ? $("#lvl0pzpiw").val((parseInt(lvl0pzpiw) + parseInt(1))) : null;
-        (inppzpiw == "lvl1l3pzpiw") ? $("#lvl0pzpiw").val((parseInt(lvl0pzpiw) + parseInt(1))) : null;
+        (inppzpiw == "lvl1l1pzpiw" || inppzpiw == "lvl1l2pzpiw" || inppzpiw == "lvl1l3pzpiw") ? $("#lvl0pzpiw").val((parseInt(lvl0pzpiw) + parseInt(1))) : null;
+
+        var lvl0pzop = $("#lvl0pzop").val();
+        (inppzop == "lvl1l1pzop" || inppzop == "lvl1l2pzop" || inppzop == "lvl1l3pzop") ? $("#lvl0pzop").val((parseInt(lvl0pzop) + parseInt(1))) : null;
 
         var lvl1l1pzpiw = $("#lvl1l1pzpiw").val();
         var lvl1l2pzpiw = $("#lvl1l2pzpiw").val();
@@ -55,40 +112,29 @@ function setPzKitIni(KitSelect, inppzpiw, inppzwa, inppzop){
         (inppzpiw == "lvl2l1pzpiw") ? $("#lvl1l1pzpiw").val((parseInt(lvl1l1pzpiw) + parseInt(1))) : null;
         (inppzpiw == "lvl2l2pzpiw") ? $("#lvl1l2pzpiw").val((parseInt(lvl1l2pzpiw) + parseInt(1))) : null;
         (inppzpiw == "lvl2l3pzpiw") ? $("#lvl1l3pzpiw").val((parseInt(lvl1l3pzpiw) + parseInt(1))) : null;
+
+        var lvl1l1pzop = $("#lvl1l1pzop").val();
+        var lvl1l2pzop = $("#lvl1l2pzop").val();
+        var lvl1l3pzop = $("#lvl1l3pzop").val();
+        (inppzop == "lvl2l1pzop") ? $("#lvl1l1pzop").val((parseInt(lvl1l1pzop) + parseInt(1))) : null;
+        (inppzop == "lvl2l2pzop") ? $("#lvl1l2pzop").val((parseInt(lvl1l2pzop) + parseInt(1))) : null;
+        (inppzop == "lvl2l3pzop") ? $("#lvl1l3pzop").val((parseInt(lvl1l3pzop) + parseInt(1))) : null;
+
+        if(inppzwa == "lvl1l1pzwa" && $("#lvl0pzpiw").val() > 0 || inppzwa == "lvl1l2pzwa" && $("#lvl0pzpiw").val() > 0 || inppzwa == "lvl1l3pzwa" && $("#lvl0pzpiw").val() > 0){
+            $("#lvl0pzpiw").val($("#lvl0pzpiw").val() - 1);
+        }
     }
 
-    if(numkitIni == 2 ){
+    if(numkitIni == 4 ){
         $("#" + inppzpiw).val('0');
-        $("#" + inppzwa).val('1');
-        $("#" + inppzop).val('0');
+        $("#" + inppzwa).val(parseInt($("#" + inppzwa).val()) + 1);
+        $("#" + inppzop).val(parseInt($("#" + inppzop).val()) + 1);
 
         var lvl0pzwa = $("#lvl0pzwa").val();
-        (inppzwa == "lvl1l1pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
-        (inppzwa == "lvl1l2pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
-        (inppzwa == "lvl1l3pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
-
-        var lvl1l1pzwa = $("#lvl1l1pzwa").val();
-        var lvl1l2pzwa = $("#lvl1l2pzwa").val();
-        var lvl1l3pzwa = $("#lvl1l3pzwa").val();
-        (inppzwa == "lvl2l1pzwa") ? $("#lvl1l1pzwa").val((parseInt(lvl1l1pzwa) + parseInt(1))) : null;
-        (inppzwa == "lvl2l2pzwa") ? $("#lvl1l2pzwa").val((parseInt(lvl1l2pzwa) + parseInt(1))) : null;
-        (inppzwa == "lvl2l3pzwa") ? $("#lvl1l3pzwa").val((parseInt(lvl1l3pzwa) + parseInt(1))) : null;
-    }
-
-    if(numkitIni == 3 ){
-        $("#" + inppzpiw).val('0');
-        $("#" + inppzwa).val('1');
-        $("#" + inppzop).val('1');
-
-        var lvl0pzwa = $("#lvl0pzwa").val();
-        (inppzwa == "lvl1l1pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
-        (inppzwa == "lvl1l2pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
-        (inppzwa == "lvl1l3pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
+        (inppzwa == "lvl1l1pzwa" || inppzwa == "lvl1l2pzwa" || inppzwa == "lvl1l3pzwa") ? $("#lvl0pzwa").val((parseInt(lvl0pzwa) + parseInt(1))) : null;
 
         var lvl0pzop = $("#lvl0pzop").val();
-        (inppzop == "lvl1l1pzop") ? $("#lvl0pzop").val((parseInt(lvl0pzop) + parseInt(1))) : null;
-        (inppzop == "lvl1l2pzop") ? $("#lvl0pzop").val((parseInt(lvl0pzop) + parseInt(1))) : null;
-        (inppzop == "lvl1l3pzop") ? $("#lvl0pzop").val((parseInt(lvl0pzop) + parseInt(1))) : null;
+        (inppzop == "lvl1l1pzop" || inppzop == "lvl1l2pzop" || inppzop == "lvl1l3pzop") ? $("#lvl0pzop").val((parseInt(lvl0pzop) + parseInt(1))) : null;
 
         var lvl1l1pzwa = $("#lvl1l1pzwa").val();
         var lvl1l2pzwa = $("#lvl1l2pzwa").val();
@@ -103,6 +149,21 @@ function setPzKitIni(KitSelect, inppzpiw, inppzwa, inppzop){
         (inppzop == "lvl2l1pzop") ? $("#lvl1l1pzop").val((parseInt(lvl1l1pzop) + parseInt(1))) : null;
         (inppzop == "lvl2l2pzop") ? $("#lvl1l2pzop").val((parseInt(lvl1l2pzop) + parseInt(1))) : null;
         (inppzop == "lvl2l3pzop") ? $("#lvl1l3pzop").val((parseInt(lvl1l3pzop) + parseInt(1))) : null;
+
+        if(inppzwa == "lvl1l1pzwa" && $("#lvl0pzpiw").val() > 0 || inppzwa == "lvl1l2pzwa" && $("#lvl0pzpiw").val() > 0 || inppzwa == "lvl1l3pzwa" && $("#lvl0pzpiw").val() > 0){
+            $("#lvl0pzpiw").val($("#lvl0pzpiw").val() - 1);
+        }
+    }
+
+    if(numkitIni == 0){
+        counter++;
+        if(counter == 1){
+            $("#" + inppzpiw).val('0');
+            $("#" + inppzwa).val('0');
+            $("#" + inppzop).val('0');
+            var countInfluencerslvl0 = $("#countInfluencerslvl0").val();
+            (inppzpiw == "lvl1l1pzpiw" || inppzpiw == "lvl1l2pzpiw" || inppzpiw == "lvl1l3pzpiw") ? $("#countInfluencerslvl0").val((parseInt(countInfluencerslvl0) - parseInt(1))) : null;
+        }
     }
 
     lvl0pzpiwf($("#lvl0pzpiw"));
@@ -129,12 +190,15 @@ function setPzKitIni(KitSelect, inppzpiw, inppzwa, inppzop){
     lvl2l3pzpiwf($("#lvl2l3pzpiw"));
     lvl2l3pzwaf($("#lvl2l3pzwa"));
     lvl2l3pzopf($("#lvl2l3pzop"));
+    contador = 0;
 }
 
 function showKit(chk, idDivKit, KitSelect, selectRango, inppzpiw, inppzwa, inppzop){
     var checkbox = document.querySelector('#' + chk);
+    var countAct = 0;
     checkbox.addEventListener( 'change', function() {
-        if(this.checked) {
+        countAct++;
+        if(this.checked && countAct == 1) {
             $("." + idDivKit).show();
             $("#" + selectRango).val('1');
             $("#" + KitSelect).val('1');
@@ -144,7 +208,7 @@ function showKit(chk, idDivKit, KitSelect, selectRango, inppzpiw, inppzwa, inppz
             }
             setPzKitIni(KitSelect, inppzpiw, inppzwa, inppzop);
         }
-        else {
+        else if(!this.checked){
             $("." + idDivKit).hide();
             $("#" + KitSelect).val('0');
             unActiveLevel3(chk)
@@ -154,8 +218,10 @@ function showKit(chk, idDivKit, KitSelect, selectRango, inppzpiw, inppzwa, inppz
             $("#" + inppzpiw).val('0');
             $("#" + inppzwa).val('0');
             $("#" + inppzop).val('0');
+            setPzKitIni(KitSelect, inppzpiw, inppzwa, inppzop);
         }
     });
+    counter = 0;
 }
 
 function activeLevel3(chk){
@@ -559,7 +625,7 @@ $(function(){
                 // Linea 0 - Nivel 0
                 if (Response[0].TotalAmount != '.00') {
                     if (pzvendidasnivel0 >= 3) {
-                        var totalfinal = (parseFloat(Response[0].Ganancias_Sugerido) + parseFloat(Response[0].Ganancias_Compras) + parseFloat(Response[0].TotalAmount) + parseFloat((Response[0].VGP > 1500 ? Response[0].Total_Adicional : 0)));
+                        var totalfinal = (parseFloat(Response[0].Ganancias_Sugerido) + parseFloat(Response[0].Ganancias_Compras) + parseFloat(Response[0].TotalAmount) + parseFloat((Response[0].VGP > 1500 ? Response[0].Total_Adicional : 0)) + parseFloat(typeof Response[0].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null ? 0 : Response[0].Gan_Influencer));
                         $('#lvl0retail').text(formatCurrency(totalfinal));
                         if (typeof Response[0].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null) {
                             $("#lvl0BonoInfluencer").text('0.00');
@@ -595,7 +661,7 @@ $(function(){
 
                 // Linea 1 - Nivel 1
                 if (Response[1].TotalAmount != '.00') {
-                    var totalfinal = (parseFloat(Response[1].Ganancias_Sugerido) + parseFloat(Response[1].Ganancias_Compras) + parseFloat(Response[1].TotalAmount) + parseFloat((Response[1].VGP > 1500 ? Response[1].Total_Adicional : 0)));
+                    var totalfinal = (parseFloat(Response[1].Ganancias_Sugerido) + parseFloat(Response[1].Ganancias_Compras) + parseFloat(Response[1].TotalAmount) + parseFloat((Response[1].VGP > 1500 ? Response[1].Total_Adicional : 0)) + parseFloat(typeof Response[1].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null ? Response[1].Gan_Influencer : 0));
                     $('#lvl1l1retail').text(formatCurrency(totalfinal));
                 }
                 if (typeof Response[1].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null) {
@@ -633,7 +699,7 @@ $(function(){
 
                 // Linea 2 - Nivel 1
                 if (Response[3].TotalAmount != '.00') {
-                    var totalfinal = (parseFloat(Response[3].Ganancias_Sugerido) + parseFloat(Response[3].Ganancias_Compras) + parseFloat(Response[3].TotalAmount) + parseFloat((Response[3].VGP > 1500 ? Response[3].Total_Adicional : 0)));
+                    var totalfinal = (parseFloat(Response[3].Ganancias_Sugerido) + parseFloat(Response[3].Ganancias_Compras) + parseFloat(Response[3].TotalAmount) + parseFloat((Response[3].VGP > 1500 ? Response[3].Total_Adicional : 0)) + parseFloat(typeof Response[3].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null ? Response[3].Gan_Influencer : 0));
                     $('#lvl1l2retail').text(formatCurrency(totalfinal));
                 }
                 if (typeof Response[3].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null) {
@@ -671,7 +737,7 @@ $(function(){
 
                 // Linea 3 - Nivel 1
                 if (Response[5].TotalAmount != '.00') {
-                    var totalfinal = (parseFloat(Response[5].Ganancias_Sugerido) + parseFloat(Response[5].Ganancias_Compras) + parseFloat(Response[5].TotalAmount) + parseFloat((Response[5].VGP > 1500 ? Response[5].Total_Adicional : 0)));
+                    var totalfinal = (parseFloat(Response[5].Ganancias_Sugerido) + parseFloat(Response[5].Ganancias_Compras) + parseFloat(Response[5].TotalAmount) + parseFloat((Response[5].VGP > 1500 ? Response[5].Total_Adicional : 0)) + parseFloat(typeof Response[5].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null ? Response[5].Gan_Influencer : 0));
                     $('#lvl1l3retail').text(formatCurrency(totalfinal));
                 }
                 if (typeof Response[5].Gan_Influencer === 'undefined' || Response[0].Gan_Influencer === null) {
@@ -1452,58 +1518,63 @@ function lvl0pzopf(input){
 
 function setPiezasVendidas(){
     $('#lvl0pz_vendidas').text(pzvendidasnivel0);
-    if(pzvendidasnivel0 >= 3){
-        $("#lvl0Avatar").attr("src","../SimuladorNC/img/ninja1.png");
-        $(".productos0").css('background-color', '#ff9900');
-        //$(".productos0").addClass('prodsNinja');
-        $('.0').css('border-top-width', '10px');
-        $('.0').css('border-top-style', 'solid');
-        $('.0').css('border-top-color', '#ff9900');
-        $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
-        $('.lvl0alcance').css('display', 'block');
-
-        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 ){
-            $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
-            $(".productos0").css('background-color', '#669933');
-            $('.0').css('border-top-width', '10px');
-            $('.0').css('border-top-style', 'solid');
-            $('.0').css('border-top-color', '#669933');
-            $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
-            $('.lvl0Alcancekinya').text('+1');
-        }
-
-        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
-            $('.lvl0Alcancekinya').text('+2');
-        }
-    }
-    else{
-        $("#lvl0Avatar").attr("src","../simuladornc/img/asesor.png");
-        $('#lvl0retail').text('0.00');
-        $(".productos0").css('background-color', '#bebebe');
-        $('.0').css('border-top-width', '0px');
-
-        $('#lvl0AlcanceImg').attr('src', '');
-        $('.lvl0Alcancekinya').text('');
-        $('.lvl0alcance').css('display', 'none');
-
-        if(pzvendidasnivel1l1 >= 3 && pzvendidasnivel0 >= 3){
+    
+    contador++;
+    if(contador <= 1){
+        pzvendidasnivel0 = parseInt(pzvendidasnivel0) + parseInt($("#countInfluencerslvl0").val());
+        if(pzvendidasnivel0 >= 3 ){
             $("#lvl0Avatar").attr("src","../SimuladorNC/img/ninja1.png");
             $(".productos0").css('background-color', '#ff9900');
+            //$(".productos0").addClass('prodsNinja');
             $('.0').css('border-top-width', '10px');
             $('.0').css('border-top-style', 'solid');
             $('.0').css('border-top-color', '#ff9900');
+            $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya.png');
+            $('.lvl0alcance').css('display', 'block');
+
+            if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 ){
+                $("#lvl0Avatar").attr("src","../SimuladorNC/img/samurai1.png");
+                $(".productos0").css('background-color', '#669933');
+                $('.0').css('border-top-width', '10px');
+                $('.0').css('border-top-style', 'solid');
+                $('.0').css('border-top-color', '#669933');
+                $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
+                $('.lvl0Alcancekinya').text('+1');
+            }
+
+            if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
+                $('.lvl0Alcancekinya').text('+2');
+            }
+        }
+        else{
+            $("#lvl0Avatar").attr("src","../simuladornc/img/asesor.png");
+            $('#lvl0retail').text('0.00');
+            $(".productos0").css('background-color', '#bebebe');
+            $('.0').css('border-top-width', '0px');
+
+            $('#lvl0AlcanceImg').attr('src', '');
+            $('.lvl0Alcancekinya').text('');
+            $('.lvl0alcance').css('display', 'none');
+
+            if(pzvendidasnivel1l1 >= 3 && pzvendidasnivel0 >= 3){
+                $("#lvl0Avatar").attr("src","../SimuladorNC/img/ninja1.png");
+                $(".productos0").css('background-color', '#ff9900');
+                $('.0').css('border-top-width', '10px');
+                $('.0').css('border-top-style', 'solid');
+                $('.0').css('border-top-color', '#ff9900');
+                $('.lvl0Alcancekinya').text('');
+            }
+        }
+
+        if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
+            $("#lvl0Avatar").attr("src","../SimuladorNC/img/sensei1.png");
+            $(".productos0").css('background-color', '#3333cc');
+            $('.0').css('border-top-width', '10px');
+            $('.0').css('border-top-style', 'solid');
+            $('.0').css('border-top-color', '#3333cc');
+            $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kintai.png');
             $('.lvl0Alcancekinya').text('');
         }
-    }
-
-    if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l1 >= 3 && pzvendidasnivel2l2 >= 3 && pzvendidasnivel2l3 >= 3){
-        $("#lvl0Avatar").attr("src","../SimuladorNC/img/sensei1.png");
-        $(".productos0").css('background-color', '#3333cc');
-        $('.0').css('border-top-width', '10px');
-        $('.0').css('border-top-style', 'solid');
-        $('.0').css('border-top-color', '#3333cc');
-        $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kintai.png');
-        $('.lvl0Alcancekinya').text('');
     }
 }
 
@@ -1642,6 +1713,8 @@ function setPiezasVendidaslvl1l1(){
         $('.0').css('border-top-width', '10px');
         $('.0').css('border-top-style', 'solid');
         $('.0').css('border-top-color', '#3333cc');
+        $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kintai.png');
+        $('.lvl0Alcancekinya').text('');
     }
 }
 
@@ -1721,8 +1794,15 @@ function setPiezasVendidaslvl1l2(){
             $('.0').css('border-top-color', '#669933');
             $('.lvl0Alcancekinya').text('+1');
         }
+
         if(pzvendidasnivel2l2 >= 3 && pzvendidasnivel1l2 >= 3){
             $('#lvl1l2Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
+            $(".productos2").css('background-color', '#669933');
+            $('.2').css('border-top-width', '10px');
+            $('.2').css('border-top-style', 'solid');
+            $('.2').css('border-top-color', '#669933');
+            $('.lvl1l2Alcancekinya').text('+1');
+            $('#lvl1l2AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
         }
 
         if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
@@ -1852,6 +1932,12 @@ function setPiezasVendidaslvl1l3(){
         }
         if(pzvendidasnivel2l3 >= 3 && pzvendidasnivel1l3 >= 3){
             $('#lvl1l3Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
+            $(".productos3").css('background-color', '#669933');
+            $('.3').css('border-top-width', '10px');
+            $('.3').css('border-top-style', 'solid');
+            $('.3').css('border-top-color', '#669933');
+            $('.lvl1l3Alcancekinya').text('+1');
+            $('#lvl1l3AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
         }
         if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
             $('.lvl0Alcancekinya').text('+2');
@@ -1862,6 +1948,11 @@ function setPiezasVendidaslvl1l3(){
         $('#lvl1l3retail').text('0.00');
         $('.3').css('border-top-width', '0px');
         $(".productos3").css('background-color', '#bebebe');
+
+        $('.lvl1l3alcance').css('display', 'none');
+        $('.lvl1l3Alcancekinya').text('');
+        $('#lvl1l3AlcanceImg').attr('src', '');
+
         if(pzvendidasnivel1l1 < 3 && pzvendidasnivel0 >= 3){
             $("#lvl0Avatar").attr("src","../SimuladorNC/img/ninja1.png");
             $(".productos0").css('background-color', '#ff9900');
@@ -1974,6 +2065,7 @@ function setPiezasVendidaslvl2l1(){
             $('.lvl1l1Alcancekinya').text('+1');
             $('#lvl1l1AlcanceImg').attr('src', '../SimuladorNC/img/kinya+.png');
         }
+
         if(pzvendidasnivel0 >= 3 && pzvendidasnivel1l1 >= 3 && pzvendidasnivel2l1 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l2 >= 3 && pzvendidasnivel2l2 >= 3 || pzvendidasnivel0 >= 3 && pzvendidasnivel1l3 >= 3 && pzvendidasnivel2l3 >= 3){
             $('.lvl0Alcancekinya').text('+2');
         }
@@ -2076,10 +2168,9 @@ function setPiezasVendidaslvl2l2(){
         $('.5').css('border-top-width', '10px');
         $('.5').css('border-top-style', 'solid');
         $('.5').css('border-top-color', '#ff9900');
-
         $('.lvl2l2alcance').css('display', 'block');
         $('#lvl2l2AlcanceImg').attr("src","../SimuladorNC/img/kinya.png");
-
+        
         if(pzvendidasnivel2l2 >= 3 && pzvendidasnivel1l2 >= 3){
             $('#lvl1l2Avatar').attr("src", "../SimuladorNC/img/samurai1.png");
             $(".productos2").css('background-color', '#669933');
@@ -2119,6 +2210,8 @@ function setPiezasVendidaslvl2l2(){
         $('.0').css('border-top-width', '10px');
         $('.0').css('border-top-style', 'solid');
         $('.0').css('border-top-color', '#3333cc');
+        $('#lvl0AlcanceImg').attr('src', '../SimuladorNC/img/kintai.png');
+        $('.lvl0Alcancekinya').text('');
     }
     else{
         setPiezasVendidas();
@@ -2213,15 +2306,16 @@ function setPiezasVendidaslvl2l3(){
         $('#lvl2l3retail').text('0.00');
         $('.6').css('border-top-width', '0px');
         $(".productos33").css('background-color', '#bebebe');
-        $('.lvl2l3alcance').css('display', 'none');
-        $('#lvl2l3AlcanceImg').attr("src","");
-        $('.lvl1l3Alcancekinya').text('');
         if(pzvendidasnivel2l3 < 3 && pzvendidasnivel1l3 >= 3){
             $('#lvl1l3Avatar').attr("src", "../SimuladorNC/img/ninja1.png");
             $(".productos3").css('background-color', '#ff9900');
             $('.3').css('border-top-width', '10px');
             $('.3').css('border-top-style', 'solid');
             $('.3').css('border-top-color', '#ff9900');
+
+            $('.lvl2l3alcance').css('display', 'none');
+            $('#lvl1l3AlcanceImg').attr("src","../SimuladorNC/img/kinya.png");
+            $('.lvl1l3Alcancekinya').text('');
         }
     }
 

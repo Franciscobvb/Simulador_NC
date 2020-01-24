@@ -200,7 +200,6 @@ input[type=number] { -moz-appearance:textfield; }
     width: 721px;
 }
 
-
 .prodsNinja{
     background-image: url('../img/prodsninja.png');
     background-size: contain;
@@ -370,7 +369,7 @@ input[type=number] { -moz-appearance:textfield; }
 .sticky{
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 .br-left-30 {
@@ -393,10 +392,12 @@ input[type=number] { -moz-appearance:textfield; }
     color: #000;
     background-image: linear-gradient(to top,#4481eb 0%,#04befe 100%);
     background-color:#04befe;
+    border-radius: 50px;
+    transition: all 500ms;
 }
 
 .addLevel1:hover, .addLevel2:hover{
-    background-image: linear-gradient(to right, #3862f5 7%, #07e0c4 100%);
+    background-image: linear-gradient(to right, #3862f5 7%, #07e0c4 100%); 
 }
 
 .btn-group, .btn-group-vertical {
@@ -447,4 +448,8 @@ input[type=number] { -moz-appearance:textfield; }
 
 .btn-2{
     border: 0;
+}
+
+.card-profile-image img{
+    z-index: 1;
 }

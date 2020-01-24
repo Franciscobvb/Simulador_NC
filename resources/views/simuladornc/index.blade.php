@@ -175,7 +175,6 @@
                                                             <img src="http://services.nikken.com.mx/SimuladorNC/img/shareIcon.png" width="10%">
                                                             <br>&nbsp;
                                                             <p>
-                                                                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v4.0"></script>
                                                                 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://services.nikken.com.mx/simulador/" class="fb-xfbml-parse-ignore btn btn-icon btn-2 btn-secondary">
                                                                     <img src="http://services.nikken.com.mx/SimuladorNC/img/facebook.png" width="20%">
                                                                     Compartir
@@ -354,25 +353,9 @@
                                                         </h1>
                                                     </center>
                                                 </div>
-                                                <div class="row" hidden>
-                                                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
-                                                            <input class="custom-control-input" id="lvl0Registro" type="checkbox">
-                                                            <label class="custom-control-label" for="lvl0Registro" onclick="showKit('lvl0Registro', 'lvl0kitDiv', 'lvl0KitInicio', 'lvl0rango')">Registro</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl0kitDiv">
-                                                        <div class="form-group row">
-                                                            <label for="example-text-input" class="col col-form-label form-control-label">Kit de inicio: </label>
-                                                            <div class="col-md-8">
-                                                                <select class="form-control" id="lvl0KitInicio" name="lvl0KitInicio">
-                                                                    <option value="0" selected>Seleccione...</option>
-                                                                    <option value="1">PI WATER</option>
-                                                                    <option value="2">WATERFALL </option>
-                                                                    <option value="3">WATERFALL y OPTIMIZER</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
+                                                <div class="row" >
+                                                    <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                        <input type="text" id="countInfluencerslvl0" name="countInfluencerslvl0" value="0">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -666,11 +649,16 @@
                                                         </h1>
                                                     </center>
                                                 </div>
+                                                <div class="row" >
+                                                    <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                        <input type="text" id="countInfluencerslvl1l1" name="countInfluencerslvl1l1" value="0">
+                                                    </div>
+                                                </div>
                                                 <div class="row">
                                                     <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                                         <div class="custom-control custom-control-alternative custom-checkbox mb-3">
                                                             <input class="custom-control-input" id="lvl1l1Registro" type="checkbox">
-                                                            <label class="custom-control-label" for="lvl1l1Registro" onclick="showKit('lvl1l1Registro', 'lvl1l1kitDiv', 'lvl1l1KitInicio', 'lvl1l1rango', 'lvl1l1pzpiw', 'lvl1l1pzwa', 'lvl1l1pzop')">Registro</label>
+                                                            <label class="custom-control-label" for="lvl1l1Registro" onclick="showKit('lvl1l1Registro', 'lvl1l1kitDiv', 'lvl1l1KitInicio', 'lvl1l1rango', 'lvl1l1pzpiw', 'lvl1l1pzwa', 'lvl1l1pzop')">Influencer</label>
                                                         </div>
                                                     </div>
                                                     <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl1l1kitDiv">
@@ -681,7 +669,8 @@
                                                                     <option value="0" selected>Seleccione...</option>
                                                                     <option value="1">PI WATER</option>
                                                                     <option value="2">WATERFALL </option>
-                                                                    <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                    <option value="3">PI WATER y OPTIMIZER</option>
+                                                                    <option value="4">WATERFALL y OPTIMIZER</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -964,7 +953,7 @@
                                                             <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                                                 <div class="custom-control custom-control-alternative custom-checkbox mb-3">
                                                                     <input class="custom-control-input" id="lvl2l1Registro" type="checkbox">
-                                                                    <label class="custom-control-label" for="lvl2l1Registro" onclick="showKit('lvl2l1Registro', 'lvl2l1kitDiv', 'lvl2l1KitInicio', 'lvl2l1rango', 'lvl2l1pzpiw', 'lvl2l1pzwa', 'lvl2l1pzop')">Registro</label>
+                                                                    <label class="custom-control-label" for="lvl2l1Registro" onclick="showKit('lvl2l1Registro', 'lvl2l1kitDiv', 'lvl2l1KitInicio', 'lvl2l1rango', 'lvl2l1pzpiw', 'lvl2l1pzwa', 'lvl2l1pzop')">Influencer</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl2l1kitDiv">
@@ -975,7 +964,8 @@
                                                                             <option value="0" selected>Seleccione...</option>
                                                                             <option value="1">PI WATER</option>
                                                                             <option value="2">WATERFALL </option>
-                                                                            <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                            <option value="3">PI WATER y OPTIMIZER</option>
+                                                                            <option value="4">WATERFALL y OPTIMIZER</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -1252,11 +1242,16 @@
                                                         </h1>
                                                     </center>
                                                 </div>
+                                                <div class="row" >
+                                                    <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                        <input type="text" id="countInfluencerslvl1l2" name="countInfluencerslvl1l2" value="0">
+                                                    </div>
+                                                </div>
                                                 <div class="row">
                                                     <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                                         <div class="custom-control custom-control-alternative custom-checkbox mb-3">
                                                             <input class="custom-control-input" id="lvl1l2Registro" type="checkbox">
-                                                            <label class="custom-control-label" for="lvl1l2Registro" onclick="showKit('lvl1l2Registro', 'lvl1l2kitDiv', 'lvl1l2KitInicio', 'lvl1l2rango', 'lvl1l2pzpiw', 'lvl1l2pzwa', 'lvl1l2pzop')">Registro</label>
+                                                            <label class="custom-control-label" for="lvl1l2Registro" onclick="showKit('lvl1l2Registro', 'lvl1l2kitDiv', 'lvl1l2KitInicio', 'lvl1l2rango', 'lvl1l2pzpiw', 'lvl1l2pzwa', 'lvl1l2pzop')">Influencer</label>
                                                         </div>
                                                     </div>
                                                     <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl1l2kitDiv">
@@ -1267,7 +1262,8 @@
                                                                     <option value="0" selected>Seleccione...</option>
                                                                     <option value="1">PI WATER</option>
                                                                     <option value="2">WATERFALL </option>
-                                                                    <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                    <option value="3">PI WATER y OPTIMIZER</option>
+                                                                    <option value="4">WATERFALL y OPTIMIZER</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -1550,7 +1546,7 @@
                                                             <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                                                 <div class="custom-control custom-control-alternative custom-checkbox mb-3">
                                                                     <input class="custom-control-input" id="lvl2l2Registro" type="checkbox">
-                                                                    <label class="custom-control-label" for="lvl2l2Registro" onclick="showKit('lvl2l2Registro', 'lvl2l2kitDiv', 'lvl2l2KitInicio', 'lvl2l2rango', 'lvl2l2pzpiw', 'lvl2l2pzwa', 'lvl2l2pzop')">Registro</label>
+                                                                    <label class="custom-control-label" for="lvl2l2Registro" onclick="showKit('lvl2l2Registro', 'lvl2l2kitDiv', 'lvl2l2KitInicio', 'lvl2l2rango', 'lvl2l2pzpiw', 'lvl2l2pzwa', 'lvl2l2pzop')">Influencer</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl2l2kitDiv">
@@ -1561,7 +1557,8 @@
                                                                             <option value="0" selected>Seleccione...</option>
                                                                             <option value="1">PI WATER</option>
                                                                             <option value="2">WATERFALL </option>
-                                                                            <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                            <option value="3">PI WATER y OPTIMIZER</option>
+                                                                            <option value="4">WATERFALL y OPTIMIZER</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -1838,11 +1835,16 @@
                                                         </h1>
                                                     </center>
                                                 </div>
+                                                <div class="row" >
+                                                    <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                        <input type="text" id="countInfluencerslvl1l3" name="countInfluencerslvl1l3" value="0">
+                                                    </div>
+                                                </div>
                                                 <div class="row">
                                                     <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                                         <div class="custom-control custom-control-alternative custom-checkbox mb-3">
                                                             <input class="custom-control-input" id="lvl1l3Registro" type="checkbox">
-                                                            <label class="custom-control-label" for="lvl1l3Registro" onclick="showKit('lvl1l3Registro', 'lvl1l3kitDiv', 'lvl1l3KitInicio', 'lvl1l3rango', 'lvl1l3pzpiw', 'lvl1l3pzwa', 'lvl1l3pzop')">Registro</label>
+                                                            <label class="custom-control-label" for="lvl1l3Registro" onclick="showKit('lvl1l3Registro', 'lvl1l3kitDiv', 'lvl1l3KitInicio', 'lvl1l3rango', 'lvl1l3pzpiw', 'lvl1l3pzwa', 'lvl1l3pzop')">Influencer</label>
                                                         </div>
                                                     </div>
                                                     <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl1l3kitDiv">
@@ -1853,7 +1855,8 @@
                                                                     <option value="0" selected>Seleccione...</option>
                                                                     <option value="1">PI WATER</option>
                                                                     <option value="2">WATERFALL </option>
-                                                                    <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                    <option value="3">PI WATER y OPTIMIZER</option>
+                                                                    <option value="4">WATERFALL y OPTIMIZER</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -2136,7 +2139,7 @@
                                                             <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                                                 <div class="custom-control custom-control-alternative custom-checkbox mb-3">
                                                                     <input class="custom-control-input" id="lvl2l3Registro" type="checkbox">
-                                                                    <label class="custom-control-label" for="lvl2l3Registro" onclick="showKit('lvl2l3Registro', 'lvl2l3kitDiv', 'lvl2l3KitInicio', 'lvl2l3rango', 'lvl2l3pzpiw', 'lvl2l3pzwa', 'lvl2l3pzop')">Registro</label>
+                                                                    <label class="custom-control-label" for="lvl2l3Registro" onclick="showKit('lvl2l3Registro', 'lvl2l3kitDiv', 'lvl2l3KitInicio', 'lvl2l3rango', 'lvl2l3pzpiw', 'lvl2l3pzwa', 'lvl2l3pzop')">Influencer</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-6 lvl2l3kitDiv">
@@ -2147,7 +2150,8 @@
                                                                             <option value="0" selected>Seleccione...</option>
                                                                             <option value="1">PI WATER</option>
                                                                             <option value="2">WATERFALL </option>
-                                                                            <option value="3">WATERFALL y OPTIMIZER</option>
+                                                                            <option value="3">PI WATER y OPTIMIZER</option>
+                                                                            <option value="4">WATERFALL y OPTIMIZER</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
